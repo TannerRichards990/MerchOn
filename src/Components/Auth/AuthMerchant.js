@@ -10,6 +10,10 @@ import { createRow } from '../../services/fetch-utils';
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [shopName, setShoName] = useState('');
+  const [aboutShop, setAboutShop] = useState('');
+  const [shopImage, setShopImage] = useState('');
+
   let history = useHistory();
   const type = 'merchant';
 
@@ -48,10 +52,9 @@ export default function SignUpMerchant() {
           <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
           <label htmlFor="password" value={ password }> Enter your password: </label>
           <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
-          {/* <label htmlFor="merchantName">Enter your Business Name</label>
-          <input type="text" value={merchantName}></input> */}
+          <label htmlFor="shopName">Shop Name:</label>
+          <input type="text" value={shopName} />
           <button className="submit" onClick={submitHandler}>Submit</button>
-
         </div>
       </div>
     </>
