@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <div className='main-container'>
       <div className='left-side'>
-        <img src='../../../public/assets/MerchOn.png' />
+        <img src={'../../../public/assets/MerchOn.png'} alt='MerchOn Logo' />
       </div>
       <div className='right-side'>
         <div className='right-top'>
