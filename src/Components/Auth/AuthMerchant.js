@@ -1,13 +1,16 @@
 import { useContext } from 'react';
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createRow } from '../../services/fetch-utils';
 
+
+
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  let history = useHistory();
   const type = 'merchant';
 
 //   const [type, setType] = useState('');
@@ -22,7 +25,7 @@ export default function SignUpMerchant() {
     createRow(email, type);
     setEmail('');
     setPassword('');
-    <Redirect to="/Storefront/" />;
+    history.push('/Storefront');
   };
 
   return (

@@ -1,9 +1,6 @@
-// import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { UserContext } from '../../Context/UserContext';
 import './Landing.css';
 import logo from '../../assets/MerchOn.png'; 
-
 
 export default function Landing() {
   let history = useHistory();  
@@ -34,7 +31,5 @@ export default function Landing() {
         </div>
       </div>
     </div>
-    
-    
   );
 }
