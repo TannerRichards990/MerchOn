@@ -12,6 +12,7 @@ export default function Landing() {
   if (user) {
     history.push('/Storefront');
   }
+  
 
   const clickMerchantHandler = () => {
     // eslint-disable-next-line no-console

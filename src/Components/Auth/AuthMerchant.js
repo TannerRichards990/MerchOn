@@ -28,6 +28,10 @@ export default function SignUpMerchant() {
     history.push('/Storefront');
   };
 
+  const signOutHandler = () => {
+    signOut();
+    history.push('/');
+  };
   
   if (user) {
     history.push('/Storefront');
@@ -37,7 +41,7 @@ export default function SignUpMerchant() {
     <>
       <div className="main-container">
         <div>
-          <button onClick={signOut}>Sign Out</button>
+          <button onClick={signOutHandler}>Sign Out</button>
         </div>
         <div>
           <label htmlFor="email">Enter User Name:</label>

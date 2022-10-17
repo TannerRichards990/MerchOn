@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createShopperRow } from '../../services/fetch-utils';
@@ -8,6 +8,8 @@ import { createShopperRow } from '../../services/fetch-utils';
 export default function SignUpShopper() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const history = useHistory();
 
   const type = 'shopper';
 
@@ -23,6 +25,12 @@ export default function SignUpShopper() {
     <Redirect to="/Storefront" />;
   };
 
+  const signOutHandler = () => {
+    signOut();
+    history.push('/');
+  };
+
+
   if (user) {
     history.push('/Storefront');
   }
@@ -31,7 +39,7 @@ export default function SignUpShopper() {
     <>
       <div className="main-container">
         <div>
-          <button onClick={signOut}>Sign Out</button>
+          <button onClick={signOutHandler}>Sign Out</button>
         </div>
         <div>
           <label htmlFor="email">Enter User Name:</label>
