@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
 import { checkError, client } from './client';
 
 export async function createRow(email, type) {

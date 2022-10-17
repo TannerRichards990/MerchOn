@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createShopperRow } from '../../services/fetch-utils';
@@ -19,6 +20,7 @@ export default function SignUpShopper() {
     createShopperRow(email, type);
     setEmail('');
     setPassword('');
+    <Redirect to="/Storefront" />;
   };
 
   return (
