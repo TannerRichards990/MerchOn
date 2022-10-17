@@ -1,9 +1,18 @@
 import { useHistory } from 'react-router-dom';
 import './Landing.css';
 import logo from '../../assets/MerchOn.png'; 
+import { UserContext } from '../../Context/UserContext';
+import { useContext } from 'react';
 
 export default function Landing() {
   let history = useHistory();  
+
+  const { user } = useContext(UserContext);
+  console.log(user);
+  if (user) {
+    history.push('/Storefront');
+  }
+
   const clickMerchantHandler = () => {
     // eslint-disable-next-line no-console
     console.log('I am Clicked... now, I die');
@@ -12,6 +21,7 @@ export default function Landing() {
   const clickShopperHandler = () => {
     history.push('/AuthShopper/');
   };
+  
 
   return (
     <div className='main-container'>

@@ -28,6 +28,11 @@ export default function SignUpMerchant() {
     history.push('/Storefront');
   };
 
+  
+  if (user) {
+    history.push('/Storefront');
+  }
+
   return (
     <>
       <div className="main-container">

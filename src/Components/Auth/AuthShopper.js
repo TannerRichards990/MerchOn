@@ -23,6 +23,10 @@ export default function SignUpShopper() {
     <Redirect to="/Storefront" />;
   };
 
+  if (user) {
+    history.push('/Storefront');
+  }
+
   return (
     <>
       <div className="main-container">
