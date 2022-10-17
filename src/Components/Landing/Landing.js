@@ -2,13 +2,14 @@ import { useContext, useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import './Landing.css';
+import logo from '../../assets/MerchOn.png'; 
 
 
 export default function Landing() {
   return (
     <div className='main-container'>
       <div className='left-side'>
-        <img src='../../../public/assets/MerchOn.png' />
+        <img src={logo} />
       </div>
       <div className='right-side'>
         <div className='right-top'>
