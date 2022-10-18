@@ -26,10 +26,12 @@ export default function SignUpMerchant() {
     return finalId;
   };
 
-  const temp = generateId();
-  console.log(temp);
   if (businessId === 0) {
-    setBusinessId(temp);
+    const temp = generateId();
+    console.log(temp);
+    if (businessId === 0) {
+      setBusinessId(temp);
+    }
   }
   console.log('business_id: ', businessId);
 
@@ -56,7 +58,7 @@ export default function SignUpMerchant() {
 
   const signOutHandler = () => {
     signOut();
-    history.push('/');
+    history.push('/Landing');
   };
 
   if (user) {
@@ -78,7 +80,7 @@ export default function SignUpMerchant() {
           <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
           <label htmlFor="aboutShop" value={aboutShop}>Enter your shop Description:</label>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
-          
+
           <button className="submit" onClick={submitHandler}>Submit</button>
         </div>
       </div>
