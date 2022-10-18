@@ -6,6 +6,7 @@ const Items = () => {
   const [price, setPrice] = useState('');
   const [availability, setAvailability] = useState('');
   const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
 
   async function handleSubmit() {
     await addItem(productName, price, availability, description);
@@ -19,6 +20,19 @@ const Items = () => {
         e.preventDefault();
         handleSubmit();
       }}>
+        <label aria-label="image" className="image-input">
+          <p>Image of Product:</p>
+          <input
+            name="image" 
+            type="file" 
+            className="image" 
+            value={ image } 
+            onChange={ (e) => setImage(e.target.value)} 
+            width={'250px'} >
+          </input>
+        </label>
+        
+
         <label aria-label="productName" className="productName-input">
           <p>Product Name:</p>
           <input 
