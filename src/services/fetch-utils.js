@@ -9,6 +9,7 @@ export async function createShopperRow(email, type) {
   return checkError(response);
 }
 
+// only gets business column
 export async function getBusinesses() {
   const resp = await client.from('merchon').select('business_info');
   return checkError(resp);

@@ -21,7 +21,6 @@ export function useBusinesses() {
   }, []);
 
   const filterBusinesses = () => {
-    // this filter is not working, businesses[0] is null yet still returns
     const filteredBusinesses = businesses.filter((item) => item.business_info !== null);
     return filteredBusinesses;
   };
