@@ -13,8 +13,8 @@ export default function Shop() {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  console.log('business Detail', businessDetail);
-  console.log('business Info', businessInfo);
+  // console.log('business Detail', businessDetail);
+  // console.log('business Info', businessInfo);
   
   
   return ( 
