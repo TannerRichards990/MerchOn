@@ -10,6 +10,6 @@ export async function createShopperRow(email, type) {
 }
 
 export async function getBusinesses() {
-  const resp = await client.from('merchon').select('business_data');
+  const resp = await client.from('merchon').select('business_info');
   return checkError(resp);
 }

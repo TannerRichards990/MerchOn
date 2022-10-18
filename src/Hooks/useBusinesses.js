@@ -9,7 +9,7 @@ export function useBusinesses() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = getBusinesses();
+        const data = await getBusinesses();
         setBusinesses(data);
         setLoading(false);
       } catch (e) {
@@ -20,5 +20,11 @@ export function useBusinesses() {
     fetchData();
   }, []);
 
-  return { businesses, error, loading };
+  const filterBusinesses = () => {
+    // this filter is not working, businesses[0] is null yet still returns
+    const filteredBusinesses = businesses.filter((item) => item.business_info !== null);
+    return filteredBusinesses;
+  };
+
+  return { businesses, setBusinesses, filterBusinesses, error, loading };
 }
