@@ -2,6 +2,7 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 
+
 export const NavbarData = [
   {
     title: 'Storefront',
@@ -16,9 +17,9 @@ export const NavbarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Cart',
-    path: '/Cart',
-    icons: <FaIcons.FaCartPlus />,
+    title: 'Followed Shops',
+    path: '/FollowedShops',
+    icons: <FaIcons.FaUsers />,
     cName: 'nav-text'
   },
   {
