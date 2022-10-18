@@ -5,8 +5,8 @@ export default function BusinessCard({ business_name, business_about }) {
   return (
     <div className="b-card">
       <div className="details">
-        <div className="title">{business_name}</div>
-        <div className="description">{business_about}</div>
+        <div className="title">{business_name}business_name</div>
+        <div className="description">{business_about}business_about</div>
       </div>
       {/* <div className="business-logo">
         <img src={avatar}
