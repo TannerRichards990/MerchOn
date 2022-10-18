@@ -32,8 +32,9 @@ function App() {
           <Storefront />
         </Route>
 
-        <Route path="/About/" />
-        <About />
+        <Route path="/About/">
+          <About />
+        </Route>
 
         <Route path="/Items/">
           <Items />
