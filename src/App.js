@@ -5,6 +5,7 @@ import SignUpShopper from './Components/Auth/AuthShopper';
 import { Switch, Route } from 'react-router-dom';
 import Storefront from './Components/Storefront/Storefront';
 import Navbar from './Components/Navbar/Navbar';
+import About from './Components/About/About';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
 
         <Route path="/Storefront/">
           <Storefront />
+        </Route>
+
+        <Route path="/About/">
+          <About />
         </Route>
 
         <Route exact path="/">
