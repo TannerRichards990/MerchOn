@@ -2,6 +2,8 @@ import React from 'react';
 import './About.css';
 import ConnorLinked from '../../assets/ConnorLinked.png';
 import ConnorGit from '../../assets/ConnorGit.png';
+import EmilyLinked from '../../assets/EmilyLinked.png';
+import EmilyGit from '../../assets/EmilyGit.png';
 
 export default function About() {
   return (
@@ -24,15 +26,33 @@ export default function About() {
 
           <h3>Emily Pisaygnane</h3>
           <p>LinkedIn</p>
+          <a href="https://www.linkedin.com/in/emily-pisaygnane/"target="_blank" rel="noreferrer">
+            <img src={EmilyLinked}></img>
+          </a>
           <p>GitHub</p>
+          <a href="https://github.com/emilypisaygnane"target="_blank" rel="noreferrer">
+            <img src={EmilyGit}></img>
+          </a>
 
           <h3>Tanner Richards</h3>
           <p>LinkedIn</p>
+          <a href=""target="_blank" rel="noreferrer">
+            <img src={}></img>
+          </a>
           <p>GitHub</p>
+          <a href=""target="_blank" rel="noreferrer">
+            <img src={}></img>
+          </a>
 
           <h3>Thomas P. Jenkins</h3>
           <p>LinkedIn</p>
+          <a href=""target="_blank" rel="noreferrer">
+            <img src={}></img>
+          </a>
           <p>GitHub</p>
+          <a href=""target="_blank" rel="noreferrer">
+            <img src={}></img>
+          </a>
         </div>
       </div>
     </div>
