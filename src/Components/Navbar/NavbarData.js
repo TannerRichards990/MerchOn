@@ -15,7 +15,7 @@ export const NavbarData = [
   {
     title: 'Profile',
     path: '/Profile',
-    icons: <CgIcons.CgProfile />,
+    icons: <FaIcons.CgProfile />,
     cName: 'nav-text'
   },
   {
@@ -27,7 +27,7 @@ export const NavbarData = [
   {
     title: 'About',
     path: '/About',
-    icons: <FcIcons.FcAbout />,
+    icons: <FaIcons.FcAbout />,
     cName: 'nav-text'
   },
   {
@@ -37,4 +37,3 @@ export const NavbarData = [
     cName: 'nav-text'
   }
 ];
-

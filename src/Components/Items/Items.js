@@ -11,6 +11,12 @@ const Items = () => {
   async function handleSubmit() {
     await addItem(productName, price, availability, description);
   }
+  let shopItems = { 
+    item_name: productName, 
+    item_price: price, 
+    item_availability: availability, 
+    item_description: description };
+
 
   return (
     <section className="main-container">
@@ -27,7 +33,7 @@ const Items = () => {
             type="file" 
             className="image" 
             value={ image } 
-            onChange={ (e) => setImage(e.target.value)} 
+            onChange={(e) => setImage(e.target.value)} 
           />
         </label>
         
@@ -40,7 +46,7 @@ const Items = () => {
             className="productName" 
             placeholder="MooMoo Cow Plushie" 
             value={ productName } 
-            onChange={ (e) => setProductName(e.target.value)}
+            onChange={(e) => setProductName(e.target.value)}
           />
         </label>
 
@@ -52,7 +58,7 @@ const Items = () => {
             className="price" 
             placeholder="$45.00" 
             value={ price } 
-            onChange={ (e) => setPrice(e.target.value)}
+            onChange={(e) => setPrice(e.target.value)}
           />
         </label>
 
@@ -64,7 +70,7 @@ const Items = () => {
             className="availability" 
             placeholder="10" 
             value={ availability } 
-            onChange={ (e) => setAvailability(e.target.value)}
+            onChange={(e) => setAvailability(e.target.value)}
           />
         </label>
 
@@ -76,7 +82,7 @@ const Items = () => {
             className="description" 
             placeholder="Soft Cuddly 50in Plush MooMoo Cow" 
             value={ description } 
-            onChange={ (e) => setDescription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </label> 
 
