@@ -9,8 +9,9 @@ export async function createShopperRow(email, type,) {
   return checkError(response);
 }
 
-export async function addItem(productName, price, availability, description) {
-  const response = await client.from('merchon').insert({ productName, price, availability, description });
+// adds new item to store (productName, price, availability, description, and image)
+export async function addItem(items) {
+  const response = await client.from('merchon').insert(items);
   return checkError(response);
 }
 
