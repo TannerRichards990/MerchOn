@@ -28,12 +28,12 @@ export default function SignUpMerchant() {
 
   if (businessId === 0) {
     const temp = generateId();
-    console.log(temp);
+    // console.log(temp);
     if (businessId === 0) {
       setBusinessId(temp);
     }
   }
-  console.log('business_id: ', businessId);
+  // console.log('business_id: ', businessId);
 
   let business_info = {
     business_name: shopName,

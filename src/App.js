@@ -8,15 +8,19 @@ import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Items from './Components/Items/Items';
 import Shop from './Components/Shop/Shop';
-
+import EditShop from './Components/EditShop/Editor/EditShop';
+import EditPage from './Components/EditShop/EditPage/EditPage';
+import Preview from './Components/EditShop/Preview/Preview';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   return (
     <div className="App">
       
       <Switch>
-        <Route path="/Storefront/:id">
-          <Shop />
+      
+        <Route exact path="/">
+          <Landing />
         </Route>
 
         <Route path="/Landing/">
@@ -36,14 +40,33 @@ function App() {
           <Storefront />
         </Route>
 
-        <Route path="/About/" />
-        <About />
+        <Route path="/About/">
+          <Navbar />
+          <About />
+        </Route>
 
-        <Route path="/Items/">
+        <Route path="/Items/:id">
+          <Navbar />
           <Items />
         </Route>
 
-        <Route exact path="/">
+        <Route path="/Storefront/:id">
+          <Navbar />
+          <Shop />
+        </Route>
+
+        <Route path="editor">
+          <Navbar />
+          <EditShop />
+          <EditPage />
+          <Preview />
+        </Route>
+
+        <Route path="profile">
+          <Profile />
+        </Route>
+
+        <Route path="*">
           <Landing />
         </Route>
 
