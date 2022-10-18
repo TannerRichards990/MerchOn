@@ -1,0 +1,31 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.left-side {
+    display: grid;
+    width: 100%;
+    
+}
+.right-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.right-top {
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.merchant {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+.shopper {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
