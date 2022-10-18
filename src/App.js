@@ -55,14 +55,14 @@ function App() {
           <Shop />
         </Route>
 
-        <Route path="editor">
+        <Route path="/editor">
           <Navbar />
           <EditShop />
           <EditPage />
           <Preview />
         </Route>
 
-        <Route path="profile">
+        <Route path="/profile">
           <Profile />
         </Route>
 
