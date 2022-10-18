@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getBusinessDetail } from '../services/fetch-utils';
 
 export function useBusiness(id) {
-  const [businessDetail, setBusinessDetail] = useState({});
+  const [businessDetail, setBusinessDetail] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
