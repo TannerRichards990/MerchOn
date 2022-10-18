@@ -28,8 +28,7 @@ const Items = () => {
             className="image" 
             value={ image } 
             onChange={ (e) => setImage(e.target.value)} 
-            width={'250px'} >
-          </input>
+          />
         </label>
         
 
