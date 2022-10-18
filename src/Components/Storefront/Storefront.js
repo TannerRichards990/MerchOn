@@ -12,7 +12,7 @@ export default function Storefront() {
   const { businesses, setBusinesses, filterBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
   const data = filterBusinesses();
-  console.log(data);
+  console.log(filterBusinesses);
 
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;

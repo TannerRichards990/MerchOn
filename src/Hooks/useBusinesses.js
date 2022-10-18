@@ -21,7 +21,7 @@ export function useBusinesses() {
   }, []);
 
   const filterBusinesses = () => {
-    const filteredBusinesses = businesses.filter((item) => item.business_info !== null);
+    const filteredBusinesses = businesses.filter((item) => item.type === 'merchant');
     return filteredBusinesses;
   };
 
