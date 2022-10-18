@@ -4,8 +4,10 @@ import ConnorLinked from '../../assets/ConnorLinked.png';
 import ConnorGit from '../../assets/ConnorGit.png';
 import EmilyLinked from '../../assets/EmilyLinked.png';
 import EmilyGit from '../../assets/EmilyGit.png';
-import TannerLinked from '../../TannerLinked.png';
-import TannerGit from '../../TannerGit.png';
+import TannerLinked from '../../assets/TannerLinked.png';
+import TannerGit from '../../assets/TannerGit.png';
+import ThomasLinked from '../../assets/ThomasLinked.png';
+import ThomasGit from '../../assets/ThomasGit.png';
 
 export default function About() {
   return (
@@ -48,12 +50,12 @@ export default function About() {
 
           <h3>Thomas P. Jenkins</h3>
           <p>LinkedIn</p>
-          <a href=""target="_blank" rel="noreferrer">
-            <img src={}></img>
+          <a href="https://www.linkedin.com/in/thomas-p-jenkins/" target="_blank" rel="noreferrer">
+            <img src={ ThomasLinked }></img>
           </a>
           <p>GitHub</p>
-          <a href=""target="_blank" rel="noreferrer">
-            <img src={}></img>
+          <a href="https://github.com/Thomas-Jenkins" target="_blank" rel="noreferrer">
+            <img src={ ThomasGit }></img>
           </a>
         </div>
       </div>
