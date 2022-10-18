@@ -1,6 +1,8 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import * as CgIcons from 'react-icons/cg';
+import * as FcIcons from 'react-icons/fc';
 
 
 export const NavbarData = [
@@ -13,7 +15,7 @@ export const NavbarData = [
   {
     title: 'Profile',
     path: '/Profile',
-    icons: <FaIcons.CgProfile />,
+    icons: <CgIcons.CgProfile />,
     cName: 'nav-text'
   },
   {
@@ -25,7 +27,7 @@ export const NavbarData = [
   {
     title: 'About',
     path: '/About',
-    icons: <FaIcons.FcAbout />,
+    icons: <FcIcons.FcAbout />,
     cName: 'nav-text'
   },
   {
@@ -35,3 +37,4 @@ export const NavbarData = [
     cName: 'nav-text'
   }
 ];
+
