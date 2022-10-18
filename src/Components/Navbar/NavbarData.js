@@ -5,7 +5,6 @@ import * as CgIcons from 'react-icons/cg';
 import * as FcIcons from 'react-icons/fc';
 
 
-
 export const NavbarData = [
   {
     title: 'Storefront',
