@@ -13,15 +13,14 @@ const Items = () => {
 
   return (
     <section className="main-container">
-      <div className="title">
-        <h3>Add/Edit Your Item Here:</h3>
-      </div>
+      <h3 className="title">Add More to Your Store:</h3>
 
       <form className="item-form" onSubmit={ async (e) => {
         e.preventDefault();
         handleSubmit();
       }}>
         <label aria-label="productName" className="productName-input">
+          <p>Product Name:</p>
           <input 
             name="productName" 
             type="text" 
@@ -33,6 +32,7 @@ const Items = () => {
         </label>
 
         <label aria-label="price" className="price-input">
+          <p>Price:</p>
           <input 
             name="price" 
             type="text" 
@@ -44,6 +44,7 @@ const Items = () => {
         </label>
 
         <label aria-label="availability" className="availability-input">
+          <p>Availability:</p>
           <input 
             name="availability" 
             type="text" 
@@ -55,6 +56,7 @@ const Items = () => {
         </label>
 
         <label aria-label="description" className="description-input">
+          <p>Description:</p>
           <input 
             name="description" 
             type="text" 
@@ -66,7 +68,8 @@ const Items = () => {
         </label> 
 
         <div className="add-item-button">
-          <button>Add/Edit Item</button>
+          <p>Add the item to your store</p>
+          <button>Add</button>
         </div>
       </form>
     </section>
