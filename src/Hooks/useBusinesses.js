@@ -20,10 +20,5 @@ export function useBusinesses() {
     fetchData();
   }, []);
 
-  const filterBusinesses = () => {
-    const filteredBusinesses = businesses.filter((item) => item.type === 'merchant');
-    return filteredBusinesses;
-  };
-
-  return { businesses, setBusinesses, filterBusinesses, error, loading };
+  return { businesses, setBusinesses, error, loading };
 }

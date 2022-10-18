@@ -11,6 +11,6 @@ export async function createShopperRow(email, type) {
 
 // only gets business column
 export async function getBusinesses() {
-  const resp = await client.from('merchon');
+  const resp = await client.from('merchon').select('*').eq('type', 'merchant');
   return checkError(resp);
 }

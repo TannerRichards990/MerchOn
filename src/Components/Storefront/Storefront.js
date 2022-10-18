@@ -9,16 +9,15 @@ import { UserContext } from '../../Context/UserContext';
 
 export default function Storefront() {
   const { location, setLocation } = useState('');
-  const { businesses, setBusinesses, filterBusinesses, error, loading } = useBusinesses(); 
+  const { businesses, setBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
-  const data = filterBusinesses();
 
   // why is our first call to filter businesses return undefined?
   // console.log(data);
   const rows = [];
-  if (data.length !== 0) {
-    for (let i = 0; i < data.length; i++) {
-      let x = JSON.parse(data[i].business_info);
+  if (businesses.length !== 0) {
+    for (let i = 0; i < businesses.length; i++) {
+      let x = JSON.parse(businesses[i].business_info);
       rows.push(x);
     }
   }
