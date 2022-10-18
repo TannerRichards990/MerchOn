@@ -7,6 +7,7 @@ import Storefront from './Components/Storefront/Storefront';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
 import Items from './Components/Items/Items';
+import Shop from './Components/Shop/Shop';
 
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
     <div className="App">
       
       <Switch>
-        
+        <Route path="/Storefront/:id">
+          <Shop />
+        </Route>
+
         <Route path="/Landing/">
           <Landing />
         </Route>
