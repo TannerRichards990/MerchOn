@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function BusinessCard({ name, id, avatar }) {
+export default function BusinessCard({ name, avatar }) {
   return (
     <div className="b-card">
       <div className="details">
