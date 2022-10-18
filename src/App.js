@@ -4,6 +4,8 @@ import SignUpMerchant from './Components/Auth/AuthMerchant';
 import SignUpShopper from './Components/Auth/AuthShopper';
 import { Switch, Route } from 'react-router-dom';
 import Storefront from './Components/Storefront/Storefront';
+// import Navbar from './Components/Navbar/Navbar';
+import Items from './Components/Items/Items';
 
 
 function App() {
@@ -28,6 +30,10 @@ function App() {
         <Route path="/Storefront/">
           <Navbar />
           <Storefront />
+        </Route>
+
+        <Route path="/Items/">
+          <Items />
         </Route>
 
         <Route exact path="/">
