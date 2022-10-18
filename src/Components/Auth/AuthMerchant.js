@@ -25,7 +25,7 @@ export default function SignUpMerchant() {
     // console.log('final Id: ', finalId);
     return finalId;
   };
-  
+
   const temp = generateId();
   console.log(temp);
   if (businessId === 0) {
@@ -48,27 +48,17 @@ export default function SignUpMerchant() {
   
 
   const submitHandler = async () => {
-    // const temp = generateId();
-    // setBusinessId(10);
-    // console.log('businessId:', businessId);
     const userResponse = await authUserSignUp(email, password);
     setUser(userResponse);
-    // console.log('generate function', generateId());
-    // console.log(business_info);
     await createMerchantRow(email, type, business_info);
-    setEmail('');
-    setPassword('');
-    // history.push('/Storefront');
+    history.push('/Storefront');
   };
-    
-  
-
 
   const signOutHandler = () => {
     signOut();
     history.push('/');
   };
-  
+
   if (user) {
     history.push('/Storefront');
   }
@@ -78,7 +68,6 @@ export default function SignUpMerchant() {
       <div className="main-container">
         <div>
           <button onClick={signOutHandler}>Sign Out</button>
-          {/* <button onClick={}>generate</button> */}
         </div>
         <div>
           <label htmlFor="email">Enter User Name:</label>
@@ -89,6 +78,7 @@ export default function SignUpMerchant() {
           <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
           <label htmlFor="aboutShop" value={aboutShop}>Enter your shop Description:</label>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
+          
           <button className="submit" onClick={submitHandler}>Submit</button>
         </div>
       </div>
