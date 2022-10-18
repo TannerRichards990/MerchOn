@@ -54,9 +54,13 @@ export default function EditShop({
         <label htmlFor='shopFont'>Shop Font</label>
       </div>
       <div className='shop-form-control'>
-        <button onClick={addItem}>Add Item
-        </button>
+        <button onClick={() => setAddItem([...addItem, { itemName: '', itemPrice: '', itemDescription: '', itemImage: '' }])}>
+        Add Item</button>
       </div>
     </div>
   );
 }
+
+// write code for users to choose custom themes via the color wheel function
+
+
