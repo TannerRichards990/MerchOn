@@ -12,7 +12,17 @@ export default function Storefront() {
   const { businesses, setBusinesses, filterBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
   const data = filterBusinesses();
-  console.log(filterBusinesses);
+
+  // why is our first call to filter businesses return undefined?
+  // console.log(data);
+  const rows = [];
+  if (data.length !== 0) {
+    for (let i = 0; i < data.length; i++) {
+      let x = JSON.parse(data[i].business_info);
+      rows.push(x);
+    }
+  }
+  console.log(rows); 
 
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
@@ -30,7 +40,7 @@ export default function Storefront() {
           <FilterStorefronts location={location} setLocation={setLocation}/>
         </div>
         <div>
-          {filterBusinesses().map((item) => (
+          {rows.map((item) => (
             <BusinessCard key={item.business_id} {...item} />
           ))}
         </div>
