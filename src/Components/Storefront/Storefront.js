@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { signOut } from '../../services/auth';
 import FilterStorefronts from './FilterStorefronts';
+import BusinessCard from './BusinessCard';
 import './Storefront.css';
 
 export default function Storefront() {
   const { location, setLocation } = useState('');
-  // const { businesses, setBusinesses, filterBusinesses } = useBusiness();
+  const { businesses, setBusinesses, filterBusinesses } = useState();  //need hook using useState as placeholder
   return (
     <>
       <main>
@@ -17,9 +18,9 @@ export default function Storefront() {
           <FilterStorefronts location={location} setLocation={setLocation}/>
         </div>
         <div>
-          {/* {filterBusinesses().map((item) => (
+          {filterBusinesses().map((item) => (
             <BusinessCard key={item.id} {...item} />
-          ))} */}
+          ))}
         </div>
 
       </main>
