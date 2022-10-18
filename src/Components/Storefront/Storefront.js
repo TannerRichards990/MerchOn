@@ -12,6 +12,31 @@ export default function Storefront() {
   const { location, setLocation } = useState('');
   const { businesses, setBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
+  const [search, setSearch] = useState('');
+  const businessInfo = [];
+
+  // console.log('businesses', businesses);
+  
+
+  
+  if (businesses.length !== 0) {
+    for (let i = 0; i < businesses.length; i++) {
+      console.log('in first loop');
+      let x = JSON.parse(businesses[i].business_info);
+      businessInfo.push(x);
+    }
+  }
+  // console.log('businesses', businesses);
+  // console.log('businessInfo', businessInfo);
+
+  const searchZipCode = () => {
+    return businessInfo.filter((item) => {
+      return item.businessInfo.match(search);
+    });
+  };
+
+  console.log(search);
+  console.log(searchZipCode);
 
   // why is our first call to filter businesses return undefined?
   // console.log(data);
@@ -28,6 +53,14 @@ export default function Storefront() {
         <h1>congrats you made it here!</h1>
         <NavLink to="/Landing/">Landing</NavLink>
         <button onClick={signOut}>Sign Out</button>
+
+        <div className='search'>
+          <label htmlFor="search">Search by zip code</label>
+          <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
+            setSearch(e.target.value);
+          }}></input>
+        </div>
+
         <div>
           <FilterStorefronts location={location} setLocation={setLocation}/>
         </div>
