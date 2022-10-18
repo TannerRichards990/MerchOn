@@ -7,6 +7,7 @@ import Storefront from './Components/Storefront/Storefront';
 // import Navbar from './Components/Navbar/Navbar';
 import Items from './Components/Items/Items';
 
+
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         </Route>
 
         <Route path="/Storefront/">
+          <Navbar />
           <Storefront />
         </Route>
 
