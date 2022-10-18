@@ -17,6 +17,10 @@ export default function Shop() {
   // console.log('business Info', businessInfo);
   
   
+
+
+
+  
   return ( 
     <>
       <div className="welcome">WELCOME TO THE SHOP</div>

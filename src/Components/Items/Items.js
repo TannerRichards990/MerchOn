@@ -7,16 +7,36 @@ const Items = () => {
   const [availability, setAvailability] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
+  const [itemId, setItemId] = useState(0);
 
-  async function handleSubmit() {
-    await addItem(productName, price, availability, description);
+  const generateId = () => {
+    const now = new Date();
+    let finalId = now.getTime();
+    // console.log('final Id: ', finalId);
+    return finalId;
+  };
+
+  if (itemId === 0) {
+    const temp = generateId();
+    // console.log(temp);
+    if (itemId === 0) {
+      setItemId(temp);
+    }
   }
+
+
+  
   let shopItems = { 
     item_name: productName, 
     item_price: price, 
     item_availability: availability, 
-    item_description: description };
-
+    item_description: description,
+    item_id: itemId
+  };
+  
+  async function handleSubmit() {
+    await addItem(shopItems);
+  }
 
   return (
     <section className="main-container">

@@ -19,6 +19,11 @@ function App() {
       
       <Switch>
       
+        <Route path="/Storefront/:id">
+          <Navbar />
+          <Shop />
+        </Route>
+
         <Route exact path="/">
           <Landing />
         </Route>
@@ -45,15 +50,12 @@ function App() {
           <About />
         </Route>
 
-        <Route path="/Items/:id">
+        <Route path="/Items/">
           <Navbar />
           <Items />
         </Route>
 
-        <Route path="/Storefront/:id">
-          <Navbar />
-          <Shop />
-        </Route>
+        
 
         <Route path="/editor">
           <Navbar />
