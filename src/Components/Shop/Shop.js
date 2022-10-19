@@ -35,15 +35,15 @@ export default function Shop() {
   // console.log(localStorage);
 
   const addToCart = (thing) => {
-    console.log('clicked!');
+    // console.log('clicked!');
     localStorage.setItem(thing.item_name, thing.item_price);
-    console.log(localStorage);
+    // console.log(localStorage);
     alert('Your shopping cart has been updated!');
   };
 
   const clearCart = () => {
     localStorage.clear();
-    console.log(localStorage);
+    // console.log(localStorage);
   };
 
   return ( 

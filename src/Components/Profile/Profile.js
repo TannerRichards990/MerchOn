@@ -19,7 +19,7 @@ export default function Profile() {
   //return user profile info, create a form to edit that info.
   //write a clickHandler function for saving profile information on button "submit"
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
-  console.log('business detail', businessDetail);
+  // console.log('business detail', businessDetail);
   const clickHandler = () => {
     history.push(`/items/${id}`);
   };
@@ -29,7 +29,7 @@ export default function Profile() {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  console.log('business info', businessInfo);
+  // console.log('business info', businessInfo);
 
   return (
     <div>
