@@ -13,33 +13,15 @@ export default function Storefront() {
   const { businesses, setBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
   const [search, setSearch] = useState('');
-  const businessInfo = [];
-
-  // console.log('businesses', businesses);
-  
-
-  
-  if (businesses.length !== 0) {
-    for (let i = 0; i < businesses.length; i++) {
-      console.log('in first loop');
-      let x = JSON.parse(businesses[i].business_info);
-      businessInfo.push(x);
-    }
-  }
-  // console.log('businesses', businesses);
-  // console.log('businessInfo', businessInfo);
 
   const searchZipCode = () => {
-    return businessInfo.filter((item) => {
-      return item.businessInfo.match(search);
+    return businesses.filter((item) => {
+      return JSON.parse(item.business_info).business_location.business_zip.includes(search);
     });
   };
 
-  console.log(search);
-  console.log(searchZipCode);
+  console.log('searchZipCode', searchZipCode);
 
-  // why is our first call to filter businesses return undefined?
-  // console.log(data);
 
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
@@ -62,10 +44,10 @@ export default function Storefront() {
         </div>
 
         <div>
-          <FilterStorefronts location={location} setLocation={setLocation}/>
+          <FilterStorefronts search={search} setSearch={setSearch}/>
         </div>
         <div>
-          {businesses.map((item) => (
+          {searchZipCode().map((item) => (
             <BusinessCard key={item.id} {...item} />
           ))}
         </div>
