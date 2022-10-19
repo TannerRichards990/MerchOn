@@ -13,7 +13,11 @@
 }
 
 .description {
-  font-size: 3em;
+  font-size: 2em;
   color:blue
+}
+.shop-item-el {
+  border: 1px solid black;
+  width: 200px;
 }
 

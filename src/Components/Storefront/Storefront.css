@@ -8,3 +8,7 @@ main {
   background-repeat: no-repeat;
   color: aliceblue;
 }
+.business-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

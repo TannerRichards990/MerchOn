@@ -29,17 +29,14 @@ export default function Storefront() {
   return (
     <>
       <main>
-        <h1>congrats you made it here!</h1>
-        <NavLink to="/Landing/">Landing</NavLink>
-        <button onClick={signOut}>Sign Out</button>
-
+        {/* <h1> Welcome {user}!</h1> */}
         <div className='search'>
           <label htmlFor="search">Search by zip code</label>
           <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
             setSearch(e.target.value);
           }}></input>
         </div>
-        <div>
+        <div className="business-list">
           {searchZipCode().map((item) => (
             <BusinessCard key={item.id} {...item} />
           ))}
