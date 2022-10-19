@@ -14,6 +14,10 @@ export default function SignUpMerchant() {
   const [shopName, setShopName] = useState('');
   const [aboutShop, setAboutShop] = useState('');
   const [businessId, setBusinessId] = useState(0);
+  const [businessStreet, setBusinessStreet] = useState('');
+  const [businessCity, setBusinessCity] = useState('');
+  const [businessState, setBusinessState] = useState('');
+  const [businessZip, setBusinessZip] = useState('');
   // const [shopImage, setShopImage] = useState('');
 
   let history = useHistory();
@@ -28,12 +32,12 @@ export default function SignUpMerchant() {
 
   if (businessId === 0) {
     const temp = generateId();
-    console.log(temp);
+    // console.log(temp);
     if (businessId === 0) {
       setBusinessId(temp);
     }
   }
-  console.log('business_id: ', businessId);
+  // console.log('business_id: ', businessId);
 
   let business_info = {
     business_name: shopName,
@@ -41,7 +45,12 @@ export default function SignUpMerchant() {
     business_owner: email,
     categories: '',
     business_about: aboutShop,
-    business_location: ''
+    business_location: {
+      business_street: businessStreet,
+      business_city: businessCity,
+      business_state: businessState,
+      business_zip: businessZip
+    }
   };
 
 
@@ -80,6 +89,16 @@ export default function SignUpMerchant() {
           <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
           <label htmlFor="aboutShop" value={aboutShop}>Enter your shop Description:</label>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
+          <label htmlFor="businessStreet"></label>
+          <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+
+          <label htmlFor="businessCity"></label>
+          <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
+          <label htmlFor="businessState"></label>
+          <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
+          <label htmlFor="businessZip"></label>
+          <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
+
 
           <button className="submit" onClick={submitHandler}>Submit</button>
         </div>

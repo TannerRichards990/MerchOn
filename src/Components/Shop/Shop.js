@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
 import './Shop.css';
@@ -9,6 +9,7 @@ export default function Shop() {
   const businessItems = [];
   const { id } = useParams();
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
+  const history = useHistory();
 
   if (businessDetail.length !== 0) {
     let x = JSON.parse(businessDetail.business_info);
@@ -30,7 +31,13 @@ export default function Shop() {
   console.log('businessItems', businessItems);
   // console.log('businessItems[0]', businessItems[0][1]);
   
-  
+  const clickHandler = () => {
+    history.push(`/items/${id}`);
+  };
+
+
+
+
   return ( 
     <>
       <div className="welcome">WELCOME TO THE SHOP</div>
@@ -46,6 +53,9 @@ export default function Shop() {
             </div>
           ))}
           <div>{id}</div>
+           <div>
+            <button onClick={clickHandler}>Add items to shop</button>
+          </div>
         </div>
       )
       }

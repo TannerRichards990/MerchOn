@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { addItem } from '../../services/fetch-utils';
+import { useParams } from 'react-router-dom';
+import { addItem, getShopItems } from '../../services/fetch-utils';
+
 
 const Items = () => {
   const [productName, setProductName] = useState('');
@@ -7,16 +9,17 @@ const Items = () => {
   const [availability, setAvailability] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
+  // const [itemId, setItemId] = useState(0);
 
-  async function handleSubmit() {
-    await addItem(productName, price, availability, description);
-  }
-  let shopItems = { 
-    item_name: productName, 
-    item_price: price, 
-    item_availability: availability, 
-    item_description: description };
+  const { id } = useParams();
 
+  const handleSubmit = async () => {
+    await addItem(productName, price, availability, description, id);
+  };
+
+  // async function handleSubmit() {
+  //   await addItem(id, business_items);
+  // }
 
   return (
     <section className="main-container">
