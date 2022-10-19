@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
@@ -12,16 +13,24 @@ export default function Shop() {
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
   const { shopItems, setShopItems } = useItems(id);
   const history = useHistory();
+  const [search, setSearch] = useState('');
 
   if (businessDetail.length !== 0) {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  console.log('getShopItems', shopItems);
+  console.log('search', search);
   
   const clickHandler = () => {
     history.push(`/items/${id}`);
   };
+
+  const searchItems = () => {
+    return shopItems.filter((item) => {
+      return item.item_name.toLowerCase().includes(search);
+    });
+  };
+
 
   return ( 
     <>
@@ -31,7 +40,14 @@ export default function Shop() {
           <div className="title">Business Name: {businessInfo[0].business_name}</div>
           <div className="description">Business About: {businessInfo[0].business_about}</div>
           <div className="owner">Business PWNer: {businessInfo[0].business_owner}</div>
-          {shopItems.map((item) => (
+
+          <div className='search'>
+            <label htmlFor="search">Search for an item!</label>
+            <input className="sort" name="search" placeholder="search" value={search} onChange={(e) => {
+              setSearch(e.target.value);
+            }}></input>
+          </div>
+          {searchItems().map((item) => (
             <div key={item.item_name} {...item}>
               <div>This should show the item name: {item.item_name}</div>
               <div>This should show the item price: {item.item_price}</div>
