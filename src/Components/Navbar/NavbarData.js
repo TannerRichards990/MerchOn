@@ -9,7 +9,7 @@ export const NavbarData = [
   {
     title: 'Storefront',
     path: '/',
-    icon: <StoreIcon />,
+    icons: <StoreIcon />,
     cName: 'nav-text'
   },
   {
