@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
-import { UserContext } from '../../Context/UserContext';
+import React from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+// import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
 import './Shop.css';
 
@@ -8,7 +8,13 @@ export default function Shop() {
   const businessInfo = [];
   const businessItems = [];
   const { id } = useParams();
-  const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
+  const { businessDetail, 
+    // setBusinessDetail, 
+    // loading, 
+    // setLoading, 
+    // error, 
+    // setError 
+  } = useBusiness(id);
   const history = useHistory();
 
   if (businessDetail.length !== 0) {
@@ -19,7 +25,7 @@ export default function Shop() {
   if (businessDetail.length !== 0) {
     let x = JSON.parse(businessDetail.business_items);
     businessItems.push(x);
-    console.log('businessItems[0][1]', businessItems[0][1]);
+    // console.log('businessItems[0][1]', businessItems[0][1]);
   }
   // console.log('business Detail', businessDetail);
   // console.log('business Info', businessInfo);
@@ -28,7 +34,7 @@ export default function Shop() {
 
   // console.log('business Items', businessItems);
   // console.log('THIS DOES NOT WORK', businessItems[0].item_name);
-  console.log('businessItems', businessItems);
+  // console.log('businessItems', businessItems);
   // console.log('businessItems[0]', businessItems[0][1]);
   
   const clickHandler = () => {
@@ -53,7 +59,7 @@ export default function Shop() {
             </div>
           ))}
           <div>{id}</div>
-           <div>
+          <div>
             <button onClick={clickHandler}>Add items to shop</button>
           </div>
         </div>
