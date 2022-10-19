@@ -1,8 +1,5 @@
 import React from 'react';
-
 import './EditShop.css';
-
-
 
 export default function EditShop({
   shopName,
@@ -18,6 +15,7 @@ export default function EditShop({
   addItem,
   setAddItem
 }) {
+  
   return (
     <div className='shop-editor'>
       <div className='shop-form-control'>
