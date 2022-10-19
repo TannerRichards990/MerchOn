@@ -13,7 +13,6 @@ export default function Landing() {
     history.push('/Storefront');
   }
   
-
   const clickMerchantHandler = () => {
     // eslint-disable-next-line no-console
     console.log('I am Clicked... now, I die');
@@ -23,7 +22,6 @@ export default function Landing() {
     history.push('/AuthShopper/');
   };
   
-
   return (
     <div className='main-container'>
       <div className='left-side'>

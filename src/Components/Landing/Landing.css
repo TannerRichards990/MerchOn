@@ -28,6 +28,8 @@
 .right-top {
     display: grid;
     grid-template-rows: 10% 90%;
+    color: white;
+    font-size: 35px;
 }
 .buttons {
     display: grid;
