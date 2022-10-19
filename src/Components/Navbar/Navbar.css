@@ -1,5 +1,5 @@
 .navbar {
-  background-color: steelblue;
+  background-color: rgb(53, 60, 65);
   height: 80px;
   display: flex;
   justify-content: start;
@@ -10,10 +10,11 @@
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
+  color: royalblue;
 }
 
 .nav-menu {
-  background-color: black;
+  background-color: rgb(53, 60, 65);
   width: 250px;
   height: 100vh;
   display: flex;
@@ -22,6 +23,8 @@
   top: 0;
   left: -100%;
   transition: 850ms;
+  
+  
 }
 
 .nav-menu.active {
@@ -40,7 +43,7 @@
 
 .nav-text a {
   text-decoration: none;
-  color: white;
+  color: royalblue;
   font-size: 18px;
   width: 95%;
   height: 100%;
@@ -51,7 +54,7 @@
 }
 
 .nav-text a:hover {
-  background-color: aquamarine;
+  background-color: orange;
 }
 
 .nav-menu-items {
@@ -59,12 +62,13 @@
 }
 
 .navbar-toggle {
-  background-color: black;
+  background-color: rgb(53, 60, 65);
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: start;
   align-items: center;
+  
 }
 
 span {

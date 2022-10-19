@@ -15,6 +15,9 @@ export default function Profile() {
   const [favorites, setFavorites] = useState('');
 
   //return user profile info, create a form to edit that info.
+  //write a clickHandler function for saving profile information on button "submit"
+
+
 
   return (
     <div>
