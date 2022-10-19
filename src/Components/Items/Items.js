@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { addItem, getShopItems } from '../../services/fetch-utils';
+import { addItem } from '../../services/fetch-utils';
 
 
 const Items = () => {
