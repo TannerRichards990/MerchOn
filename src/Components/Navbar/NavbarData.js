@@ -19,12 +19,6 @@ export const NavbarData = [
     cName: 'nav-text'
   },
   {
-    title: 'My Shops',
-    path: '/FollowedShops',
-    icons: <BookmarkIcon />,
-    cName: 'nav-text'
-  },
-  {
     title: 'About',
     path: '/About',
     icons: <Groups2Icon />,
