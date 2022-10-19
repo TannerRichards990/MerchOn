@@ -32,7 +32,15 @@ export default function Landing() {
           <nav>
             <a className='log-in'>Log-In</a>
           </nav>
-          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Anyone</h1>
+          <h1 className='slogan'>
+            Any Place
+            <br />
+            Anywhere
+            <br />
+            Local Based Merch
+            <br />
+            For Everyone
+          </h1>
         </div>
         <div className='buttons'>
           <button className='merchant' onClick={clickMerchantHandler}>Merchant</button>
