@@ -8,11 +8,8 @@ import { createShopperRow } from '../../services/fetch-utils';
 export default function SignUpShopper() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const history = useHistory();
-
   const type = 'shopper';
-
   const { user, setUser } = useContext(UserContext);
 
   const submitHandler = async () => {
@@ -29,7 +26,6 @@ export default function SignUpShopper() {
     signOut();
     history.push('/');
   };
-
 
   if (user) {
     history.push('/Storefront');
@@ -49,7 +45,6 @@ export default function SignUpShopper() {
           {/* <label htmlFor="merchantName">Enter your Business Name</label>
           <input type="text" value={merchantName}></input> */}
           <button className="submit" onClick={submitHandler}>Submit</button>
-
         </div>
       </div>
     </>

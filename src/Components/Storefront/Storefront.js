@@ -19,25 +19,21 @@ export default function Storefront() {
     });
   };
 
-
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
-  // if (!user) {
-  //   return <Redirect to="/Auth/" />;
-  // }
 
   return (
     <>
       <main>
-        <h1>congrats you made it here!</h1>
-        <NavLink to="/Landing/">Landing</NavLink>
-        <button onClick={signOut}>Sign Out</button>
+        <h1>Welcome to MerchOn</h1>
 
         <div className='search'>
-          <label htmlFor="search">Search by zip code</label>
-          <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
-            setSearch(e.target.value);
-          }}></input>
+          <label htmlFor="search">
+            <p>Search by Zip</p>
+            <input className="sort" name="search" placeholder="Enter Zip" value={search} onChange={(e) => {
+              setSearch(e.target.value);
+            }}></input>
+          </label>
         </div>
         <div>
           {searchZipCode().map((item) => (

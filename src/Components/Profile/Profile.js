@@ -7,7 +7,8 @@ export default function Profile() {
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); 
     await getProfile(image, name, about);
   };
 
@@ -34,9 +35,9 @@ export default function Profile() {
           <form>
             <input 
               type="file" 
-              value={image} 
-              onChange={(e) => setImage(e.target.value)} 
+              onChange={(e) => setImage(e.target.files[0].name)} 
               placeholder="Image" />
+
             <label>
               <p>Name</p> 
               <input 
@@ -57,8 +58,7 @@ export default function Profile() {
             <div className="button">
               <button 
                 onSubmit={ async (e) => { 
-                  e.preventDefault(); 
-                  handleSubmit(); 
+                  handleSubmit(e); 
                 }}>Submit</button>
             </div>
 

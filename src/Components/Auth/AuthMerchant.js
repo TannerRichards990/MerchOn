@@ -5,9 +5,6 @@ import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createMerchantRow } from '../../services/fetch-utils';
 
-
-
-
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,7 +15,6 @@ export default function SignUpMerchant() {
   const [businessCity, setBusinessCity] = useState('');
   const [businessState, setBusinessState] = useState('');
   const [businessZip, setBusinessZip] = useState('');
-  // const [shopImage, setShopImage] = useState('');
 
   let history = useHistory();
   const type = 'merchant';
@@ -37,7 +33,6 @@ export default function SignUpMerchant() {
       setBusinessId(temp);
     }
   }
-  // console.log('business_id: ', businessId);
 
   let business_info = {
     business_name: shopName,
@@ -53,11 +48,8 @@ export default function SignUpMerchant() {
     }
   };
 
-
   const { user, setUser } = useContext(UserContext);
   
-  
-
   const submitHandler = async () => {
     const userResponse = await authUserSignUp(email, password);
     setUser(userResponse);
@@ -81,26 +73,49 @@ export default function SignUpMerchant() {
           <button onClick={signOutHandler}>Sign Out</button>
         </div>
         <div>
-          <label htmlFor="email">Enter User Name:</label>
-          <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
-          <label htmlFor="password" value={ password }> Enter your password: </label>
-          <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
-          <label htmlFor="shopName" value={shopName}>Shop Name:</label>
-          <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
-          <label htmlFor="aboutShop" value={aboutShop}>Enter your shop Description:</label>
-          <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
-          <label htmlFor="businessStreet"></label>
-          <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+          <label htmlFor="email">
+            <p>Enter User Name</p>
+            <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
+          </label>
 
-          <label htmlFor="businessCity"></label>
-          <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
-          <label htmlFor="businessState"></label>
-          <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
-          <label htmlFor="businessZip"></label>
-          <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
+          <label htmlFor="password" value={ password }>
+            <p>Enter your password</p>
+            <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
+          </label>
 
+          <label htmlFor="shopName" value={shopName}>
+            <p>Shop Name</p>
+            <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
+          </label>
 
-          <button className="submit" onClick={submitHandler}>Submit</button>
+          <label htmlFor="aboutShop" value={aboutShop}>
+            <p>Enter your shop Description</p>
+            <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
+          </label>
+
+          <label htmlFor="businessStreet">
+            <p>Street Address</p>
+            <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+          </label>
+
+          <label htmlFor="businessCity">
+            <p>City</p>
+            <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
+          </label>
+
+          <label htmlFor="businessState">
+            <p>State</p>
+            <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
+          </label>
+
+          <label htmlFor="businessZip">
+            <p>Zip Code</p>
+            <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
+          </label>
+
+          <div className="submit-button">
+            <button className="submit" onClick={submitHandler}>Submit</button>
+          </div>
         </div>
       </div>
     </>
