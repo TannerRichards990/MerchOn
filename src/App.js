@@ -24,9 +24,7 @@ function App() {
           <Shop />
         </Route>
 
-        <Route exact path="/">
-          <Landing />
-        </Route>
+        
 
         <Route path="/Landing/">
           <Landing />
@@ -50,12 +48,10 @@ function App() {
           <About />
         </Route>
 
-        <Route path="/Items/">
+        <Route path="/Items/:id">
           <Navbar />
           <Items />
         </Route>
-
-        
 
         <Route path="/editor">
           <Navbar />
@@ -64,11 +60,15 @@ function App() {
           <Preview />
         </Route>
 
-        <Route path="/profile">
+        {/* <Route path="/profile">
           <Profile />
-        </Route>
+        </Route> */}
 
         <Route path="*">
+          <Landing />
+        </Route>
+
+        <Route exact path="/">
           <Landing />
         </Route>
 

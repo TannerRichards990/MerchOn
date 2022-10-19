@@ -10,8 +10,8 @@ export async function createShopperRow(email, type,) {
 }
 
 // adds new item to store (productName, price, availability, description, and image)
-export async function addItem(id, business_items) {
-  const response = await client.from('merchon').match({ id }).insert(business_items);
+export async function addItem(item_name, item_price, item_availability, item_description, business_id) {
+  const response = await client.from('business_items').insert({ item_name, item_price, item_availability, item_description, business_id });
   return checkError(response);
 }
 
@@ -22,5 +22,10 @@ export async function getBusinesses() {
 
 export async function getBusinessDetail(id) {
   const resp = await client.from('merchon').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
+export async function getShopItems(id) {
+  const resp = await client.from('merchon').select('business_items').match({ id }).single();
   return checkError(resp);
 }
