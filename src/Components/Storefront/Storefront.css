@@ -6,4 +6,5 @@ main {
   background-image: url(../../background.png);
   height: 100vh;
   background-repeat: no-repeat;
+  color: aliceblue;
 }

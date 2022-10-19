@@ -2,6 +2,16 @@
 
 /* font-family: 'Cormorant Garamond', serif; */
 
+.about-title {
+    color:aliceblue;
+    font-size: 100px;
+    align-items: center;
+}
+
+.about-text {
+    color: aliceblue;
+}
+
 img {
     width: 100px;
 }
