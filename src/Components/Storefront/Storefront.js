@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { signOut } from '../../services/auth';
-import FilterStorefronts from './FilterStorefronts';
 import BusinessCard from './BusinessCard';
 import './Storefront.css';
 import { useBusinesses } from '../../Hooks/useBusinesses';
@@ -41,10 +40,6 @@ export default function Storefront() {
           <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
             setSearch(e.target.value);
           }}></input>
-        </div>
-
-        <div>
-          <FilterStorefronts search={search} setSearch={setSearch}/>
         </div>
         <div>
           {searchZipCode().map((item) => (
