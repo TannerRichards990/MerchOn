@@ -8,7 +8,7 @@ export default function Landing() {
   let history = useHistory();  
 
   const { user } = useContext(UserContext);
-  console.log(user);
+  // console.log(user);
   if (user) {
     history.push('/Storefront');
   }
