@@ -26,7 +26,7 @@ export async function getBusinessDetail(id) {
   return checkError(resp);
 }
 
-export async function getShopItems(id) {
-  const resp = await client.from('merchon').select('business_items').match({ id }).single();
+export async function getShopItems(business_id) {
+  const resp = await client.from('business_items').select('*').eq('business_id', business_id);
   return checkError(resp);
 }
