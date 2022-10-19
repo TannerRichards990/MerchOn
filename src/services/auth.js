@@ -9,6 +9,10 @@ export async function authUserSignUp(email, password) {
   return response.user;
 }
 
+export async function authUser(email, password) {
+  let resp = await client.auth.signIn({ email, password });
+  return resp.user;
+}
 
 
 
