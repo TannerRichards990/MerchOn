@@ -14,12 +14,12 @@ export default function Shop() {
   const { shopItems, setShopItems } = useItems(id);
   const history = useHistory();
   const [search, setSearch] = useState('');
+  const [cart, setCart] = useState([]);
 
   if (businessDetail.length !== 0) {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  console.log('search', search);
   
   const clickHandler = () => {
     history.push(`/items/${id}`);
@@ -31,6 +31,20 @@ export default function Shop() {
     });
   };
 
+  // localStorage.setItem('booger1', 'booger2');
+  // console.log(localStorage);
+
+  const addToCart = (thing) => {
+    console.log('clicked!');
+    localStorage.setItem(thing.item_name, thing.item_price);
+    console.log(localStorage);
+    alert('Your shopping cart has been updated!');
+  };
+
+  const clearCart = () => {
+    localStorage.clear();
+    console.log(localStorage);
+  };
 
   return ( 
     <>
@@ -51,6 +65,8 @@ export default function Shop() {
             <div key={item.item_name} {...item}>
               <div>This should show the item name: {item.item_name}</div>
               <div>This should show the item price: {item.item_price}</div>
+              <button onClick={()=> addToCart(item)}>Add to Shopping Cart</button>
+              <button onClick={clearCart}>Clear Cart</button>
             </div>
           ))}
           <div>{id}</div>

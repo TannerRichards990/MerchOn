@@ -30,3 +30,8 @@ export async function getShopItems(business_id) {
   const resp = await client.from('business_items').select('*').eq('business_id', business_id);
   return checkError(resp);
 }
+
+export async function changeMerchantRow(id, business_info) {
+  const resp = await client.from('merchon').update({ business_info }).match({ id }).single();
+  return checkError(resp);
+}

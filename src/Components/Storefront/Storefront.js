@@ -19,7 +19,7 @@ export default function Storefront() {
     });
   };
 
-
+  console.log(user);
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
   // if (!user) {

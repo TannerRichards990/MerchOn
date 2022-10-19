@@ -13,6 +13,12 @@ export const NavbarData = [
     cName: 'nav-text'
   },
   {
+    title: 'Editor',
+    path: '/Editor/:id',
+    icons: <StoreIcon />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Profile',
     path: '/Profile',
     icons: <AccountCircleIcon />,
