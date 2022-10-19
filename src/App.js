@@ -24,8 +24,6 @@ function App() {
           <Shop />
         </Route>
 
-        
-
         <Route path="/Landing/">
           <Landing />
         </Route>
