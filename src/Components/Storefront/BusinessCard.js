@@ -14,11 +14,6 @@ export default function BusinessCard(business) {
         <div className="description">{businessInfo[0].business_about}</div>
         <Link to={`/storefront/${business.id}`}>LINK HERE NOOB</Link>
       </div>
-      {/* <div className="business-logo">
-        <img src={avatar}
-          width="50"
-          height="50"/>
-      </div> */}
     </div>
   );
 }

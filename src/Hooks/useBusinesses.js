@@ -8,13 +8,13 @@ export function useBusinesses() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const data = await getBusinesses();
         setBusinesses(data);
         setLoading(false);
       } catch (e) {
         setError(e.message);
-        setLoading(false);
       }
     };
     fetchData();

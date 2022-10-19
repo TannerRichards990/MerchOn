@@ -1,15 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+
+/* font-family: 'Cormorant Garamond', serif; */
+
 .main-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 40%;
+    height: 100vh;
+    width: 100vw;
+    
+    
 }
 .left-side {
     display: grid;
     width: 100%;
     
 }
+
+.left-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .right-side {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 40% 60%;
 }
 .right-top {
     display: grid;
@@ -18,14 +32,24 @@
 .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
 }
 .merchant {
     display: grid;
     width: 100%;
     height: 100%;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 1.5rem;
+    border: 1px solid white;
 }
 .shopper {
     display: grid;
     width: 100%;
     height: 100%;
+    align-items: center;
+    color: black;
+    background-color: white;
+    font-size: 1.5rem;
 }

@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { signOut } from '../../services/auth';
-import FilterStorefronts from './FilterStorefronts';
 import BusinessCard from './BusinessCard';
 import './Storefront.css';
 import { useBusinesses } from '../../Hooks/useBusinesses';
@@ -12,9 +11,14 @@ export default function Storefront() {
   const { location, setLocation } = useState('');
   const { businesses, setBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
+  const [search, setSearch] = useState('');
 
-  // why is our first call to filter businesses return undefined?
-  // console.log(data);
+  const searchZipCode = () => {
+    return businesses.filter((item) => {
+      return JSON.parse(item.business_info).business_location.business_zip.includes(search);
+    });
+  };
+
 
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
@@ -28,11 +32,15 @@ export default function Storefront() {
         <h1>congrats you made it here!</h1>
         <NavLink to="/Landing/">Landing</NavLink>
         <button onClick={signOut}>Sign Out</button>
-        <div>
-          <FilterStorefronts location={location} setLocation={setLocation}/>
+
+        <div className='search'>
+          <label htmlFor="search">Search by zip code</label>
+          <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
+            setSearch(e.target.value);
+          }}></input>
         </div>
         <div>
-          {businesses.map((item) => (
+          {searchZipCode().map((item) => (
             <BusinessCard key={item.id} {...item} />
           ))}
         </div>

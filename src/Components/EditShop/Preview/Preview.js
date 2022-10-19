@@ -4,7 +4,7 @@ import './Preview.css';
 
 export default function Preview({ shopName, aboutShop, shopImage, shopTheme, shopFont, addItem }) {
   return (
-    <div className={`preview ${shopFont}`} style={{ shopTheme }}>
+    <div className={`preview ${shopFont}`} style={{ shopTheme: shopTheme }}>
       <div className='shop-preview-header'>
         <h1>{shopName}</h1>
         <h3>{aboutShop}</h3>
@@ -28,6 +28,3 @@ export default function Preview({ shopName, aboutShop, shopImage, shopTheme, sho
     </div>
   );
 }
-
-
-

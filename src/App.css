@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+
+/* font-family: 'Cormorant Garamond', serif; */
+
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -36,3 +41,4 @@
     transform: rotate(360deg);
   }
 }
+
