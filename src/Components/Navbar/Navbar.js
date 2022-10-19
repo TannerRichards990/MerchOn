@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { NavbarData } from './NavbarData';
+import { useUser } from '../../Hooks/useUser';
 import './Navbar.css';
+import { UserContext } from '../../Context/UserContext';
+import StoreIcon from '@mui/icons-material/Store';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Groups2Icon from '@mui/icons-material/Groups2';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-
+  const { id } = useParams();
+  const { user } = useContext(UserContext);
+  let email = user.email;
+  const { supaUser, setSupaUser, loading, setLoading, error, setError } = useUser(email);
+  console.log(email);
+  console.log(supaUser.id);
 
   return (
     <>
@@ -27,22 +38,39 @@ function Navbar() {
               <CloseIcon />
             </Link>
           </li>
-          {NavbarData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName}>
-                <Link to={item.path}>
-                  {item.icons}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
+          <li className='nav-text'>
+            <Link to='/'>
+              <StoreIcon />
+              <span>Storefront</span>
+            </Link>
+          </li>
+          <li className='nav-text'>
+            <Link to={`/Editor/${supaUser.id}`}>
+              <StoreIcon />
+              <span>My Shop</span>
+            </Link>
+          </li>
+          <li className='nav-text'>
+            <Link to={`/Profile/${supaUser.id}`}>
+              <AccountCircleIcon />
+              <span>Profile</span>
+            </Link>
+          </li>
+          <li className='nav-text'>
+            <Link to='/About'>
+              <Groups2Icon />
+              <span>About</span>
+            </Link>
+          </li>
+          <li className='nav-text'>
+            <Link to='SignOut'>
+              <LogoutIcon />
+              <span>SignOut</span>
+            </Link>
+          </li>
+
         </ul>
       </nav>
-      
-
-
-
     </>
   );
 }

@@ -1,6 +1,7 @@
 //User profile page
 
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -16,6 +17,7 @@ export default function Profile() {
   //return user profile info, create a form to edit that info.
   //write a clickHandler function for saving profile information on button "submit"
 
+  const { id } = useParams();
 
 
   return (

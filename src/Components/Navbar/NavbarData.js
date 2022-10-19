@@ -6,6 +6,7 @@ import Groups2Icon from '@mui/icons-material/Groups2';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 export const NavbarData = [
+  
   {
     title: 'Storefront',
     path: '/',
@@ -14,7 +15,7 @@ export const NavbarData = [
   },
   {
     title: 'Editor',
-    path: '/Editor/:id',
+    path: '/Editor ',
     icons: <StoreIcon />,
     cName: 'nav-text'
   },
