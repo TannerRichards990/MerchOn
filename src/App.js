@@ -58,9 +58,9 @@ function App() {
           <Preview />
         </Route>
 
-        {/* <Route path="/profile">
+        <Route path="/profile">
           <Profile />
-        </Route> */}
+        </Route>
 
         <Route path="*">
           <Landing />

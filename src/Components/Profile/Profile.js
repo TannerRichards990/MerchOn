@@ -1,11 +1,5 @@
-//User profile page
-
 import React, { useState } from 'react';
-
-
-
 import './Profile.css';
-
 
 export default function Profile() {
   const [image, setImage] = useState('');
