@@ -38,6 +38,11 @@ export async function uploadImage(shopImage) {
   return checkError(response);
 }
 
+export async function updateBusinessImageName(business_image_name, id) {
+  const response = await client.from('merchon').select('*').match({ id }).update(business_image_name).single();
+  return checkError(response);
+}
+
 export async function fetchImage(business_image_name) {
   const response = await client.storage.from('merchon-buckets').getPublicUrl(`business_images/${encodeURIComponent(business_image_name)}`);
   return checkError(response);
@@ -45,5 +50,10 @@ export async function fetchImage(business_image_name) {
 
 export async function fetchImageName(id) {
   const response = await client.from('merchon').select('business_image_name').match({ id }).single();
+  return checkError(response);
+}
+
+export async function updateBusinessInfo(business_info, id) {
+  const response = await client.from('merchon').select('*').match({ id }).update(business_info).single();
   return checkError(response);
 }
