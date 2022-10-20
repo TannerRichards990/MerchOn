@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import CartItem from './CartItem';
+import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
@@ -58,6 +58,7 @@ export default function Cart() {
             <button onClick={checkOut}>Checkout</button>
           </div>
         )}
+        
       </div>
     </>
   );
