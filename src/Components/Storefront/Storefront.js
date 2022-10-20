@@ -1,17 +1,19 @@
 import { useContext, useState } from 'react';
-import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { signOut } from '../../services/auth';
 import BusinessCard from './BusinessCard';
 import './Storefront.css';
 import { useBusinesses } from '../../Hooks/useBusinesses';
 import { UserContext } from '../../Context/UserContext';
 
+
 export default function Storefront() {
   const history = useHistory();
-  const { location, setLocation } = useState('');
+  // const { location, setLocation } = useState('');
   const { businesses, setBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
   const [search, setSearch] = useState('');
+  
 
   const searchZipCode = () => {
     return businesses.filter((item) => {

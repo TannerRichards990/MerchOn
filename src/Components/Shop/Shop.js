@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
-import { useImage } from '../../Hooks/useImage';
+import { useBusinessImage } from '../../Hooks/useBusinessImage';
 import { useItems } from '../../Hooks/useItems';
 import './Shop.css';
 
@@ -15,7 +15,7 @@ export default function Shop() {
   const { shopItems } = useItems(id);
   const history = useHistory();
   const [search, setSearch] = useState('');
-  const { imageData } = useImage(id);
+  const { imageData } = useBusinessImage(id);
 
   if (!user) {
     history.push('/landing');

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { fetchImage, fetchImageName } from '../services/fetch-utils';
 
-export function useImage(id) {
+export function useBusinessImage(id) {
   const [imageData, setImageData] = useState();
   const [error, setError] = useState('');
   
