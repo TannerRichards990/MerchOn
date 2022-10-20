@@ -6,15 +6,14 @@ import './EditPAge.css';
 export default function EditPage() {
   const [shopName, setShopName] = useState('');
   const [aboutShop, setAboutShop] = useState('');
-  const [shopFont, setShopFont] = useState('default');
   const [shopTheme, setShopTheme] = useState('default');
   const [shopImage, setShopImage] = useState('');
   const [addItem, setAddItem] = useState([]);
 
 
   return (
-    <div>
-      <Preview {...{ shopName, aboutShop, shopImage, shopTheme, shopFont, addItem }} />
+    <div className='Editor'>
+      <Preview {...{ shopName, aboutShop, shopImage, shopTheme, addItem }} />
       <EditShop {...
         { shopName, 
           setShopName, 
@@ -23,12 +22,11 @@ export default function EditPage() {
           shopImage, 
           setShopImage, 
           shopTheme, 
-          setShopTheme, 
-          shopFont, 
-          setShopFont, 
+          setShopTheme,  
           addItem, 
           setAddItem }} />
     </div>
   );
 }
 
+//This page is for displaying the controls and preview side by side

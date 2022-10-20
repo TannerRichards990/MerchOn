@@ -37,7 +37,6 @@ function Navbar() {
 
   return (
     <>
-    
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
           <MenuIcon onClick={showSidebar} />
@@ -49,6 +48,7 @@ function Navbar() {
             <Link to='#' className='menu-bars'>
               <CloseIcon />
             </Link>
+            
           </li>
           <li className='nav-text'>
             <Link to='/'>
@@ -88,6 +88,7 @@ function Navbar() {
           </li>
 
         </ul>
+        <img src='' />
       </nav>
     </>
   );

@@ -1,8 +1,12 @@
 import { useHistory } from 'react-router-dom';
 import './Landing.css';
-import logo from '../../assets/MerchOn.png'; 
 import { UserContext } from '../../Context/UserContext';
 import { useContext } from 'react';
+import ReactPlayer from 'react-player/lazy';
+
+
+
+
 import { Email } from '@mui/icons-material';
 import { useState } from 'react';
 import { authUser } from '../../services/auth';
@@ -30,14 +34,15 @@ export default function Landing() {
   };
   
   return (
-    <div className='landing-container'>
-      <div className='left-side'>
-        <img src={logo} />
+    <div className='main-container'>
+      
+
+      <div className='top-side'>
       </div>
-      <div className='right-side'>
+      <div className='bottom-side'>
         <div className='right-top'>
           <nav>
-            <a className='log-in'>Log-In</a>
+            <button className='button' onClick={clickSignIn}>Log-In</button>
           </nav>
           <h1 className='slogan'>
             Any Place
@@ -54,6 +59,8 @@ export default function Landing() {
           <button className='shopper' onClick={clickShopperHandler}>Shopper</button>
         </div>
       </div>
+      <ReactPlayer className='music' url={'https://soundcloud.com/bassti_music/pure-imagination?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'} volume={0.1} playing={true} />
     </div>
   );
 }
+  
