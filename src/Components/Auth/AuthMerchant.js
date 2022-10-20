@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createMerchantRow } from '../../services/fetch-utils';
+import './AuthMerchant.css';
 
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
@@ -67,54 +68,52 @@ export default function SignUpMerchant() {
   }
 
   return (
-    <>
-      <div className="main-container">
-        <div>
-          <label htmlFor="email">
-            <p>Enter User Name</p>
-            <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
-          </label>
+    <div className="input-container">
+      <div className="inputs">
+        <label htmlFor="email">
+          <p>Enter User Name</p>
+          <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
+        </label>
 
-          <label htmlFor="password" value={ password }>
-            <p>Enter your password</p>
-            <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
-          </label>
+        <label htmlFor="password" value={ password }>
+          <p>Enter your password</p>
+          <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
+        </label>
 
-          <label htmlFor="shopName" value={shopName}>
-            <p>Shop Name</p>
-            <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
-          </label>
+        <label htmlFor="shopName" value={shopName}>
+          <p>Shop Name</p>
+          <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
+        </label>
 
-          <label htmlFor="aboutShop" value={aboutShop}>
-            <p>Enter your shop Description</p>
-            <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
-          </label>
+        <label htmlFor="aboutShop" value={aboutShop}>
+          <p>Enter your shop description</p>
+          <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
+        </label>
 
-          <label htmlFor="businessStreet">
-            <p>Street Address</p>
-            <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
-          </label>
+        <label htmlFor="businessStreet">
+          <p>Street Address</p>
+          <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+        </label>
 
-          <label htmlFor="businessCity">
-            <p>City</p>
-            <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
-          </label>
+        <label htmlFor="businessCity">
+          <p>City</p>
+          <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
+        </label>
 
-          <label htmlFor="businessState">
-            <p>State</p>
-            <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
-          </label>
+        <label htmlFor="businessState">
+          <p>State</p>
+          <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
+        </label>
 
-          <label htmlFor="businessZip">
-            <p>Zip Code</p>
-            <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
-          </label>
+        <label htmlFor="businessZip">
+          <p>Zip Code</p>
+          <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
+        </label>
 
-          <div className="submit-button">
-            <button className="submit" onClick={submitHandler}>Submit</button>
-          </div>
+        <div className="submit-button">
+          <button className="submit" onClick={submitHandler}>Submit</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
