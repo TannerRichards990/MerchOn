@@ -14,16 +14,15 @@ export default function Shop() {
   const { shopItems, setShopItems } = useItems(id);
   const history = useHistory();
   const [search, setSearch] = useState('');
-  const [cart, setCart] = useState([]);
 
   if (businessDetail.length !== 0) {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
   
-  const clickHandler = () => {
-    history.push(`/items/${id}`);
-  };
+  // const clickHandler = () => {
+  //   history.push(`/items/${id}`);
+  // };
 
   const searchItems = () => {
     return shopItems.filter((item) => {
@@ -35,16 +34,27 @@ export default function Shop() {
   // console.log(localStorage);
 
   const addToCart = (thing) => {
-    // console.log('clicked!');
-    localStorage.setItem(thing.item_name, thing.item_price);
-    // console.log(localStorage);
+    let cartItem = [
+      thing.item_name,
+      thing.item_price,
+    ];
+    console.log('clicked!');
+    let cart = [];
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(localStorage);
     alert('Your shopping cart has been updated!');
   };
 
   const clearCart = () => {
     localStorage.clear();
-    // console.log(localStorage);
+    console.log(localStorage);
   };
+
+
 
   return ( 
     <>
@@ -70,9 +80,9 @@ export default function Shop() {
             </div>
           ))}
           <div>{id}</div>
-          <div>
+          {/* <div>
             <button onClick={clickHandler}>Add items to shop</button>
-          </div>
+          </div> */}
         </div>
       )
       }

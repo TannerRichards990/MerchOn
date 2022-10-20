@@ -14,11 +14,15 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-
+  const [email, setEmail] = useState('');
   const showSidebar = () => setSidebar(!sidebar);
   const { id } = useParams();
   const { user } = useContext(UserContext);
-  let email = user.email;
+
+  if (user) {
+    setEmail(user.email);
+  }
+
   const { supaUser, setSupaUser, loading, setLoading, error, setError } = useUser(email);
   console.log(email);
   console.log(supaUser.id);
@@ -60,6 +64,12 @@ function Navbar() {
             <Link to='/About'>
               <Groups2Icon />
               <span>About</span>
+            </Link>
+          </li>
+          <li className='nav-text'>
+            <Link to={`/Cart`}>
+              <Groups2Icon />
+              <span>Shopping Cart</span>
             </Link>
           </li>
           <li className='nav-text'>

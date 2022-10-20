@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useBusiness } from '../../Hooks/useBusiness';
+import { changeMerchantRow } from '../../services/fetch-utils';
 
 
 
@@ -20,9 +21,16 @@ export default function Profile() {
   //write a clickHandler function for saving profile information on button "submit"
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
   // console.log('business detail', businessDetail);
-  const clickHandler = () => {
-    history.push(`/items/${id}`);
-  };
+  
+  // const clickHandler = async () => {
+  //   try {
+  //     await changeMerchantRow(id, businessDetail.title, businessDetail.description);
+  //   } catch (e) {
+  //       //eslint-disable-next-line no-console
+  //     console.error(e.message);
+  //   }
+    
+  // };
 
 
   if (businessDetail.length !== 0) {

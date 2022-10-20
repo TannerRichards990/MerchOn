@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import Storefront from './Components/Storefront/Storefront';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
+import Cart from './Components/Cart/Cart';
 import Items from './Components/Items/Items';
 import Shop from './Components/Shop/Shop';
 import EditShop from './Components/EditShop/Editor/EditShop';
@@ -39,6 +40,11 @@ function App() {
         <Route path="/Storefront/">
           <Navbar />
           <Storefront />
+        </Route>
+
+        <Route path="/Cart/">
+          <Navbar />
+          <Cart />
         </Route>
 
         <Route path="/About/">
