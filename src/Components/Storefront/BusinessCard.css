@@ -26,7 +26,7 @@
 }
 
 .bc-description {
-  font-size: 3em;
+  font-size: 2em;
   color: aliceblue;
 }
 
@@ -45,7 +45,7 @@
 
 .bc-store:before {
   content: '';
-  background: linear-gradient(45deg, #078FCD, #CC9A3A, #0B0D18);
+  background: linear-gradient(45deg, #2a807d, #CC9A3A, #0B0D18);
   position: absolute;
   top: -2px;
   left:-2px;

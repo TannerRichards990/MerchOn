@@ -53,21 +53,9 @@ const Items = () => {
             name="price" 
             type="text" 
             className="price" 
-            placeholder="$45.00" 
+            placeholder="45.00" 
             value={ price } 
             onChange={(e) => setPrice(e.target.value)}
-          />
-        </label>
-
-        <label aria-label="availability" className="availability-input">
-          <p>Availability:</p>
-          <input 
-            name="availability" 
-            type="text" 
-            className="availability" 
-            placeholder="10" 
-            value={ availability } 
-            onChange={(e) => setAvailability(e.target.value)}
           />
         </label>
 

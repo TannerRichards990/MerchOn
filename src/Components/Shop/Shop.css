@@ -2,18 +2,29 @@
 
 /* font-family: 'Cormorant Garamond', serif; */
 
-.title {
+.shop-title {
   font-size: 3em;
-  color:blue
+  color: #2A807D;
 }
 
-.id {
+.shop-id {
   font-size: 3em;
-  color:blue
+  color: #2A807D;
 }
 
-.description {
-  font-size: 3em;
-  color:blue
+.shop-description {
+  font-size: 2em;
+  color: #2A807D;
 }
 
+.shop-owner {
+  color: aliceblue;
+}
+
+.shop-search {
+  color: aliceblue;
+}
+
+.shop-map {
+  color: aliceblue;
+}
