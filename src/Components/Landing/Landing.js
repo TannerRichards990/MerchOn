@@ -23,7 +23,7 @@ export default function Landing() {
   };
   
   return (
-    <div className='main-container'>
+    <div className='landing-container'>
       <div className='left-side'>
         <img src={logo} />
       </div>

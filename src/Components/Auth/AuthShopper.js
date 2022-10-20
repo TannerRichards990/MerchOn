@@ -30,7 +30,7 @@ export default function SignUpShopper() {
 
   return (
     <>
-      <div className="main-container">
+      <div className="auth-container">
         <div>
           <label htmlFor="email">
             <p>Enter User Name</p>
@@ -43,8 +43,8 @@ export default function SignUpShopper() {
           </label>
 
           <label>
-            <p>Submit</p>
-            <button className="submit" onClick={submitHandler}></button>
+            <p>Click to Submit</p>
+            <button className="submit" onClick={submitHandler}>Submit</button>
           </label>
         </div>
       </div>
