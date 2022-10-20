@@ -18,6 +18,14 @@ export default function Cart() {
     history.push('/Venmo');
   };
 
+  if (!shoppingCart) {
+    return (
+      <>
+        <div>Your shopping cart is empty</div>
+      </>
+    );}
+
+
   function totalMoney() {
     let moneyArr = [];
     shoppingCart.map((item) => (

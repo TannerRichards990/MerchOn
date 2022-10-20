@@ -110,7 +110,7 @@ export default function SignUpMerchant() {
         </label>
 
         <label htmlFor="business-img-input">
-          <p>Upload an Image for your business<p>
+          <p>Upload an Image for your business</p>
           <input accept="image/*" type="file" id="business-img-input" onChange={imageChange}/>
         </label>
         
@@ -125,5 +125,6 @@ export default function SignUpMerchant() {
         </div>
       </div>
     </div>
+   
   );
 }

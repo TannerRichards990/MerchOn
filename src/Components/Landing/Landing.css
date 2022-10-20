@@ -36,27 +36,20 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     text-align: center;
 }
 
-.log-in {
+/* .log-in {
     color: #078FCD;
     position: relative;
     left: 325px;
     font-size: 20px;
     font-family: 'Noto Sans Vai', sans-serif;
-}
+} */
 
-.slogan {
-    color: white;
-    font-size: 40px;
-    position: relative;
-    top: 65px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Noto Sans Vai', sans-serif;
-}
+
 
 .buttons {
     display: grid;
     grid-template-columns: 50% 50%;
+    
     
     
     
