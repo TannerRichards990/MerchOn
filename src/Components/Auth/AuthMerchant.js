@@ -30,26 +30,18 @@ export default function SignUpMerchant() {
     }
   };
   
-  
-
-
-
   const generateId = () => {
     const now = new Date();
     let finalId = now.getTime();
-    // console.log('final Id: ', finalId);
     return finalId;
   };
 
-
   if (businessId === 0) {
     const temp = generateId();
-    // console.log(temp);
     if (businessId === 0) {
       setBusinessId(temp);
     }
   }
-  // console.log('business_id: ', businessId);
 
   let business_info = {
     business_name: shopName,
@@ -70,7 +62,7 @@ export default function SignUpMerchant() {
   const submitHandler = async () => {
     const userResponse = await authUserSignUp(email, password);
     setUser(userResponse);
-    await createMerchantRow(email, type, business_info);
+    await createMerchantRow(email, type, business_info, shopImage.name);
     await uploadImage(shopImage);
     history.push('/Storefront');
   };

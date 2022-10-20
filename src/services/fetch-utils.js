@@ -1,7 +1,8 @@
 import { checkError, client } from './client';
 
-export async function createMerchantRow(email, type, business_info) {
-  const response = await client.from('merchon').insert({ email, type, business_info });
+export async function createMerchantRow(email, type, business_info, business_image_name) {
+  const response = await client.from('merchon').insert({ email, type, business_info, business_image_name });
+  console.log(response);
   return checkError(response);
 }
 export async function createShopperRow(email, type,) {
@@ -36,3 +37,5 @@ export async function uploadImage(shopImage) {
   const response = await client.storage.from('merchon-buckets').upload(`/business_images/${shopImage.name}`);
   return checkError(response);
 }
+
+// export async function fetchImage()
