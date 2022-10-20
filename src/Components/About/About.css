@@ -31,9 +31,23 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 80%;
     width: 100vw;
-
 }
 
 img {
     width: 100px;
+}
+
+div.tanner {
+    justify-content: center;
+    margin: auto;
+}
+
+.t-richy {
+    display: flex;
+    flex-direction: row;
+}
+
+.t-richy p {
+    margin-left: 10px;
+    padding: 10px;
 }

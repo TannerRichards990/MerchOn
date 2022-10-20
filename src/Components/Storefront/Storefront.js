@@ -24,7 +24,7 @@ export default function Storefront() {
 
   return (
     <>
-      <main>
+      <main className="storefront-main">
         <h1 className="storefront-title">Welcome to MerchOn</h1>
 
         <div className='storefront-search'>

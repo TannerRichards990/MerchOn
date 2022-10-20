@@ -3,7 +3,7 @@
 /* font-family: 'Cormorant Garamond', serif; */
 
 .b-card {
-  border: 1px solid white;
+  border: 1px solid aliceblue;
   background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
   justify-content: center;
   height: 300px;
@@ -13,8 +13,6 @@
   box-shadow: 2px 2px 3px 0px #078FCD;
   -webkit-box-shadow: 2px 2px 4px 0px #078FCD;
   border-radius: 15px;
-  position: relative;
-  top: 30px;
 }
 
 .bc-title {
@@ -32,11 +30,10 @@
   color: aliceblue;
 }
 
+/* click to enter shop styling begins */
 .bc-store {
   width: 500px;
   height: 50px;
-  border: none;
-  outline: none;
   color: #fff;
   background: #111;
   cursor: pointer;
@@ -92,3 +89,4 @@
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+/* click to enter shop styling ends */

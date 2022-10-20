@@ -45,14 +45,16 @@ export default function About() {
 
           <div className="tanner">
             <h3>Tanner Richards</h3>
-            <p>LinkedIn</p>
-            <a href="https://www.linkedin.com/in/tannerrichards/" target="_blank" rel="noreferrer">
-              <img src={ TannerLinked }></img>
-            </a>
-            <p>GitHub</p>
-            <a href="https://github.com/TannerRichards990" target="_blank" rel="noreferrer">
-              <img src={ TannerGit }></img>
-            </a>
+            <div className="t-richy">
+              <p>LinkedIn</p>
+              <a href="https://www.linkedin.com/in/tannerrichards/" target="_blank" rel="noreferrer">
+                <img src={ TannerLinked }></img>
+              </a>
+              <p>GitHub</p>
+              <a href="https://github.com/TannerRichards990" target="_blank" rel="noreferrer">
+                <img src={ TannerGit }></img>
+              </a>
+            </div>
           </div>
 
           <div className="thomas">

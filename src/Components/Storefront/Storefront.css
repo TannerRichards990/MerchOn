@@ -2,7 +2,7 @@
 
 /* font-family: 'Cormorant Garamond', serif; */
 
-main {
+.storefront-main {
   background-image: url(../../background.png);
   background-repeat: no-repeat;
   color: aliceblue;
@@ -10,13 +10,14 @@ main {
   width: 100vw;
   overflow: scroll;
   overflow-x: hidden;
-  position: relative;
-  left: 33px;
+  /* position: relative;
+  left: 33px; */
 }
 
 .storefront-map {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .storefront-title {
