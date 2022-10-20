@@ -13,6 +13,7 @@ import EditShop from './Components/EditShop/Editor/EditShop';
 import EditPage from './Components/EditShop/EditPage/EditPage';
 import Preview from './Components/EditShop/Preview/Preview';
 import Profile from './Components/Profile/Profile';
+import Venmo from './Components/Venmo/Venmo';
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
         <Route path="/Storefront/:id">
           <Navbar />
           <Shop />
+        </Route>
+
+        <Route path="/Venmo">
+          <Navbar />
+          <Venmo />
         </Route>
 
         <Route path="/Landing/">

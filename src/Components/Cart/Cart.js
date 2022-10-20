@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import CartItem from './CartItem';
 
 export default function Cart() {
+  const history = useHistory();
   let totalSum = 0;
   let totalSumString = '';
   // console.log(localStorage);
@@ -10,7 +12,10 @@ export default function Cart() {
 
   const clearCart = () => {
     localStorage.clear();
-    console.log(localStorage);
+  };
+
+  const checkOut = () => {
+    history.push('/Venmo');
   };
 
   function totalMoney() {
@@ -23,7 +28,6 @@ export default function Cart() {
     ));
     totalSum = (Math.round(totalSum * 100) / 100);
     totalSumString = totalSum.toString();
-    console.log(totalSum);
   }
 
   totalMoney();
@@ -51,6 +55,7 @@ export default function Cart() {
             <div className='subtotal'>
                   Subtotal: ${totalSumString}
             </div>
+            <button onClick={checkOut}>Checkout</button>
           </div>
         )}
       </div>
