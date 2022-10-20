@@ -3,8 +3,13 @@ import './Landing.css';
 import logo from '../../assets/MerchOn.png'; 
 import { UserContext } from '../../Context/UserContext';
 import { useContext } from 'react';
+import { Email } from '@mui/icons-material';
+import { useState } from 'react';
+import { authUser } from '../../services/auth';
 
 export default function Landing() {
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
   let history = useHistory();  
 
   const { user } = useContext(UserContext);
@@ -14,12 +19,14 @@ export default function Landing() {
   }
   
   const clickMerchantHandler = () => {
-    // eslint-disable-next-line no-console
-    console.log('I am Clicked... now, I die');
     history.push('/AuthMerchant');
   };
   const clickShopperHandler = () => {
     history.push('/AuthShopper/');
+  };
+  const logInHandler = () => {
+    authUser(userEmail, userPassword);
+    history.push('/Storefront');
   };
   
   return (

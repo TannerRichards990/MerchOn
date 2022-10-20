@@ -66,7 +66,7 @@ function App() {
           <Items />
         </Route>
 
-        <Route path="/Editor">
+        <Route path="/Editor/:id">
           <Navbar />
           <EditPage />
         </Route>

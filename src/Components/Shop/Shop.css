@@ -24,6 +24,10 @@
 .shop-search {
   color: aliceblue;
 }
+.shop-item-el {
+  border: 1px solid black;
+  width: 200px;
+}
 
 .shop-map {
   color: aliceblue;

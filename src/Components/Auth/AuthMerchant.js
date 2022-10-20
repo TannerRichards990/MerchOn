@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
-import { authUserSignUp } from '../../services/auth';
-import { createMerchantRow } from '../../services/fetch-utils';
+import { authUserSignUp, signOut } from '../../services/auth';
+import { createMerchantRow, uploadImage } from '../../services/fetch-utils';
 import './AuthMerchant.css';
 
 export default function SignUpMerchant() {
@@ -16,20 +16,24 @@ export default function SignUpMerchant() {
   const [businessCity, setBusinessCity] = useState('');
   const [businessState, setBusinessState] = useState('');
   const [businessZip, setBusinessZip] = useState('');
-
+  const [shopImage, setShopImage] = useState();
   let history = useHistory();
   const type = 'merchant';
 
+  const imageChange = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setShopImage(e.target.files[0]);
+    }
+  };
+  
   const generateId = () => {
     const now = new Date();
     let finalId = now.getTime();
-    // console.log('final Id: ', finalId);
     return finalId;
   };
 
   if (businessId === 0) {
     const temp = generateId();
-    // console.log(temp);
     if (businessId === 0) {
       setBusinessId(temp);
     }
@@ -54,7 +58,8 @@ export default function SignUpMerchant() {
   const submitHandler = async () => {
     const userResponse = await authUserSignUp(email, password);
     setUser(userResponse);
-    await createMerchantRow(email, type, business_info);
+    await createMerchantRow(email, type, business_info, shopImage.name);
+    await uploadImage(shopImage);
     history.push('/Storefront');
   };
 
@@ -84,7 +89,6 @@ export default function SignUpMerchant() {
           <p>Enter your shop description</p>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
         </label>
-
         <label htmlFor="businessStreet">
           <p>Street Address</p>
           <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
@@ -105,8 +109,19 @@ export default function SignUpMerchant() {
           <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
         </label>
 
+        <label htmlFor="business-img-input">
+          <p>Upload an Image for your business<p>
+          <input accept="image/*" type="file" id="business-img-input" onChange={imageChange}/>
+        </label>
+        
         <div className="submit-button">
+
           <button className="submit" onClick={submitHandler}>Submit</button>
+          {shopImage && (
+            <div>
+              <img src={URL.createObjectURL(shopImage)}/>
+            </div>
+          )}
         </div>
       </div>
     </div>

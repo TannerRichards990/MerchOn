@@ -1,19 +1,25 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
+import { useBusinessImage } from '../../Hooks/useBusinessImage';
 import { useItems } from '../../Hooks/useItems';
 import './Shop.css';
 
 export default function Shop() {
+  const { user } = useContext(UserContext);
   const businessInfo = [];
-  const businessItems = [];
   const { id } = useParams();
-  const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
-  const { shopItems, setShopItems } = useItems(id);
+  const { businessDetail } = useBusiness(id);
+  const { shopItems } = useItems(id);
   const history = useHistory();
   const [search, setSearch] = useState('');
+  const { imageData } = useBusinessImage(id);
+
+  if (!user) {
+    history.push('/landing');
+  }
 
   if (businessDetail.length !== 0) {
     let x = JSON.parse(businessDetail.business_info);
@@ -54,17 +60,19 @@ export default function Shop() {
     console.log(localStorage);
   };
 
-
-
   return ( 
     <>
       <div className="welcome">WELCOME TO THE SHOP</div>
       {businessDetail.length !== 0 && (
         <div>
+
           <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
           <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
           <div className="shop-owner">Business PWNer: {businessInfo[0].business_owner}</div>
-
+          <div className="business_image_el">
+            <img alt='business logo' src={imageData}/>
+          </div>
+          
           <div className='shop-search'>
             <label htmlFor="search">
               <p>Search for an item!</p>
