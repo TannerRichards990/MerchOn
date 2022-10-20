@@ -11,13 +11,14 @@ export default function BusinessCard(business) {
 
   return (
     <div className="b-card">
-      <div className="details">
-        <div className="title">{businessInfo[0].business_name}</div>
-        <div className="description">{businessInfo[0].business_about}</div>
+
+      <div className="business-card-details">
+        <div className="bc-title">{businessInfo[0].business_name}</div>
+        <div className="bc-description">{businessInfo[0].business_about}</div>
         <div className="business_image_el">
           <img alt='business logo' src={imageData}/>
         </div>
-        <Link to={`/storefront/${business.id}`}>LINK HERE NOOB</Link>
+        <Link to={`/storefront/${business.id}`} className="bc-store">CLICK TO ENTER SHOP</Link>
       </div>
     </div>
   );

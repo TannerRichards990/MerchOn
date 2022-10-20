@@ -13,12 +13,11 @@ export default function Landing() {
   let history = useHistory();  
 
   const { user } = useContext(UserContext);
-  console.log(user);
+
   if (user) {
     history.push('/Storefront');
   }
   
-
   const clickMerchantHandler = () => {
     history.push('/AuthMerchant');
   };
@@ -30,23 +29,25 @@ export default function Landing() {
     history.push('/Storefront');
   };
   
-
   return (
-    <div className='main-container'>
+    <div className='landing-container'>
       <div className='left-side'>
         <img src={logo} />
       </div>
       <div className='right-side'>
         <div className='right-top'>
-          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Anyone</h1>
-          <div className="log-in-element">
-            <h3>Already have an account?</h3>
-            <label htmlFor="email">Email: </label>
-            <input type="text" value={userEmail} onChange={(e) => setUserEmail(e.target.value)}/>
-            <label htmlFor="password"> Password: </label>
-            <input type="password" value={userPassword} onChange={(e) => setUserPassword(e.target.value)}/>
-            <button onClick={logInHandler}>Log-In</button>
-          </div>
+          <nav>
+            <a className='log-in'>Log-In</a>
+          </nav>
+          <h1 className='slogan'>
+            Any Place
+            <br />
+            Anywhere
+            <br />
+            Local Based Merch
+            <br />
+            For Everyone
+          </h1>
         </div>
         <div className='buttons'>
           <button className='merchant' onClick={clickMerchantHandler}>Merchant</button>

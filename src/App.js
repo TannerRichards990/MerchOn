@@ -6,12 +6,13 @@ import { Switch, Route } from 'react-router-dom';
 import Storefront from './Components/Storefront/Storefront';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Components/About/About';
+import Cart from './Components/Cart/Cart';
 import Items from './Components/Items/Items';
 import Shop from './Components/Shop/Shop';
 import EditShop from './Components/EditShop/Editor/EditShop';
 import EditPage from './Components/EditShop/EditPage/EditPage';
 import Preview from './Components/EditShop/Preview/Preview';
-import Profile from './Components/Profile/Profile';
+import Venmo from './Components/Venmo/Venmo';
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
           <Shop />
         </Route>
 
+        <Route path="/Venmo">
+          <Navbar />
+          <Venmo />
+        </Route>
+
         <Route path="/Landing/">
           <Landing />
         </Route>
@@ -32,6 +38,10 @@ function App() {
           <SignUpMerchant />
         </Route>
 
+        <Route path="/Landing/">
+          <Landing />
+        </Route>
+        
         <Route path="/AuthShopper/">
           <SignUpShopper />
         </Route>
@@ -39,6 +49,11 @@ function App() {
         <Route path="/Storefront/">
           <Navbar />
           <Storefront />
+        </Route>
+
+        <Route path="/Cart/">
+          <Navbar />
+          <Cart />
         </Route>
 
         <Route path="/About/">
@@ -52,12 +67,9 @@ function App() {
         </Route>
 
         <Route path="/Editor/:id">
+          <Navbar />
           <EditPage />
         </Route>
-
-        {/* <Route path="/profile">
-          <Profile />
-        </Route> */}
 
         <Route path="*">
           <Landing />

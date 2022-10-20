@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createMerchantRow, uploadImage } from '../../services/fetch-utils';
+import './AuthMerchant.css';
 
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
@@ -16,7 +17,6 @@ export default function SignUpMerchant() {
   const [businessState, setBusinessState] = useState('');
   const [businessZip, setBusinessZip] = useState('');
   const [shopImage, setShopImage] = useState();
-
   let history = useHistory();
   const type = 'merchant';
 
@@ -63,41 +63,59 @@ export default function SignUpMerchant() {
     history.push('/Storefront');
   };
 
-  const signOutHandler = () => {
-    signOut();
-    history.push('/Landing');
-  };
-
   if (user) {
     history.push('/Storefront');
   }
 
   return (
-    <>
-      <div className="main-container">
-        <div>
-          <button onClick={signOutHandler}>Sign Out</button>
-        </div>
-        <div>
-          <label htmlFor="email">Enter User Name:</label>
+    <div className="input-container">
+      <div className="inputs">
+        <label htmlFor="email">
+          <p>Enter User Name</p>
           <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
-          <label htmlFor="password" value={ password }> Enter your password: </label>
-          <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
-          <label htmlFor="shopName" value={shopName}>Shop Name:</label>
-          <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
-          <label htmlFor="aboutShop" value={aboutShop}>Enter your shop Description:</label>
-          <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
-          <label htmlFor="businessStreet">Street:</label>
-          <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+        </label>
 
-          <label htmlFor="businessCity">City:</label>
+        <label htmlFor="password" value={ password }>
+          <p>Enter your password</p>
+          <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
+        </label>
+
+        <label htmlFor="shopName" value={shopName}>
+          <p>Shop Name</p>
+          <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
+        </label>
+
+        <label htmlFor="aboutShop" value={aboutShop}>
+          <p>Enter your shop description</p>
+          <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
+        </label>
+        <label htmlFor="businessStreet">
+          <p>Street Address</p>
+          <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+        </label>
+
+        <label htmlFor="businessCity">
+          <p>City</p>
           <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
-          <label htmlFor="businessState">State:</label>
+        </label>
+
+        <label htmlFor="businessState">
+          <p>State</p>
           <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
-          <label htmlFor="businessZip">Zip:</label>
+        </label>
+
+        <label htmlFor="businessZip">
+          <p>Zip Code</p>
           <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
-          <label htmlFor="business-img-input">Upload an Image for your business:</label>
+        </label>
+
+        <label htmlFor="business-img-input">
+          <p>Upload an Image for your business<p>
           <input accept="image/*" type="file" id="business-img-input" onChange={imageChange}/>
+        </label>
+        
+        <div className="submit-button">
+
           <button className="submit" onClick={submitHandler}>Submit</button>
           {shopImage && (
             <div>
@@ -106,6 +124,6 @@ export default function SignUpMerchant() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

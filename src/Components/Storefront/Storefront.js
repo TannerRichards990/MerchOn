@@ -21,12 +21,13 @@ export default function Storefront() {
     });
   };
 
-
+  // console.log(user);
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
-  // if (!user) {
-  //   return <Redirect to="/Landing/" />;
-  // }
+
+  if (!user) {
+    return <Redirect to="/Landing/" />;
+  }
 
   const handleSgnOut = async () => {
     await signOut();
@@ -35,16 +36,19 @@ export default function Storefront() {
 
   return (
     <>
-      <main>
-        <button onClick={handleSgnOut}>Sign Out</button>
-        {/* <h1> Welcome {user}!</h1> */}
-        <div className='search'>
-          <label htmlFor="search">Search by zip code</label>
-          <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
-            setSearch(e.target.value);
-          }}></input>
+
+      <main className="storefront-main">
+        <h1 className="storefront-title">Welcome to MerchOn</h1>
+
+        <div className='storefront-search'>
+          <label htmlFor="search">
+            <p>Search by Zip</p>
+            <input className="sort" name="search" placeholder="Enter Zip" value={search} onChange={(e) => {
+              setSearch(e.target.value);
+            }}></input>
+          </label>
         </div>
-        <div className="business-list">
+        <div className="storefront-map">
           {searchZipCode().map((item) => (
             <BusinessCard key={item.id} {...item} />
           ))}

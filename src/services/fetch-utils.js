@@ -5,18 +5,17 @@ export async function createMerchantRow(email, type, business_info, business_ima
   console.log(response);
   return checkError(response);
 }
+
 export async function createShopperRow(email, type,) {
   const response = await client.from('merchon').insert({ email, type });
   return checkError(response);
 }
 
-// adds new item to store (productName, price, availability, description, and image)
 export async function addItem(item_name, item_price, item_availability, item_description, business_id) {
   const response = await client.from('business_items').insert({ item_name, item_price, item_availability, item_description, business_id });
   return checkError(response);
 }
 
-// only gets business column
 export async function getBusinesses() {
   const resp = await client.from('merchon').select('*').eq('type', 'merchant');
   return checkError(resp);
@@ -32,7 +31,6 @@ export async function getShopItems(business_id) {
   return checkError(resp);
 }
 
-// const shopImageFile = event.target.files[0];
 export async function uploadImage(shopImage) {
   const response = await client.storage.from('merchon-buckets').upload(`/business_images/${shopImage.name}`, shopImage);
   return checkError(response);
@@ -56,4 +54,19 @@ export async function fetchImageName(id) {
 export async function updateBusinessInfo(business_info, id) {
   const response = await client.from('merchon').select('*').match({ id }).update(business_info).single();
   return checkError(response);
+}
+
+export async function getProfile(id) {
+  const resp = await client.from('merchon').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
+export async function changeMerchantRow(id, business_info) {
+  const resp = await client.from('merchon').update({ business_info }).match({ id }).single();
+  return checkError(resp);
+}
+
+export async function grabID(email) {
+  const resp = await client.from('merchon').select('*').match({ email }).single();
+  return checkError(resp);
 }

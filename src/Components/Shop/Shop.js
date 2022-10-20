@@ -26,9 +26,9 @@ export default function Shop() {
     businessInfo.push(x);
   }
   
-  const clickHandler = () => {
-    history.push(`/items/${id}`);
-  };
+  // const clickHandler = () => {
+  //   history.push(`/items/${id}`);
+  // };
 
   const searchItems = () => {
     return shopItems.filter((item) => {
@@ -36,36 +36,63 @@ export default function Shop() {
     });
   };
 
+  // localStorage.setItem('booger1', 'booger2');
+  // console.log(localStorage);
+
+  const addToCart = (thing) => {
+    let cartItem = [
+      thing.item_name,
+      thing.item_price,
+    ];
+    console.log('clicked!');
+    let cart = [];
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(localStorage);
+    alert('Your shopping cart has been updated!');
+  };
+
+  const clearCart = () => {
+    localStorage.clear();
+    console.log(localStorage);
+  };
+
   return ( 
     <>
       <div className="welcome">WELCOME TO THE SHOP</div>
       {businessDetail.length !== 0 && (
         <div>
-          <div className="title">{businessInfo[0].business_name}</div>
-          <div className="description">About: {businessInfo[0].business_about}</div>
-          <h2 className="owner">Owner: {businessInfo[0].business_owner}</h2>
+
+          <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
+          <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
+          <div className="shop-owner">Business PWNer: {businessInfo[0].business_owner}</div>
           <div className="business_image_el">
             <img alt='business logo' src={imageData}/>
           </div>
-          <div className='search'>
-            <label htmlFor="search">Search for an item!</label>
-            <input className="sort" name="search" placeholder="search" value={search} onChange={(e) => {
-              setSearch(e.target.value);
-            }}></input>
+          
+          <div className='shop-search'>
+            <label htmlFor="search">
+              <p>Search for an item!</p>
+              <input className="shop-sort" name="search" placeholder="search" value={search} onChange={(e) => {
+                setSearch(e.target.value);
+              }}></input>
+            </label>
           </div>
-          {searchItems().map((item) => (
-            <div className="shop-item-el" key={item.item_name} {...item}>
-              <div>Item Name: {item.item_name}</div>
-              <div>Item Price: {item.item_price}</div>
-              <div>Item Quantity: {item.item_availability}</div>
-              <div>Description: {item.item_description}</div>
-              
-            </div>
-          ))}
+          <div className="shop-map">
+            {searchItems().map((item) => (
+              <div key={item.item_name} {...item}>
+                <div>This should show the item name: {item.item_name}</div>
+                <div>This should show the item price: {item.item_price}</div>
+              </div>
+            ))}
+          </div>
           <div>{id}</div>
-          <div>
+          {/* <div>
             <button onClick={clickHandler}>Add items to shop</button>
-          </div>
+          </div> */}
         </div>
       )
       }

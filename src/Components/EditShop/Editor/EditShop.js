@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { useParams } from 'react-router-dom';
+import { useBusiness } from '../../../Hooks/useBusiness';
+import { changeMerchantRow } from '../../../services/fetch-utils';
 import './EditShop.css';
-
-
 
 export default function EditShop({
   shopName,
@@ -18,6 +18,19 @@ export default function EditShop({
   addItem,
   setAddItem
 }) {
+
+  const { id } = useParams();
+  const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
+
+  const handleClick = async () => {
+    try {
+      await changeMerchantRow(id, businessDetail); 
+    } catch (e) {
+        //eslint-disable-next-line no-console
+      console.error(e.message);
+    }
+  };
+
   return (
     <div className='shop-editor'>
       <div className='shop-form-control'>
@@ -56,6 +69,9 @@ export default function EditShop({
       <div className='shop-form-control'>
         <button onClick={() => setAddItem([...addItem, { itemName: '', itemPrice: '', itemDescription: '', itemImage: '' }])}>
         Add Item</button>
+      </div>
+      <div>
+        <button className="add" onClick={handleClick}>EDIT</button>
       </div>
     </div>
   );

@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
-import { authUserSignUp, signOut } from '../../services/auth';
+import { authUserSignUp } from '../../services/auth';
 import { createShopperRow } from '../../services/fetch-utils';
+import './AuthShopper.css';
 
 export default function SignUpShopper() {
   const [email, setEmail] = useState('');
@@ -14,17 +15,13 @@ export default function SignUpShopper() {
 
   const submitHandler = async () => {
     const userResponse = await authUserSignUp(email, password);
-    // setType('merchant');
+
     setUser(userResponse);
     createShopperRow(email, type);
     setEmail('');
     setPassword('');
-    <Redirect to="/Storefront" />;
-  };
 
-  const signOutHandler = () => {
-    signOut();
-    history.push('/');
+    <Redirect to="/Storefront" />;
   };
 
   if (user) {
@@ -33,16 +30,28 @@ export default function SignUpShopper() {
 
   return (
     <>
-      <div className="main-container">
+      <div className="auth-container">
         <div>
+
           <button onClick={signOutHandler}>Sign Out</button>
         </div>
+        
         <div>
-          <label htmlFor="email">Enter User Name:</label>
-          <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
-          <label htmlFor="password" value={ password }> Enter your password: </label>
-          <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
-          <button className="submit" onClick={submitHandler}>Submit</button>
+          <label htmlFor="email">
+            <p>Enter User Name</p>
+            <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
+          </label>
+          
+          <label htmlFor="password" value={ password }>
+            <p>Enter your password</p>
+            <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
+          </label>
+
+          <label>
+            <p>Click to Submit</p>
+            <button className="submit" onClick={submitHandler}>Submit</button>
+          </label>
+
         </div>
       </div>
     </>
