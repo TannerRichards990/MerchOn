@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
-import { authUserSignUp, signOut } from '../../services/auth';
+import { authUserSignUp } from '../../services/auth';
 import { createMerchantRow } from '../../services/fetch-utils';
 import './AuthMerchant.css';
 
@@ -56,11 +56,6 @@ export default function SignUpMerchant() {
     setUser(userResponse);
     await createMerchantRow(email, type, business_info);
     history.push('/Storefront');
-  };
-
-  const signOutHandler = () => {
-    signOut();
-    history.push('/Landing');
   };
 
   if (user) {
