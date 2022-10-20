@@ -4,7 +4,29 @@
 
 main {
   background-image: url(../../background.png);
-  height: 100vh;
   background-repeat: no-repeat;
   color: aliceblue;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  overflow-x: hidden;
+  position: relative;
+  left: 33px;
+}
+
+.storefront-map {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.storefront-title {
+  color: aliceblue;
+  font-size: 60px;
+  position: relative;
+  bottom: 25px;
+}
+
+.storefront-search {
+  position: relative;
+  bottom: 30px;
 }

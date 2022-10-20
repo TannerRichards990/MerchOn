@@ -9,10 +9,10 @@ export default function BusinessCard(business) {
 
   return (
     <div className="b-card">
-      <div className="details">
-        <div className="title">{businessInfo[0].business_name}</div>
-        <div className="description">{businessInfo[0].business_about}</div>
-        <Link to={`/storefront/${business.id}`}>LINK HERE NOOB</Link>
+      <div className="business-card-details">
+        <div className="bc-title">{businessInfo[0].business_name}</div>
+        <div className="bc-description">{businessInfo[0].business_about}</div>
+        <Link to={`/storefront/${business.id}`} className="bc-store">CLICK TO ENTER SHOP</Link>
       </div>
     </div>
   );

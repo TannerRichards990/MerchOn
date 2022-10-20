@@ -2,17 +2,93 @@
 
 /* font-family: 'Cormorant Garamond', serif; */
 
-.title {
-  font-size: 3em;
-  color:aliceblue
+.b-card {
+  border: 1px solid white;
+  background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+  justify-content: center;
+  height: 300px;
+  margin: 10px;
+  padding: 20px 15px 15px 20px;
+  width: 400px;
+  box-shadow: 2px 2px 3px 0px #078FCD;
+  -webkit-box-shadow: 2px 2px 4px 0px #078FCD;
+  border-radius: 15px;
+  position: relative;
+  top: 30px;
 }
 
-.id {
+.bc-title {
   font-size: 3em;
-  color:aliceblue
+  color:aliceblue;
 }
 
-.description {
+.bc-id {
   font-size: 3em;
-  color:aliceblue
+  color:aliceblue;
+}
+
+.bc-description {
+  font-size: 3em;
+  color: aliceblue;
+}
+
+.bc-store {
+  width: 500px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.bc-store:before {
+  content: '';
+  background: linear-gradient(45deg, #078FCD, #CC9A3A, #0B0D18);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.bc-store:active {
+  color: #000
+}
+
+.bc-store:active:after {
+  background: transparent;
+}
+
+.bc-store:hover:before {
+  opacity: 1;
+}
+
+.bc-store:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }

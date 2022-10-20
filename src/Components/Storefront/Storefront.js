@@ -25,9 +25,9 @@ export default function Storefront() {
   return (
     <>
       <main>
-        <h1>Welcome to MerchOn</h1>
+        <h1 className="storefront-title">Welcome to MerchOn</h1>
 
-        <div className='search'>
+        <div className='storefront-search'>
           <label htmlFor="search">
             <p>Search by Zip</p>
             <input className="sort" name="search" placeholder="Enter Zip" value={search} onChange={(e) => {
@@ -35,7 +35,7 @@ export default function Storefront() {
             }}></input>
           </label>
         </div>
-        <div>
+        <div className="storefront-map">
           {searchZipCode().map((item) => (
             <BusinessCard key={item.id} {...item} />
           ))}
