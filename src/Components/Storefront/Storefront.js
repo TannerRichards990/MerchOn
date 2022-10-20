@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { signOut } from '../../services/auth';
 import BusinessCard from './BusinessCard';
 import './Storefront.css';

@@ -79,7 +79,6 @@ function Navbar() {
               <span>SignOut</span>
             </Link>
           </li>
-
         </ul>
       </nav>
     </>

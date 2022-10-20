@@ -13,6 +13,7 @@ import EditShop from './Components/EditShop/Editor/EditShop';
 import EditPage from './Components/EditShop/EditPage/EditPage';
 import Preview from './Components/EditShop/Preview/Preview';
 import Venmo from './Components/Venmo/Venmo';
+import AuthLogIn from './Components/Auth/AuthLogIn';
 
 function App() {
   return (
@@ -69,6 +70,10 @@ function App() {
         <Route path="/Editor/:id">
           <Navbar />
           <EditPage />
+        </Route>
+
+        <Route path="/AuthLogIn">
+          <AuthLogIn />
         </Route>
 
         <Route path="*">

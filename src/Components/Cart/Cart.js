@@ -17,6 +17,12 @@ export default function Cart() {
   const checkOut = () => {
     history.push('/Venmo');
   };
+  if (!shoppingCart) {
+    return (
+      <>
+        <div>Your shopping cart is empty</div>
+      </>
+    );}
 
   if (!shoppingCart) {
     return (

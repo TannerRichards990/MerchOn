@@ -30,8 +30,7 @@ export default function SignUpShopper() {
 
   return (
     <>
-      <div className="auth-container">
-
+      <div className="auth-container">        
         <div>
           <label htmlFor="email">
             <p>Enter User Name</p>
