@@ -63,12 +63,6 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-text'>
-            <Link to={`/Profile/${supaUser.id}`}>
-              <AccountCircleIcon />
-              <span>Profile</span>
-            </Link>
-          </li>
-          <li className='nav-text'>
             <Link to='/About'>
               <Groups2Icon />
               <span>About</span>
@@ -86,9 +80,7 @@ function Navbar() {
               <span>SignOut</span>
             </Link>
           </li>
-
         </ul>
-        <img src='' />
       </nav>
     </>
   );
