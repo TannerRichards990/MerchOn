@@ -86,9 +86,7 @@ function Navbar() {
               <span>SignOut</span>
             </Link>
           </li>
-
         </ul>
-        <img src='' />
       </nav>
     </>
   );

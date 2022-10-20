@@ -42,7 +42,7 @@ export default function Landing() {
       <div className='bottom-side'>
         <div className='right-top'>
           <nav>
-            <button className='button' onClick={clickSignIn}>Log-In</button>
+            <button className='button' onClick={logInHandler}>Log-In</button>
           </nav>
           <h1 className='slogan'>
             Any Place
