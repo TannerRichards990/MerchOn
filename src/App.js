@@ -53,9 +53,7 @@ function App() {
 
         <Route path="/editor">
           <Navbar />
-          <EditShop />
           <EditPage />
-          <Preview />
         </Route>
 
         {/* <Route path="/profile">

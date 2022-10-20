@@ -1,3 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 
 /* font-family: 'Cormorant Garamond', serif; */
+
+.shop-editor {
+  grid-area: editor;
+  color: steelblue;
+  background-image: url(../../../background.png);
+  font-size: 1.5rem;
+  align-content: center;
+}
+
+
+
+

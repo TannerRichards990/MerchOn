@@ -4,7 +4,7 @@ import './Preview.css';
 
 export default function Preview({ shopName, aboutShop, shopImage, shopTheme, shopFont, addItem }) {
   return (
-    <div className={`preview ${shopFont}`} style={{ shopTheme: shopTheme }}>
+    <div className={`preview ${shopTheme}`}>
       <div className='shop-preview-header'>
         <h1>{shopName}</h1>
         <h3>{aboutShop}</h3>
@@ -28,3 +28,6 @@ export default function Preview({ shopName, aboutShop, shopImage, shopTheme, sho
     </div>
   );
 }
+
+
+//This page is for previewing all the edits you made to your store

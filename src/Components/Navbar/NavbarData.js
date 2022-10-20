@@ -12,6 +12,12 @@ export const NavbarData = [
     cName: 'nav-text'
   },
   {
+    title: 'MyShop',
+    path: '/editor',
+    icons: <StoreIcon />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Profile',
     path: '/Profile',
     icons: <AccountCircleIcon />,

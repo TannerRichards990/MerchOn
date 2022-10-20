@@ -1,3 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 
 /* font-family: 'Cormorant Garamond', serif; */
+
+.ocean{
+  background-image: url(../../../assets/ocean-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+
+}
+
+.forest{
+  background-image: url(../../../assets/forest-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  
+}
+
+.glitch{
+  background-image: url(../../../assets/glitch-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+}
+
+.space{
+  background-image: url(../../../assets/space-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.abstract {
+  background-image: url(../../../assets/abstract-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

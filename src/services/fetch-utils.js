@@ -30,3 +30,8 @@ export async function getShopItems(business_id) {
   const resp = await client.from('business_items').select('*').eq('business_id', business_id);
   return checkError(resp);
 }
+
+export async function getProfile(id) {
+  const resp = await client.from('merchon').select('*').match({ id }).single();
+  return checkError(resp);
+}

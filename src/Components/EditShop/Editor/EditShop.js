@@ -13,46 +13,48 @@ export default function EditShop({
   setShopImage,
   shopTheme,
   setShopTheme,
-  shopFont,
-  setShopFont,
   addItem,
   setAddItem
 }) {
   return (
     <div className='shop-editor'>
       <div className='shop-form-control'>
-        <input name='shopName' type='text' value={shopName} 
-          onChange={(e) => setShopName(e.target.value)} />
-        <label htmlFor='shopName'>Shop Name</label>
+        <label htmlFor='shopName'>
+          <p>Shop Name:</p>
+          <input name='shopName' type='text' value={shopName} 
+            onChange={(e) => setShopName(e.target.value)} />
+        </label>
       </div>
       <div className='shop-form-control'>
-        <input name='aboutShop' type='text' value={aboutShop} 
-          onChange={(e) => setAboutShop(e.target.value)} />
-        <label htmlFor='aboutShop'>About Shop</label>
+        <label htmlFor='aboutShop'>
+          <p>About Shop:</p>
+          <input name='aboutShop' type='text' value={aboutShop} 
+            onChange={(e) => setAboutShop(e.target.value)} />
+        </label>
       </div>
       <div className='shop-form-control'>
-        <input name='shopImage' type='src' value={shopImage} 
-          onChange={(e) => setShopImage(e.target.value)} />
-        <label htmlFor='shopImage'>Shop Image</label>
+        <label htmlFor='shopImage'>
+          <p>Shop Image:</p>
+          <input name='shopImage' type='file' value={shopImage} 
+            onChange={(e) => setShopImage(e.target.value)} />
+        </label>
       </div>
       <div className='shop-form-control'>
-        
-        <select value={shopTheme} onChange={(e) => setShopTheme(e.target.value)}>
-          <option value='default'>Default</option>
-          <option value='dark'>Dark</option>
-          <option value='light'>Light</option>
-        </select>
-        <label htmlFor='shopTheme'>Shop Theme</label>
+        <label htmlFor='shopTheme'>
+          <p>Shop Theme:</p>
+          <select value={shopTheme} onChange={(e) => setShopTheme(e.target.value)}>
+            <option value='default'>Default</option>
+            <option value='glitch'>Glitch</option>
+            <option value='ocean'>Ocean</option>
+            <option value='forest'>Forest</option>
+            <option value='space'>Space</option>
+            <option value='abstract'>Abstract</option>
+            
+          </select>
+        </label>
       </div>
-      <div className='shop-form-control'>
-        
-        <select value={shopFont} onChange={(e) => setShopFont(e.target.value)}>
-          <option value='default'>Default</option>
-          <option value='cursive'>Cursive</option>
-          <option value='sans-serif'>Sans-Serif</option>
-        </select>
-        <label htmlFor='shopFont'>Shop Font</label>
-      </div>
+      <br>
+      </br>
       <div className='shop-form-control'>
         <button onClick={() => setAddItem([...addItem, { itemName: '', itemPrice: '', itemDescription: '', itemImage: '' }])}>
         Add Item</button>
@@ -63,4 +65,4 @@ export default function EditShop({
 
 // write code for users to choose custom themes via the color wheel function
 
-
+// This Page is the controls for editing your page

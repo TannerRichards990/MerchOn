@@ -11,12 +11,13 @@ export default function Profile() {
   const [image, setImage] = useState('');
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
+  
 
 
   //return user profile info, create a form to edit that info.
   //write a clickHandler function for saving profile information on button "submit"
 
-
+  // const handleSubmit 
 
   return (
     <div>

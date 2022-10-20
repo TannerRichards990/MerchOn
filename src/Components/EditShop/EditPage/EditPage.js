@@ -15,7 +15,7 @@ export default function EditPage() {
 
 
   return (
-    <div>
+    <div className='Editor'>
       <Preview {...{ shopName, aboutShop, shopImage, shopTheme, shopFont, addItem }} />
       <EditShop {...
         { shopName, 
@@ -34,3 +34,4 @@ export default function EditPage() {
   );
 }
 
+//This page is for displaying the controls and preview side by side
