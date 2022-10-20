@@ -3,7 +3,7 @@
 /* font-family: 'Cormorant Garamond', serif; */
 
 .navbar {
-  background-color: rgb(53, 60, 65);
+  background-image: url(../../background.png);
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -14,11 +14,11 @@
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
-  color: royalblue;
+  color: #ffbd59;
 }
 
 .nav-menu {
-  background-color: rgb(53, 60, 65);
+  background: url(../../background.png);
   width: 250px;
   height: 100vh;
   display: flex;
@@ -43,12 +43,18 @@
   padding: 8px 0px 8px 16px;
   list-style: none;
   height: 60px;
+  text-shadow: 2px 2px 3px 0px #2a807d;
+  -webkit-text-shadow: 2px 2px 4px 0px #cd9c07;
 }
 
 .nav-text a {
   text-decoration: none;
-  color: royalblue;
-  font-size: 18px;
+  color: #ffbd59;
+  background: #232323;  
+  box-shadow: 2px 2px 3px 0px #2a807d;
+  -webkit-box-shadow: 2px 2px 4px 0px #2a807d;
+  border-radius: 15px;
+  font-size: 1.5rem;
   width: 95%;
   height: 100%;
   display: flex;
@@ -66,8 +72,8 @@
 }
 
 .navbar-toggle {
-  background-color: rgb(53, 60, 65);
-  width: 100%;
+  background: url(../../background.png);
+  width: 0%;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -83,3 +89,4 @@ span {
   align-items: center;
   justify-content: center;
 }
+

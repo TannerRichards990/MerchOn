@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Preview.css';
 
-export default function Preview({ shopName, aboutShop, shopImage, shopTheme, shopFont, addItem }) {
+export default function Preview({ shopName, aboutShop, shopImage, shopTheme, addItem }) {
   return (
     <div className={`preview ${shopTheme}`}>
       <div className='shop-preview-header'>
@@ -10,7 +10,7 @@ export default function Preview({ shopName, aboutShop, shopImage, shopTheme, sho
         <h3>{aboutShop}</h3>
       </div>
       <div className='shop-preview-body'>
-        <img src={shopImage} alt='shop' />
+        <img src={shopImage} />
       </div>
       <div className='items-preview'>
         {addItem.map((item, index) => {

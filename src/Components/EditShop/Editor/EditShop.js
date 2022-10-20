@@ -28,7 +28,7 @@ export default function EditShop({
       <div className='shop-form-control'>
         <label htmlFor='aboutShop'>
           <p>About Shop:</p>
-          <input name='aboutShop' type='text' value={aboutShop} 
+          <textarea name='aboutShop' type='textarea' value={aboutShop} 
             onChange={(e) => setAboutShop(e.target.value)} />
         </label>
       </div>
@@ -46,7 +46,7 @@ export default function EditShop({
             <option value='default'>Default</option>
             <option value='glitch'>Glitch</option>
             <option value='ocean'>Ocean</option>
-            <option value='forest'>Forest</option>
+            <option value='light'>Light</option>
             <option value='space'>Space</option>
             <option value='abstract'>Abstract</option>
             

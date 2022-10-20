@@ -14,7 +14,6 @@ function Navbar() {
 
   return (
     <>
-    
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
           <MenuIcon onClick={showSidebar} />
@@ -26,6 +25,7 @@ function Navbar() {
             <Link to='#' className='menu-bars'>
               <CloseIcon />
             </Link>
+            
           </li>
           {NavbarData.map((item, index) => {
             return (
@@ -38,11 +38,8 @@ function Navbar() {
             );
           })}
         </ul>
+        <img src='' />
       </nav>
-      
-
-
-
     </>
   );
 }

@@ -11,7 +11,7 @@ import Shop from './Components/Shop/Shop';
 import EditShop from './Components/EditShop/Editor/EditShop';
 import EditPage from './Components/EditShop/EditPage/EditPage';
 import Preview from './Components/EditShop/Preview/Preview';
-import Profile from './Components/Profile/Profile';
+
 
 function App() {
   return (

@@ -1,20 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 
 /* font-family: 'Cormorant Garamond', serif; */
+.preview {
+  border: 3px solid #0B3E37;
+  margin-left: 255px;
+  margin-bottom: 25px;
+  background-image: url(../../../background.png);
+}
+
+.default {
+  font-size: 1.5rem;
+  background-image: url(../../../assets/default-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #0B3E37;
+  text-shadow: 1.5px 1.5px 2px rgba(150, 150, 150, 1);
+  }
 
 .ocean{
   background-image: url(../../../assets/ocean-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 
 }
 
-.forest{
-  background-image: url(../../../assets/forest-theme.png);
+.light{
+  background-image: url(../../../assets/light-theme.png);
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  color: rgb(18, 229, 180);
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
   
 }
 
@@ -22,17 +40,47 @@
   background-image: url(../../../assets/glitch-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
-  color: black;
+  color: #ffbd59;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 }
 
 .space{
   background-image: url(../../../assets/space-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 }
 
 .abstract {
   background-image: url(../../../assets/abstract-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
+  color: black;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.shop-preview-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  height: 20%;
+  border: 2px solid black;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+
+.items-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  border: 2px solid black;
+  width: 90%;
+  height: 55%;
+  margin: auto;
 }

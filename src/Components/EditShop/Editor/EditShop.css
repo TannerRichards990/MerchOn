@@ -4,10 +4,15 @@
 
 .shop-editor {
   grid-area: editor;
-  color: steelblue;
-  background-image: url(../../../background.png);
-  font-size: 1.5rem;
+  color: hsl(172, 70%, 14%);
+  text-shadow: 1.5px 1.5px 2px hsl(172, 70%, 14%);
+  font-size: 2rem;
   align-content: center;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../background.png);
+  
+  
 }
 
 

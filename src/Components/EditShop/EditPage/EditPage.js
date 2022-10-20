@@ -8,7 +8,6 @@ import './EditPage.css';
 export default function EditPage() {
   const [shopName, setShopName] = useState('');
   const [aboutShop, setAboutShop] = useState('');
-  const [shopFont, setShopFont] = useState('default');
   const [shopTheme, setShopTheme] = useState('default');
   const [shopImage, setShopImage] = useState('');
   const [addItem, setAddItem] = useState([]);
@@ -16,7 +15,7 @@ export default function EditPage() {
 
   return (
     <div className='Editor'>
-      <Preview {...{ shopName, aboutShop, shopImage, shopTheme, shopFont, addItem }} />
+      <Preview {...{ shopName, aboutShop, shopImage, shopTheme, addItem }} />
       <EditShop {...
         { shopName, 
           setShopName, 
@@ -25,9 +24,7 @@ export default function EditPage() {
           shopImage, 
           setShopImage, 
           shopTheme, 
-          setShopTheme, 
-          shopFont, 
-          setShopFont, 
+          setShopTheme,  
           addItem, 
           setAddItem }} />
     </div>
