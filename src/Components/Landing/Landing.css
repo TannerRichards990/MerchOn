@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Vai&display=swap');
 
 /* font-family: 'Cormorant Garamond', serif; */
 
@@ -10,7 +10,6 @@
     grid-template-rows: 85% 15%;
     height: 100%;
     width: 100%;
-    
 }
 
 
@@ -27,6 +26,7 @@
     text-align: center;
     
 }
+
 .right-top {
     display: grid;
     grid-template-columns: 10% 90%;
@@ -35,6 +35,25 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     color: #ffbd59;
     text-align: center;
 }
+
+.log-in {
+    color: #078FCD;
+    position: relative;
+    left: 325px;
+    font-size: 20px;
+    font-family: 'Noto Sans Vai', sans-serif;
+}
+
+.slogan {
+    color: white;
+    font-size: 40px;
+    position: relative;
+    top: 65px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans Vai', sans-serif;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -42,6 +61,7 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     
     
 }
+
 .merchant {
     display: grid;
     width: 100%;
@@ -52,6 +72,7 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     font-size: 3rem;
     border: 2px solid #ffbd59;
 }
+
 .shopper {
     display: grid;
     width: 100%;

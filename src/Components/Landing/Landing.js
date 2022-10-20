@@ -7,31 +7,31 @@ import ReactPlayer from 'react-player/lazy';
 
 
 
+import { Email } from '@mui/icons-material';
+import { useState } from 'react';
+import { authUser } from '../../services/auth';
 
 export default function Landing() {
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
   let history = useHistory();  
 
   const { user } = useContext(UserContext);
-  console.log(user);
+
   if (user) {
     history.push('/Storefront');
   }
   
-
   const clickMerchantHandler = () => {
-    // eslint-disable-next-line no-console
-    console.log('I am Clicked... now, I die');
     history.push('/AuthMerchant');
   };
   const clickShopperHandler = () => {
     history.push('/AuthShopper/');
   };
-
-  const clickSignIn = () => {
+  const logInHandler = () => {
+    authUser(userEmail, userPassword);
     history.push('/Storefront');
   };
-  
-
   
   return (
     <div className='main-container'>
@@ -44,7 +44,15 @@ export default function Landing() {
           <nav>
             <button className='button' onClick={clickSignIn}>Log-In</button>
           </nav>
-          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Anyone</h1>
+          <h1 className='slogan'>
+            Any Place
+            <br />
+            Anywhere
+            <br />
+            Local Based Merch
+            <br />
+            For Everyone
+          </h1>
         </div>
         <div className='buttons'>
           <button className='merchant' onClick={clickMerchantHandler}>Merchant</button>

@@ -3,10 +3,8 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
-import { createMerchantRow } from '../../services/fetch-utils';
-
-
-
+import { createMerchantRow, uploadImage } from '../../services/fetch-utils';
+import './AuthMerchant.css';
 
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
@@ -18,26 +16,28 @@ export default function SignUpMerchant() {
   const [businessCity, setBusinessCity] = useState('');
   const [businessState, setBusinessState] = useState('');
   const [businessZip, setBusinessZip] = useState('');
-  // const [shopImage, setShopImage] = useState('');
-
+  const [shopImage, setShopImage] = useState();
   let history = useHistory();
   const type = 'merchant';
 
+  const imageChange = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setShopImage(e.target.files[0]);
+    }
+  };
+  
   const generateId = () => {
     const now = new Date();
     let finalId = now.getTime();
-    // console.log('final Id: ', finalId);
     return finalId;
   };
 
   if (businessId === 0) {
     const temp = generateId();
-    // console.log(temp);
     if (businessId === 0) {
       setBusinessId(temp);
     }
   }
-  // console.log('business_id: ', businessId);
 
   let business_info = {
     business_name: shopName,
@@ -53,21 +53,14 @@ export default function SignUpMerchant() {
     }
   };
 
-
   const { user, setUser } = useContext(UserContext);
   
-  
-
   const submitHandler = async () => {
     const userResponse = await authUserSignUp(email, password);
     setUser(userResponse);
-    await createMerchantRow(email, type, business_info);
+    await createMerchantRow(email, type, business_info, shopImage.name);
+    await uploadImage(shopImage);
     history.push('/Storefront');
-  };
-
-  const signOutHandler = () => {
-    signOut();
-    history.push('/Landing');
   };
 
   if (user) {
@@ -75,34 +68,62 @@ export default function SignUpMerchant() {
   }
 
   return (
-    <>
-      <div className="main-container">
-        <div>
-          <button onClick={signOutHandler}>Sign Out</button>
-        </div>
-        <div>
-          <label htmlFor="email">Enter User Name:</label>
+    <div className="input-container">
+      <div className="inputs">
+        <label htmlFor="email">
+          <p>Enter User Name</p>
           <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
-          <label htmlFor="password" value={ password }> Enter your password: </label>
+        </label>
+
+        <label htmlFor="password" value={ password }>
+          <p>Enter your password</p>
           <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
-          <label htmlFor="shopName" value={shopName}>Shop Name:</label>
+        </label>
+
+        <label htmlFor="shopName" value={shopName}>
+          <p>Shop Name</p>
           <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
-          <label htmlFor="aboutShop" value={aboutShop}>Enter your shop Description:</label>
+        </label>
+
+        <label htmlFor="aboutShop" value={aboutShop}>
+          <p>Enter your shop description</p>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
-          <label htmlFor="businessStreet"></label>
+        </label>
+        <label htmlFor="businessStreet">
+          <p>Street Address</p>
           <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
+        </label>
 
-          <label htmlFor="businessCity"></label>
+        <label htmlFor="businessCity">
+          <p>City</p>
           <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
-          <label htmlFor="businessState"></label>
-          <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
-          <label htmlFor="businessZip"></label>
-          <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
+        </label>
 
+        <label htmlFor="businessState">
+          <p>State</p>
+          <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
+        </label>
+
+        <label htmlFor="businessZip">
+          <p>Zip Code</p>
+          <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
+        </label>
+
+        <label htmlFor="business-img-input">
+          <p>Upload an Image for your business<p>
+          <input accept="image/*" type="file" id="business-img-input" onChange={imageChange}/>
+        </label>
+        
+        <div className="submit-button">
 
           <button className="submit" onClick={submitHandler}>Submit</button>
+          {shopImage && (
+            <div>
+              <img src={URL.createObjectURL(shopImage)}/>
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
