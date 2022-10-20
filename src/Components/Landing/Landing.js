@@ -17,7 +17,7 @@ export default function Landing() {
   let history = useHistory();  
 
   const { user } = useContext(UserContext);
-
+  console.log(user);
   if (user) {
     history.push('/Storefront');
   }
@@ -29,20 +29,21 @@ export default function Landing() {
     history.push('/AuthShopper/');
   };
   const logInHandler = () => {
-    authUser(userEmail, userPassword);
-    history.push('/Storefront');
+    history.push('/AuthLogIn');
+  };
+  const logOutHandler = () => {
+    history.push('/AuthLogIn');
   };
   
   return (
     <div className='main-container'>
-      
-
       <div className='top-side'>
       </div>
       <div className='bottom-side'>
         <div className='right-top'>
           <nav>
             <button className='button' onClick={logInHandler}>Log-In</button>
+            <button className='button' onClick={logOutHandler}>Log-Out</button>
           </nav>
           <h1 className='slogan'>
             Any Place
