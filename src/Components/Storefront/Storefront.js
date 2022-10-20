@@ -28,18 +28,18 @@ export default function Storefront() {
 
   return (
     <>
-      <main>
-        <h1>congrats you made it here!</h1>
-        <NavLink to="/Landing/">Landing</NavLink>
-        <button onClick={signOut}>Sign Out</button>
+      <main className="storefront-main">
+        <h1 className="storefront-title">Welcome to MerchOn</h1>
 
-        <div className='search'>
-          <label htmlFor="search">Search by zip code</label>
-          <input className="sort" name="search" placeholder="enter zip" value={search} onChange={(e) => {
-            setSearch(e.target.value);
-          }}></input>
+        <div className='storefront-search'>
+          <label htmlFor="search">
+            <p>Search by Zip</p>
+            <input className="sort" name="search" placeholder="Enter Zip" value={search} onChange={(e) => {
+              setSearch(e.target.value);
+            }}></input>
+          </label>
         </div>
-        <div>
+        <div className="storefront-map">
           {searchZipCode().map((item) => (
             <BusinessCard key={item.id} {...item} />
           ))}

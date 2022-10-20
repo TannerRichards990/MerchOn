@@ -2,24 +2,18 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { addItem } from '../../services/fetch-utils';
 
-
 const Items = () => {
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
   const [availability, setAvailability] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
-  // const [itemId, setItemId] = useState(0);
 
   const { id } = useParams();
 
   const handleSubmit = async () => {
     await addItem(productName, price, availability, description, id);
   };
-
-  // async function handleSubmit() {
-  //   await addItem(id, business_items);
-  // }
 
   return (
     <section className="main-container">
@@ -59,21 +53,9 @@ const Items = () => {
             name="price" 
             type="text" 
             className="price" 
-            placeholder="$45.00" 
+            placeholder="45.00" 
             value={ price } 
             onChange={(e) => setPrice(e.target.value)}
-          />
-        </label>
-
-        <label aria-label="availability" className="availability-input">
-          <p>Availability:</p>
-          <input 
-            name="availability" 
-            type="text" 
-            className="availability" 
-            placeholder="10" 
-            value={ availability } 
-            onChange={(e) => setAvailability(e.target.value)}
           />
         </label>
 

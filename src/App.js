@@ -12,7 +12,6 @@ import Shop from './Components/Shop/Shop';
 import EditShop from './Components/EditShop/Editor/EditShop';
 import EditPage from './Components/EditShop/EditPage/EditPage';
 import Preview from './Components/EditShop/Preview/Preview';
-import Profile from './Components/Profile/Profile';
 import Venmo from './Components/Venmo/Venmo';
 
 function App() {
@@ -39,6 +38,10 @@ function App() {
           <SignUpMerchant />
         </Route>
 
+        <Route path="/Landing/">
+          <Landing />
+        </Route>
+        
         <Route path="/AuthShopper/">
           <SignUpShopper />
         </Route>
@@ -63,13 +66,9 @@ function App() {
           <Items />
         </Route>
 
-        <Route path="/editor">
+        <Route path="/Editor">
           <Navbar />
           <EditPage />
-        </Route>
-
-        <Route path="/profile/:id">
-          <Profile />
         </Route>
 
         <Route path="*">

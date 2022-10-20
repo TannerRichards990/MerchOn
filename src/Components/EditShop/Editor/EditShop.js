@@ -2,10 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useBusiness } from '../../../Hooks/useBusiness';
 import { changeMerchantRow } from '../../../services/fetch-utils';
-
 import './EditShop.css';
-
-
 
 export default function EditShop({
   shopName,
@@ -21,6 +18,7 @@ export default function EditShop({
   addItem,
   setAddItem
 }) {
+
   const { id } = useParams();
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
 

@@ -8,12 +8,11 @@ export default function Landing() {
   let history = useHistory();  
 
   const { user } = useContext(UserContext);
-  console.log(user);
+
   if (user) {
     history.push('/Storefront');
   }
   
-
   const clickMerchantHandler = () => {
     // eslint-disable-next-line no-console
     console.log('I am Clicked... now, I die');
@@ -23,9 +22,8 @@ export default function Landing() {
     history.push('/AuthShopper/');
   };
   
-
   return (
-    <div className='main-container'>
+    <div className='landing-container'>
       <div className='left-side'>
         <img src={logo} />
       </div>
@@ -34,7 +32,15 @@ export default function Landing() {
           <nav>
             <a className='log-in'>Log-In</a>
           </nav>
-          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Anyone</h1>
+          <h1 className='slogan'>
+            Any Place
+            <br />
+            Anywhere
+            <br />
+            Local Based Merch
+            <br />
+            For Everyone
+          </h1>
         </div>
         <div className='buttons'>
           <button className='merchant' onClick={clickMerchantHandler}>Merchant</button>
