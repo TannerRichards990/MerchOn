@@ -23,12 +23,18 @@ export default function Storefront() {
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
   // if (!user) {
-  //   return <Redirect to="/Auth/" />;
+  //   return <Redirect to="/Landing/" />;
   // }
+
+  const handleSgnOut = async () => {
+    await signOut();
+    history.push('/landing');
+  };
 
   return (
     <>
       <main>
+        <button onClick={handleSgnOut}>Sign Out</button>
         {/* <h1> Welcome {user}!</h1> */}
         <div className='search'>
           <label htmlFor="search">Search by zip code</label>

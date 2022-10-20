@@ -30,3 +30,9 @@ export async function getShopItems(business_id) {
   const resp = await client.from('business_items').select('*').eq('business_id', business_id);
   return checkError(resp);
 }
+
+// const shopImageFile = event.target.files[0];
+export async function uploadImage(shopImage) {
+  const response = await client.storage.from('merchon-buckets').upload(`/business_images/${shopImage.name}`);
+  return checkError(response);
+}
