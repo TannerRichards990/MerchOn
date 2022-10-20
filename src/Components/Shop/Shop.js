@@ -19,17 +19,41 @@ export default function Shop() {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  console.log('search', search);
   
-  const clickHandler = () => {
-    history.push(`/items/${id}`);
-  };
+  // const clickHandler = () => {
+  //   history.push(`/items/${id}`);
+  // };
 
   const searchItems = () => {
     return shopItems.filter((item) => {
       return item.item_name.toLowerCase().includes(search);
     });
   };
+
+  // localStorage.setItem('booger1', 'booger2');
+  // console.log(localStorage);
+
+  const addToCart = (thing) => {
+    let cartItem = [
+      thing.item_name,
+      thing.item_price,
+    ];
+    console.log('clicked!');
+    let cart = [];
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(localStorage);
+    alert('Your shopping cart has been updated!');
+  };
+
+  const clearCart = () => {
+    localStorage.clear();
+    console.log(localStorage);
+  };
+
 
 
   return ( 
@@ -58,9 +82,9 @@ export default function Shop() {
             ))}
           </div>
           <div>{id}</div>
-          <div>
+          {/* <div>
             <button onClick={clickHandler}>Add items to shop</button>
-          </div>
+          </div> */}
         </div>
       )
       }

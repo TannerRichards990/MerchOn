@@ -33,3 +33,14 @@ export async function getProfile(id) {
   const resp = await client.from('merchon').select('*').match({ id }).single();
   return checkError(resp);
 }
+
+export async function changeMerchantRow(id, business_info) {
+  const resp = await client.from('merchon').update({ business_info }).match({ id }).single();
+  return checkError(resp);
+}
+
+export async function grabID(email) {
+  const resp = await client.from('merchon').select('*').match({ email }).single();
+  return checkError(resp);
+}
+
