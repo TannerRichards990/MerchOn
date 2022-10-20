@@ -5,9 +5,6 @@ import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
 import { createMerchantRow, uploadImage } from '../../services/fetch-utils';
 
-
-
-
 export default function SignUpMerchant() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,7 +23,6 @@ export default function SignUpMerchant() {
   const imageChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       setShopImage(e.target.files[0]);
-      // console.log(shopImage.name);
     }
   };
   
@@ -100,19 +96,14 @@ export default function SignUpMerchant() {
           <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
           <label htmlFor="businessZip">Zip:</label>
           <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
-
           <label htmlFor="business-img-input">Upload an Image for your business:</label>
           <input accept="image/*" type="file" id="business-img-input" onChange={imageChange}/>
-
-
           <button className="submit" onClick={submitHandler}>Submit</button>
-
           {shopImage && (
             <div>
               <img src={URL.createObjectURL(shopImage)}/>
             </div>
           )}
-
         </div>
       </div>
     </>

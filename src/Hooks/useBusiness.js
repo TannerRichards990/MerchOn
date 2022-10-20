@@ -9,7 +9,7 @@ export function useBusiness(id) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getBusinessDetail(id);
+        const data = await getBusinessDetail(id); 
         setBusinessDetail(data);
         setLoading(false);
       } catch (e) {

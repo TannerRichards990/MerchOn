@@ -34,8 +34,16 @@ export async function getShopItems(business_id) {
 
 // const shopImageFile = event.target.files[0];
 export async function uploadImage(shopImage) {
-  const response = await client.storage.from('merchon-buckets').upload(`/business_images/${shopImage.name}`);
+  const response = await client.storage.from('merchon-buckets').upload(`/business_images/${shopImage.name}`, shopImage);
   return checkError(response);
 }
 
-// export async function fetchImage()
+export async function fetchImage(business_image_name) {
+  const response = await client.storage.from('merchon-buckets').getPublicUrl(`business_images/${encodeURIComponent(business_image_name)}`);
+  return checkError(response);
+}
+
+export async function fetchImageName(id) {
+  const response = await client.from('merchon').select('business_image_name').match({ id }).single();
+  return checkError(response);
+}
