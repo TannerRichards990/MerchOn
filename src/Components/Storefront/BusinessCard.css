@@ -22,7 +22,6 @@
 
 .bc-id {
   font-size: 3em;
-
   color:aliceblue;
 }
 
@@ -31,12 +30,17 @@
   color: aliceblue;
 }
 
+.business-logo {
+  width: 100px;
+}
+
 /* click to enter shop styling begins */
 .bc-store {
   width: 500px;
   height: 50px;
   color: #fff;
   background: #111;
+  position: relative;
   cursor: pointer;
   z-index: 0;
   border-radius: 10px;
