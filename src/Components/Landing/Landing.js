@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { useContext } from 'react';

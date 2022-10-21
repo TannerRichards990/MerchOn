@@ -2,10 +2,9 @@ import { useContext, useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import { signOut } from '../../services/auth';
 import BusinessCard from './BusinessCard';
-import './Storefront.css';
 import { useBusinesses } from '../../Hooks/useBusinesses';
 import { UserContext } from '../../Context/UserContext';
-
+import './Storefront.css';
 
 export default function Storefront() {
   const history = useHistory();
@@ -13,7 +12,6 @@ export default function Storefront() {
   const { businesses, setBusinesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
   const [search, setSearch] = useState('');
-  
 
   const searchZipCode = () => {
     return businesses.filter((item) => {
@@ -21,7 +19,6 @@ export default function Storefront() {
     });
   };
 
-  // console.log(user);
   if (loading) return <h1>Loading</h1>;
   if (error) return <h1>{error}</h1>;
 
@@ -36,7 +33,6 @@ export default function Storefront() {
 
   return (
     <>
-
       <main className="storefront-main">
         <h1 className="storefront-title">Welcome to MerchOn</h1>
 
@@ -53,7 +49,6 @@ export default function Storefront() {
             <BusinessCard key={item.id} {...item} />
           ))}
         </div>
-
       </main>
     </>
   );

@@ -28,7 +28,7 @@
 }
 
 .log-in {
-    color: #078FCD;
+    color: #2a807d;
     position: relative;
     left: 325px;
     font-size: 20px;
@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-.music{
+.music {
     display: none;
 }
 

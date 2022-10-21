@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { useEffect, useState } from 'react';
+import { useContext useEffect, useState } from 'react';
 import { UserContext } from '../Context/UserContext';
 import { grabID } from '../services/fetch-utils';
 
@@ -8,7 +7,6 @@ export function useUser(email) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const { user } = useContext(UserContext);
-  console.log(user);
 
   useEffect(() => {
     const fetchData = async () => {

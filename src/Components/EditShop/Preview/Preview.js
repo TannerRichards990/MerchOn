@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Preview.css';
 
 export default function Preview({ shopName, aboutShop, shopImage, shopTheme, addItem }) {

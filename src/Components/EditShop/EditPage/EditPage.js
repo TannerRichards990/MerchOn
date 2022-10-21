@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Preview from '../Preview/Preview';
 import EditShop from '../Editor/EditShop';
-import './EditPAge.css';
+import './EditPage.css';
 
 export default function EditPage() {
   const [shopName, setShopName] = useState('');

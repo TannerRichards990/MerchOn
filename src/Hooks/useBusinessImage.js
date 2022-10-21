@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+/* eslint-disable no-console */
+import { useEffect, useState } from 'react';
 import { fetchImage, fetchImageName } from '../services/fetch-utils';
 
 export function useBusinessImage(id) {

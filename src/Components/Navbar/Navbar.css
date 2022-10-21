@@ -27,8 +27,6 @@
   top: 0;
   left: -100%;
   transition: 850ms;
-  
-  
 }
 
 .nav-menu.active {
@@ -78,7 +76,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
 }
 
 span {

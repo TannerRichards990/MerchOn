@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 
 /* font-family: 'Cormorant Garamond', serif; */
+
 .preview {
   border: 3px solid #0B3E37;
   margin-left: 255px;
@@ -17,26 +18,24 @@
   text-shadow: 1.5px 1.5px 2px rgba(150, 150, 150, 1);
   }
 
-.ocean{
+.ocean {
   background-image: url(../../../assets/ocean-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
   font-size: 1.5rem;
   text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
-
 }
 
-.light{
+.light {
   background-image: url(../../../assets/light-theme.png);
   background-size: cover;
   color: rgb(18, 229, 180);
   font-size: 1.5rem;
   text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
-  
 }
 
-.glitch{
+.glitch {
   background-image: url(../../../assets/glitch-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,7 +44,7 @@
   text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 }
 
-.space{
+.space {
   background-image: url(../../../assets/space-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -63,7 +62,7 @@
   text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 }
 
-.shop-preview-body{
+.shop-preview-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +72,6 @@
   margin: auto;
   margin-bottom: 10px;
 }
-
 
 .items-preview {
   display: grid;
