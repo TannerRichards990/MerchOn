@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { useState } from 'react';
+/* eslint-disable no-console */
+import React, { useContext, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
@@ -25,19 +25,12 @@ export default function Shop() {
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  
-  // const clickHandler = () => {
-  //   history.push(`/items/${id}`);
-  // };
 
   const searchItems = () => {
     return shopItems.filter((item) => {
       return item.item_name.toLowerCase().includes(search);
     });
   };
-
-  // localStorage.setItem('booger1', 'booger2');
-  // console.log(localStorage);
 
   const addToCart = (thing) => {
     let cartItem = [
@@ -65,7 +58,6 @@ export default function Shop() {
       <div className="welcome">WELCOME TO THE SHOP</div>
       {businessDetail.length !== 0 && (
         <div>
-
           <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
           <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
           <div className="shop-owner">Business PWNer: {businessInfo[0].business_owner}</div>
@@ -81,6 +73,7 @@ export default function Shop() {
               }}></input>
             </label>
           </div>
+
           <div className="shop-map">
             {searchItems().map((item) => (
               <div key={item.item_name} {...item}>
@@ -94,8 +87,7 @@ export default function Shop() {
             <button onClick={clickHandler}>Add items to shop</button>
           </div> */}
         </div>
-      )
-      }
+      )}
     </>
   );
 }

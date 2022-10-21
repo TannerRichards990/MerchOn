@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Vai&display=swap');
 
-/* font-family: 'Cormorant Garamond', serif; */
-
-
-
-
 .main-container {
     display: grid;
     grid-template-rows: 85% 15%;
@@ -12,44 +7,37 @@
     width: 100%;
 }
 
-
 .top-side {
     display: grid;
     background-image: url(../../assets/Merchon-final.gif);
     background-size: cover;
-    
 }
-
 
 .bottom-side {
     display: grid;
     text-align: center;
-    
 }
 
 .right-top {
     display: grid;
     grid-template-columns: 10% 90%;
     background: rgb(0,6,4);
-background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+    background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     color: #ffbd59;
     text-align: center;
 }
-
+   
 /* .log-in {
-    color: #078FCD;
+    color: #2a807d;
     position: relative;
     left: 325px;
     font-size: 20px;
     font-family: 'Noto Sans Vai', sans-serif;
 } */
 
-
-
 .buttons {
     display: grid;
     grid-template-columns: 50% 50%;
-    
 }
 
 .merchant {
@@ -76,7 +64,7 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     cursor: pointer;
 }
 
-.music{
+.music {
     display: none;
 }
 
@@ -88,9 +76,6 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     background-color: black;
     border: 2px solid #ffbd59;
     font-size: 1.2rem;
-    
-    
-    
 }
 
 .slogan {

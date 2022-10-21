@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+
+/* font-family: 'Cormorant Garamond', serif; */
+
+.Editor {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 'preview editor';
+  /* grid-gap: 20px; */
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-image: url(../../../background.png);
+}

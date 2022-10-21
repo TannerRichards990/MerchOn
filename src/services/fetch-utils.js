@@ -2,7 +2,6 @@ import { checkError, client } from './client';
 
 export async function createMerchantRow(email, type, business_info, business_image_name) {
   const response = await client.from('merchon').insert({ email, type, business_info, business_image_name });
-  console.log(response);
   return checkError(response);
 }
 

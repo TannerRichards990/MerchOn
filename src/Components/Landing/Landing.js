@@ -1,11 +1,9 @@
+/* eslint-disable no-console */
 import { useHistory } from 'react-router-dom';
-import './Landing.css';
 import { UserContext } from '../../Context/UserContext';
 import { useContext } from 'react';
 import ReactPlayer from 'react-player/lazy';
-
-
-
+import './Landing.css';
 
 import { Email } from '@mui/icons-material';
 import { useState } from 'react';
@@ -54,4 +52,3 @@ export default function Landing() {
     </div>
   );
 }
-  

@@ -18,9 +18,7 @@ import AuthLogIn from './Components/Auth/AuthLogIn';
 function App() {
   return (
     <div className="App">
-      
       <Switch>
-      
         <Route path="/Storefront/:id">
           <Navbar />
           <Shop />
@@ -79,9 +77,7 @@ function App() {
         <Route exact path="/">
           <Landing />
         </Route>
-
       </Switch>
-
     </div>
   );
 }

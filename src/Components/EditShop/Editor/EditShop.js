@@ -1,3 +1,5 @@
+// This Page is the controls for editing your page
+
 import React from 'react';
 import { useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
@@ -119,7 +121,3 @@ export default function EditShop({
     </div>
   );
 }
-
-// write code for users to choose custom themes via the color wheel function
-
-// This Page is the controls for editing your page

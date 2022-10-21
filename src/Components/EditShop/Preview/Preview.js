@@ -7,7 +7,6 @@ export default function Preview({ shopName, aboutShop, shopImage, shopTheme, add
   const { id } = useParams();
   const { imageData } = useBusinessImage(id);
   
-  
   return (
     <div className={`preview ${shopTheme}`}>
       <div className='shop-preview-header'>
@@ -33,6 +32,4 @@ export default function Preview({ shopName, aboutShop, shopImage, shopTheme, add
     </div>
   );
 }
-
-
 //This page is for previewing all the edits you made to your store

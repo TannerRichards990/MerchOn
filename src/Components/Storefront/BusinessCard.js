@@ -11,7 +11,6 @@ export default function BusinessCard(business) {
   console.log(imageData);
   return (
     <div className="b-card">
-
       <div className="business-card-details">
         <div className="bc-title">{businessInfo[0].business_name}</div>
         <div className="bc-description">{businessInfo[0].business_about}</div>

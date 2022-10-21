@@ -16,9 +16,7 @@ export default function Cart() {
 
   let totalSum = 0;
   let totalSumString = '';
-  // console.log(localStorage);
   let shoppingCart = JSON.parse(localStorage.getItem('cart'));
-  // console.log('shopping cart', shoppingCart);
 
   const clearCart = () => {
     localStorage.clear();
@@ -82,7 +80,6 @@ export default function Cart() {
             <button onClick={checkOut}>Checkout</button>
           </div>
         )}
-        
       </div>
     </>
   );

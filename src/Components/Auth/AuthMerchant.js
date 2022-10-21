@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp, signOut } from '../../services/auth';
@@ -71,12 +70,12 @@ export default function SignUpMerchant() {
     <div className="input-container">
       <div className="inputs">
         <label htmlFor="email">
-          <p>Enter User Name:</p>
+          <p>Enter Email Address</p>
           <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
         </label>
 
         <label htmlFor="password" value={ password }>
-          <p>Enter your password:</p>
+          <p>Enter Password</p>
           <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
         </label>
 
@@ -86,9 +85,10 @@ export default function SignUpMerchant() {
         </label>
 
         <label htmlFor="aboutShop" value={aboutShop}>
-          <p>Enter your shop description:</p>
+          <p>Enter Shop Description</p>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
         </label>
+        
         <label htmlFor="businessStreet">
           <p>Street Address:</p>
           <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
@@ -121,10 +121,8 @@ export default function SignUpMerchant() {
             </div>
           )}
           <button className="submit" onClick={submitHandler}>Submit</button>
-        
         </div>
       </div>
     </div>
-  
   );
 }

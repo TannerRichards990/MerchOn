@@ -1,7 +1,6 @@
 import React from 'react';
 import './Venmo.css';
 
-
 export default function Venmo() {
   let totalSum = 0;
   let totalSumString = '';
@@ -19,7 +18,6 @@ export default function Venmo() {
   }
 
   totalMoney();
-
 
   return (
     <>    

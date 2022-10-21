@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useContext } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,7 +11,6 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { signOut } from '../../services/auth';
-
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);

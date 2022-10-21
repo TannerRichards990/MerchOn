@@ -5,14 +5,12 @@ import { addItem } from '../../services/fetch-utils';
 const Items = () => {
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
-  const [availability, setAvailability] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
-
   const { id } = useParams();
 
   const handleSubmit = async () => {
-    await addItem(productName, price, availability, description, id);
+    await addItem(productName, price, description, id);
   };
 
   return (
@@ -41,7 +39,6 @@ const Items = () => {
             name="productName" 
             type="text" 
             className="productName" 
-            placeholder="MooMoo Cow Plushie" 
             value={ productName } 
             onChange={(e) => setProductName(e.target.value)}
           />
@@ -65,7 +62,6 @@ const Items = () => {
             name="description" 
             type="text" 
             className="description" 
-            placeholder="Soft Cuddly 50in Plush MooMoo Cow" 
             value={ description } 
             onChange={(e) => setDescription(e.target.value)}
           />

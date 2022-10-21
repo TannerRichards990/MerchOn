@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
 import { authUserSignUp } from '../../services/auth';
@@ -30,16 +29,15 @@ export default function SignUpShopper() {
 
   return (
     <>
-
       <div className="auth-container">        
         <div className='shopper-inputs'>
           <label htmlFor="email">
-            <p>Enter User Name:</p>
+            <p>Enter Email</p>
             <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
           </label>
           
           <label htmlFor="password" value={ password }>
-            <p>Enter your password:</p>
+            <p>Enter Password</p>
             <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
           </label>
 
@@ -47,7 +45,6 @@ export default function SignUpShopper() {
             <p>Click to Submit:</p>
             <button className="submit" onClick={submitHandler}>Submit</button>
           </label>
-
         </div>
       </div>
     </>
