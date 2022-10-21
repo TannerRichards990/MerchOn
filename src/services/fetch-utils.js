@@ -69,3 +69,12 @@ export async function grabID(email) {
   const resp = await client.from('merchon').select('*').match({ email }).single();
   return checkError(resp);
 }
+
+export async function updateBusinessTheme(id, theme) {
+  const response = await client.from('merchon').update({ theme }).match({ id }).select('theme').single();
+  return checkError(response);
+}
+export async function getBusinessTheme(id) {
+  const response = await client.from('merchon').select('theme').eq('id', id);
+  return checkError(response);
+}

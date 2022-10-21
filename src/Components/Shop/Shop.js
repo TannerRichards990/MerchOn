@@ -5,6 +5,7 @@ import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
 import { useBusinessImage } from '../../Hooks/useBusinessImage';
 import { useItems } from '../../Hooks/useItems';
+import { useTheme } from '../../Hooks/useTheme';
 import './Shop.css';
 
 export default function Shop() {
@@ -16,6 +17,7 @@ export default function Shop() {
   const history = useHistory();
   const [search, setSearch] = useState('');
   const { imageData } = useBusinessImage(id);
+  const { themeDetail } = useTheme(id);
 
   if (!user) {
     history.push('/landing');
@@ -47,12 +49,11 @@ export default function Shop() {
     console.log(localStorage);
     alert('Your shopping cart has been updated!');
   };
-
   return ( 
     <>
-      <div className="welcome">WELCOME TO THE SHOP</div>
+      <div >WELCOME TO THE SHOP</div>
       {businessDetail.length !== 0 && (
-        <div>
+        <div className={`standard-${themeDetail[0].theme}`}>
           <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
           <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
           <div className="shop-owner">Business PWNer: {businessInfo[0].business_owner}</div>

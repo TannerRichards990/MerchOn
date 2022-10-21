@@ -32,3 +32,13 @@
 .shop-map {
   color: aliceblue;
 }
+
+.standard-default {
+  font-size: 3em;
+}
+
+.standard-ocean {
+  background-color: black;
+  width: 40vw;
+  height: 40vh;
+}
