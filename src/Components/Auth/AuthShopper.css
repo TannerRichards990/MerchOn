@@ -1,7 +1,28 @@
 .auth-container {
-    font-family: 'Noto Sans Vai', sans-serif;
-    color: #078FCD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    background: rgb(0,6,4);
+    background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+}
+
+.shopper-inputs {
+    font-family: 'Noto Sans Vai', sans-serif;
+    font-size: 1.4rem;
+    color: #2a807d;
+    text-shadow: 2px 2px 2px black;
+    width: 40vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/woodboard.png);
+    border: 5px solid #ffbd59;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
 }

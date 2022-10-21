@@ -5,7 +5,6 @@ import BusinessCard from './BusinessCard';
 import './Storefront.css';
 import { useBusinesses } from '../../Hooks/useBusinesses';
 import { UserContext } from '../../Context/UserContext';
-import { Redirect } from 'react-router-dom';
 
 
 export default function Storefront() {

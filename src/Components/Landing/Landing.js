@@ -45,7 +45,7 @@ export default function Landing() {
             <button className='button' onClick={logInHandler}>Log-In</button>
             <button className='button' onClick={logOutHandler}>Log-Out</button>
           </nav>
-          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Everyone</h1>
+          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Everyone!</h1>
         </div>
         <div className='buttons'>
           <button className='merchant' onClick={clickMerchantHandler}>Merchant</button>

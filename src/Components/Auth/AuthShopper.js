@@ -31,7 +31,7 @@ export default function SignUpShopper() {
   return (
     <>
       <div className="auth-container">        
-        <div>
+        <div className='shopper-inputs'>
           <label htmlFor="email">
             <p>Enter User Name</p>
             <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
@@ -43,7 +43,7 @@ export default function SignUpShopper() {
           </label>
 
           <label>
-            <p>Click to Submit</p>
+            <p>Click to Submit:</p>
             <button className="submit" onClick={submitHandler}>Submit</button>
           </label>
 
