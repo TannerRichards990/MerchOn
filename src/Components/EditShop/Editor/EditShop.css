@@ -1,10 +1,29 @@
 .shop-editor {
   grid-area: editor;
-  color: hsl(172, 70%, 14%);
-  text-shadow: 1.5px 1.5px 2px hsl(172, 70%, 14%);
+  color: #ffbd59;
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
   font-size: 2rem;
   align-content: center;
   width: 100%;
   height: 100%;
-  background-image: url(../../../background.png);
+  background-image: url(../../../../src/assets/woodboard.png);
+}
+
+.shop-editor select {
+  font-size: 1.5rem;
+  color: #ffbd59;
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
+  background-image: url(../../../../src/assets/woodboard.png);
+  background-color: black;
+  
+}
+
+.shop-editor button {
+  font-size: 1.5rem;
+  color: #ffbd59;
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
+  border: 1px solid #2a807d;
+  background: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+  margin: 10px;
 }

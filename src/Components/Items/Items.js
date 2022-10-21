@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { addItem } from '../../services/fetch-utils';
+import './Items.css';
 
 const Items = () => {
   const history = useHistory();
@@ -16,7 +17,7 @@ const Items = () => {
   };
 
   return (
-    <section className="main-container">
+    <section className="items-container">
       <h3 className="title">Add More to Your Store:</h3>
 
       <form className="item-form" onSubmit={ async (e) => {
