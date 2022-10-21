@@ -5,6 +5,7 @@ import BusinessCard from './BusinessCard';
 import { useBusinesses } from '../../Hooks/useBusinesses';
 import { UserContext } from '../../Context/UserContext';
 import './Storefront.css';
+// import Navbar from '../Navbar/Navbar';
 
 export default function Storefront() {
   const history = useHistory();
@@ -30,6 +31,7 @@ export default function Storefront() {
   return (
     <>
       <main className="storefront-main">
+        
         <h1 className="storefront-title">Welcome to MerchOn</h1>
 
         <div className='storefront-search'>

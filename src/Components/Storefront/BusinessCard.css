@@ -3,11 +3,12 @@
 /* font-family: 'Cormorant Garamond', serif; */
 
 .b-card {
-  border: 1px solid aliceblue;
-  background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+  border: 1px solid #2a807d;
+  background: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
   justify-content: center;
-  height: 300px;
-  margin: 10px;
+  height: 400px;
+  margin: 30px;
   padding: 20px 15px 15px 20px;
   width: 400px;
   box-shadow: 2px 2px 3px 0px #078FCD;
@@ -17,17 +18,24 @@
 
 .bc-title {
   font-size: 3em;
-  color:aliceblue;
+  color : #ffbd59;
+  margin: 10px;
 }
 
 .bc-id {
   font-size: 3em;
-  color:aliceblue;
+  margin: 10px;
+  color:#ffbd59;
+}
+
+.business_image_el {
+  margin: 10px;
 }
 
 .bc-description {
   font-size: 2em;
-  color: aliceblue;
+  color: #ffbd59;
+  margin: 10px;
 }
 
 .business-logo {
@@ -38,13 +46,15 @@
 .bc-store {
   width: 500px;
   height: 50px;
-  color: #fff;
+  color: #ffbd59;
   background: #111;
   position: relative;
   cursor: pointer;
   z-index: 0;
   border-radius: 10px;
   text-decoration: none;
+  margin: 10px;
+  position: relative;
 }
 
 .bc-store:before {

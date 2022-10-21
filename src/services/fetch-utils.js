@@ -78,3 +78,11 @@ export async function getBusinessTheme(id) {
   const response = await client.from('merchon').select('theme').eq('id', id);
   return checkError(response);
 }
+// fetch shop item image from supabase bucket
+
+export async function fetchShopImage(shop_item_image_name) {
+  const response = await client.storage.from('merchon-buckets').getPublicUrl(`shop_item_images/${encodeURIComponent(shop_item_image_name)}`);
+  return checkError(response);
+}
+
+

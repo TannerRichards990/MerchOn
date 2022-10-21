@@ -3,11 +3,13 @@
 /* font-family: 'Cormorant Garamond', serif; */
 
 .navbar {
-  background-image: url(../../background.png);
-  height: 80px;
+  background-image: url(../../../src/assets/woodboard.png);
+  height: 10vh;
+  width: 100vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  /* z-index: .1; */
 }
 
 .menu-bars {
@@ -18,9 +20,9 @@
 }
 
 .nav-menu {
-  background: url(../../background.png);
-  width: 250px;
-  height: 100vh;
+  background: url(../../../src/assets/woodboard.png);
+  width: 350px;
+  height: 40vh;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -53,7 +55,7 @@
   -webkit-box-shadow: 2px 2px 4px 0px #2a807d;
   border-radius: 15px;
   font-size: 1.5rem;
-  width: 95%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -66,7 +68,7 @@
 }
 
 .nav-menu-items {
-  width: 100%;
+  width: 100vw;
 }
 
 .navbar-toggle {
