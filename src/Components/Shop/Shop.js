@@ -76,7 +76,7 @@ export default function Shop() {
                 <>              
                   <div key={item.item_name} {...item}>
                     <div> item name: {item.item_name}</div>
-                    <div> item price: {item.item_price}</div>
+                    <div> item price: ${item.item_price}</div>
                   </div>
                   <button onClick={() => (addToCart(item))}>Add items to shopping cart</button>
                 </>

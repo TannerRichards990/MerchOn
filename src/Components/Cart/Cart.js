@@ -82,7 +82,7 @@ export default function Cart() {
                   <li>
                     item name: {item[0]}
                     <h1>
-                    item price: {item[1]}
+                    item price: ${item[1]}
                     </h1>
                   </li>
                   <button onClick={() => (clearItem(item))}>Remove Item</button>
