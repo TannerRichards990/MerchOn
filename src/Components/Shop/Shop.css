@@ -87,3 +87,56 @@
   -webkit-box-shadow: 2px 2px 4px 0px #078FCD;
   border-radius: 15px;
 }
+
+.standard-default {
+  font-size: 1.5rem;
+  background-image: url(../../assets/default-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #0B3E37;
+  text-shadow: 1.5px 1.5px 2px rgba(150, 150, 150, 1);
+  }
+
+.standard-ocean {
+  background-image: url()../../assets/ocean-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.standard-light {
+  background-image: url(../../assets/light-theme.png);
+  background-size: cover;
+  color: rgb(18, 229, 180);
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.standard-glitch {
+  background-image: url(../../assets/glitch-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffbd59;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.standard-space {
+  background-image: url(../../assets/space-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+.standard-abstract {
+  background-image: url(../../assets/abstract-theme.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
