@@ -70,13 +70,13 @@ export default function SignUpMerchant() {
     <div className="input-container">
       <div className="inputs">
         <label htmlFor="email">
-          <p>Enter Email Address</p>
+          <p>Enter Email</p>
           <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />
         </label>
 
         <label htmlFor="password" value={ password }>
           <p>Enter Password</p>
-          <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
+          <input placeholder="6 Characters Min." type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
         </label>
 
         <label htmlFor="shopName" value={shopName}>
