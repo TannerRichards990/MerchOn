@@ -15,7 +15,6 @@
   align-items: center;
 }
 
-
 .shop-title {
   font-size: 3em;
   color: #ffbd59;
@@ -31,6 +30,7 @@
   font-size: 2em;
   color: #ffbd59;
   margin: 30px;
+
 }
 
 .shop-owner {
@@ -49,9 +49,8 @@
   font-size: 1.5rem;
   background: rgb(0,6,4);
   background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
-
-
 }
+
 .shop-item-el {
   border: 1px solid black;
   width: 200px;
@@ -62,7 +61,6 @@
   font-size: 2rem;
   display: flex;
   flex-direction: column;
-  
 }
 
 .shop-map button {

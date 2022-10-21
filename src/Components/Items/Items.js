@@ -72,7 +72,7 @@ const Items = () => {
 
         <div className="add-item-button">
           <p>Add the item to your store</p>
-          <button onClick={handleSubmit}>Add</button>
+          <button onClick={() => (handleSubmit)}>Add</button>
         </div>
       </form>
     </section>
