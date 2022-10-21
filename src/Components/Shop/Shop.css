@@ -99,7 +99,7 @@
   }
 
 .standard-ocean {
-  background-image: url()../../assets/ocean-theme.png);
+  background-image: url(../../assets/ocean-theme.png);
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
