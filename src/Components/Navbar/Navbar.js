@@ -42,47 +42,46 @@ function Navbar() {
         <Link to='#' className='menu-bars'>
           <MenuIcon onClick={showSidebar} />
         </Link>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+          <ul className='nav-menu-items' onClick={showSidebar}>
+            <li className='navbar-toggle'>
+              <Link to='#' className='menu-bars'>
+                <CloseIcon />
+              </Link>
+            </li>
+            <li className='nav-text'>
+              <Link to='/'>
+                <StoreIcon />
+                <span>Storefront</span>
+              </Link>
+            </li>
+            <li className='nav-text'>
+              <Link to={`/Editor/${supaUser.id}`}>
+                <AccountCircleIcon />
+                <span>My Shop</span>
+              </Link>
+            </li>
+            <li className='nav-text'>
+              <Link to='/About'>
+                <Groups2Icon />
+                <span>About</span>
+              </Link>
+            </li>
+            <li className='nav-text'>
+              <Link to='/Cart'>
+                <Groups2Icon />
+                <span>Shopping Cart</span>
+              </Link>
+            </li>
+            <li className='nav-text'>
+              <Link to='/Landing' onClick={() => clickHandler()}>
+                <LogoutIcon />
+                <span>SignOut</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-        <ul className='nav-menu-items' onClick={showSidebar}>
-          <li className='navbar-toggle'>
-            <Link to='#' className='menu-bars'>
-              <CloseIcon />
-            </Link>
-            
-          </li>
-          <li className='nav-text'>
-            <Link to='/'>
-              <StoreIcon />
-              <span>Storefront</span>
-            </Link>
-          </li>
-          <li className='nav-text'>
-            <Link to={`/Editor/${supaUser.id}`}>
-              <AccountCircleIcon />
-              <span>My Shop</span>
-            </Link>
-          </li>
-          <li className='nav-text'>
-            <Link to='/About'>
-              <Groups2Icon />
-              <span>About</span>
-            </Link>
-          </li>
-          <li className='nav-text'>
-            <Link to='/Cart'>
-              <Groups2Icon />
-              <span>Shopping Cart</span>
-            </Link>
-          </li>
-          <li className='nav-text'>
-            <Link to='/Landing' onClick={() => clickHandler()}>
-              <LogoutIcon />
-              <span>SignOut</span>
-            </Link>
-          </li>
-        </ul>
-      </nav>
     </>
   );
 }

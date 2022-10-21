@@ -57,7 +57,10 @@ export default function Shop() {
     <>
       <div className="welcome">WELCOME TO THE SHOP</div>
       {businessDetail.length !== 0 && (
-        <div>
+
+
+
+        <div className='shop-container'>
           <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
           <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
           <div className="shop-owner">Business PWNer: {businessInfo[0].business_owner}</div>
@@ -83,9 +86,7 @@ export default function Shop() {
             ))}
           </div>
           <div>{id}</div>
-          {/* <div>
-            <button onClick={clickHandler}>Add items to shop</button>
-          </div> */}
+          < preview />
         </div>
       )}
     </>

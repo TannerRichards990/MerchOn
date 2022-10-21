@@ -69,3 +69,12 @@ export async function grabID(email) {
   const resp = await client.from('merchon').select('*').match({ email }).single();
   return checkError(resp);
 }
+
+// fetch shop item image from supabase bucket
+
+export async function fetchShopImage(shop_item_image_name) {
+  const response = await client.storage.from('merchon-buckets').getPublicUrl(`shop_item_images/${encodeURIComponent(shop_item_image_name)}`);
+  return checkError(response);
+}
+
+

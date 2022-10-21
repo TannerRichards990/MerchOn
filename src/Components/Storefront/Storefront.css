@@ -1,32 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap%27');
 
 /* font-family: 'Cormorant Garamond', serif; */
 
 .storefront-main {
-  background-image: url(../../background.png);
   background-size: cover;
   background-repeat: no-repeat;
-  color: aliceblue;
+  background-image: url(../../background.png);
   height: 100vh;
   width: 100vw;
   overflow: scroll;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .storefront-map {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-top: 0 auto;
+  padding: 20px;
+
 }
 
 .storefront-title {
-  color: aliceblue;
+  color: #ffbd59;
   font-size: 60px;
   position: relative;
   bottom: 25px;
 }
 
 .storefront-search {
-  position: relative;
-  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  color:#ffbd59;
+  font-size: 1.5rem;
+
 }

@@ -48,7 +48,7 @@ export default function Landing() {
           <button className='shopper' onClick={clickShopperHandler}>Shopper</button>
         </div>
       </div>
-      {/* <ReactPlayer className='music' url={'https://soundcloud.com/bassti_music/pure-imagination?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'} volume={0.1} playing={true} /> */}
+      <ReactPlayer className='music' url={'https://soundcloud.com/bassti_music/pure-imagination?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'} volume={0.1} playing={true} />
     </div>
   );
 }

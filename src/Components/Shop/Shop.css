@@ -2,27 +2,44 @@
 
 /* font-family: 'Cormorant Garamond', serif; */
 
+.shop-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../background.png);
+  color: #ffbd59;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* z-index: .1; */
+}
+
 .shop-title {
   font-size: 3em;
-  color: #2A807D;
+  color: #ffbd59;
 }
 
 .shop-id {
-  font-size: 3em;
-  color: #2A807D;
+  font-size: 1.5rem;
+  color: #ffbd59;
 }
 
 .shop-description {
   font-size: 2em;
-  color: #2A807D;
+  color: #ffbd59;
 }
 
 .shop-owner {
-  color: aliceblue;
+  color: #ffbd59;
+  font-size: 1.5rem;
 }
 
 .shop-search {
-  color: aliceblue;
+  color: #ffbd59;
+  font-size: 1.5rem;
 }
 .shop-item-el {
   border: 1px solid black;
@@ -31,4 +48,10 @@
 
 .shop-map {
   color: aliceblue;
+}
+
+.welcome {
+  color: #2A807D;
+  font-size: 3rem;
+  background-image: url(../../../src/assets/woodboard.png);
 }
