@@ -45,7 +45,7 @@ export default function Shop() {
     cart.push(cartItem);
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(localStorage);
-    // alert('Your shopping cart has been updated!');
+    alert('Your shopping cart has been updated!');
   };
 
   const clearCart = () => {
