@@ -73,6 +73,7 @@ export default function EditShop({
         //eslint-disable-next-line no-console
       console.error(e.message);
     }
+    history.push(`/Storefront`);
   };
 
 
