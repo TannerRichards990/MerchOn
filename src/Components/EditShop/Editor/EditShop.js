@@ -59,7 +59,7 @@ export default function EditShop({
     businessInfoTwo.push(business_info_new);
   } 
   const handleItemButton = () => {
-    history.push('/Items/:id');
+    history.push(`/Items/${id}`);
   };
 
   const handleClick = async () => {
