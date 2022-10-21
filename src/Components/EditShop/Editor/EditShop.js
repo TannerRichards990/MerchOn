@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { useBusiness } from '../../../Hooks/useBusiness';
 import { useBusinessImage } from '../../../Hooks/useBusinessImage';
 import { changeMerchantRow, getBusinessDetail } from '../../../services/fetch-utils';
@@ -18,6 +18,7 @@ export default function EditShop({
   addItem,
   setAddItem
 }) {
+  let history = useHistory();
   let businessInfo = [];
   let businessInfoTwo = [];
   let businessInfoThree = [];
@@ -35,17 +36,6 @@ export default function EditShop({
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
-  // console.log(businessInfo);
-
-  // if (businessInfo.length !== 0) {
-  //   console.log(businessInfo[0].business_location);
-  //   let y = JSON.parse(businessInfo[0].business_location);
-  //   businessInfoTwo.push(y);
-  // }
-  // if (businessInfoTwo.length !== 0) {
-  //   console.log('businessInfoTwo: ', businessInfoTwo[0].business_location.business_street);
-  // }
-  
   
   if (businessDetail.length !== 0) {
     // console.log(businessInfo[0].business_info);
@@ -63,9 +53,11 @@ export default function EditShop({
       }
     };
     businessInfoTwo.push(business_info_new);
-    // console.log(business_info_new);
   } 
-  // console.log(businessInfoThree);
+  const handleItemButton = () => {
+    history.push('/Items/:id');
+  };
+
   const handleClick = async () => {
     try {
       await changeMerchantRow(id, businessInfoTwo[0]); 
@@ -114,7 +106,7 @@ export default function EditShop({
       <br>
       </br>
       <div className='shop-form-control'>
-        <button onClick={() => setAddItem([...addItem, { itemName: '', itemPrice: '', itemDescription: '', itemImage: '' }])}>
+        <button onClick={handleItemButton}>
         Add Item</button>
       </div>
       <div>
