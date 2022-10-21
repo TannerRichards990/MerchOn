@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useUser } from '../../Hooks/useUser';
 import './Navbar.css';
 import { UserContext } from '../../Context/UserContext';
@@ -20,19 +20,19 @@ function Navbar() {
   }
 
   const [sidebar, setSidebar] = useState(false);
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const showSidebar = () => setSidebar(!sidebar);
-  const { id } = useParams();
+  // const { id } = useParams();
   const temp = user.email;
   // console.log('user email', temp);
 
   const clickHandler = async () => {
-    console.log('we out here clickin!');
+    // console.log('we out here clickin!');
     await signOut();
     setUser(null);
   };
 
-  const { supaUser, setSupaUser, loading, setLoading, error, setError } = useUser(temp);
+  const { supaUser } = useUser(temp);
   // console.log(email);
   // console.log(supaUser.id);
 
