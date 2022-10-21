@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../../Context/UserContext';
 import { authUser } from '../../services/auth';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './AuthLogIn.css';
 
 export default function AuthLogIn() {

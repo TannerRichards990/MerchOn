@@ -5,13 +5,13 @@ import { useContext } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import './Landing.css';
 
-import { Email } from '@mui/icons-material';
-import { useState } from 'react';
-import { authUser, signOut } from '../../services/auth';
+// import { Email } from '@mui/icons-material';
+// import { useState } from 'react';
+// import { authUser, signOut } from '../../services/auth';
 
 export default function Landing() {
-  const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
+  // const [userEmail, setUserEmail] = useState('');
+  // const [userPassword, setUserPassword] = useState('');
   let history = useHistory();  
 
   const { user } = useContext(UserContext);

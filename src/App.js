@@ -9,9 +9,9 @@ import About from './Components/About/About';
 import Cart from './Components/Cart/Cart';
 import Items from './Components/Items/Items';
 import Shop from './Components/Shop/Shop';
-import EditShop from './Components/EditShop/Editor/EditShop';
+// import EditShop from './Components/EditShop/Editor/EditShop';
 import EditPage from './Components/EditShop/EditPage/EditPage';
-import Preview from './Components/EditShop/Preview/Preview';
+// import Preview from './Components/EditShop/Preview/Preview';
 import Venmo from './Components/Venmo/Venmo';
 import AuthLogIn from './Components/Auth/AuthLogIn';
 

@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
-import { authUserSignUp, signOut } from '../../services/auth';
+import { authUserSignUp } from '../../services/auth';
 import { createMerchantRow, uploadImage } from '../../services/fetch-utils';
 import './AuthMerchant.css';
 

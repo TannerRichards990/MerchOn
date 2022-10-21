@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../Context/UserContext';
+import { useEffect, useState } from 'react';
+// import { UserContext } from '../Context/UserContext';
 import { grabID } from '../services/fetch-utils';
 
 export function useUser(email) {
   const [supaUser, setSupaUser] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-  const { user } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
-import { signOut } from '../../services/auth';
+import { Redirect } from 'react-router-dom';
+// import { signOut } from '../../services/auth';
 import BusinessCard from './BusinessCard';
 import { useBusinesses } from '../../Hooks/useBusinesses';
 import { UserContext } from '../../Context/UserContext';
@@ -8,9 +8,9 @@ import './Storefront.css';
 // import Navbar from '../Navbar/Navbar';
 
 export default function Storefront() {
-  const history = useHistory();
+  // const history = useHistory();
   // const { location, setLocation } = useState('');
-  const { businesses, setBusinesses, error, loading } = useBusinesses(); 
+  const { businesses, error, loading } = useBusinesses(); 
   const { user } = useContext(UserContext);
   const [search, setSearch] = useState('');
 
@@ -26,7 +26,7 @@ export default function Storefront() {
   if (!user) {
     return <Redirect to='/Landing/' />;
   }
-  console.log(user);
+  // console.log(user);
   
   return (
     <>

@@ -1,11 +1,11 @@
-import { LocalTaxi } from '@mui/icons-material';
+// import { LocalTaxi } from '@mui/icons-material';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
-  let temp = [];
+  // let temp = [];
   let totalSum = 0;
   let totalSumString = '';
   let shoppingCart = JSON.parse(localStorage.getItem('cart'));

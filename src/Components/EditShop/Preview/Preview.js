@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useBusinessImage } from '../../../Hooks/useBusinessImage';
 import './Preview.css';
 
-export default function Preview({ shopName, aboutShop, shopImage, shopTheme, addItem }) {
+export default function Preview({ shopName, aboutShop, shopTheme, addItem }) {
   const { id } = useParams();
   const { imageData } = useBusinessImage(id);
   

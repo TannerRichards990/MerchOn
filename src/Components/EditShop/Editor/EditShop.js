@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useBusiness } from '../../../Hooks/useBusiness';
-import { useBusinessImage } from '../../../Hooks/useBusinessImage';
-import { changeMerchantRow, getBusinessDetail, updateBusinessImageName, updateBusinessTheme, uploadImage } from '../../../services/fetch-utils';
+// import { useBusinessImage } from '../../../Hooks/useBusinessImage';
+import { changeMerchantRow, updateBusinessImageName, updateBusinessTheme, uploadImage } from '../../../services/fetch-utils';
 import './EditShop.css';
 
 export default function EditShop({
@@ -17,17 +17,17 @@ export default function EditShop({
   // setShopImage,
   shopTheme,
   setShopTheme,
-  addItem,
-  setAddItem
+  // addItem,
+  // setAddItem
 }) {
 
   let history = useHistory();
   let businessInfo = [];
   let businessInfoTwo = [];
-  let businessInfoThree = [];
+  // let businessInfoThree = [];
 
   const { id } = useParams();
-  const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
+  const { businessDetail } = useBusiness(id);
   const [shopImage, setShopImage] = useState();
   // console.log(businessDetail.business_info);
   
