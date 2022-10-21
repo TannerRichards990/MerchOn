@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { useBusiness } from '../../../Hooks/useBusiness';
 import { useBusinessImage } from '../../../Hooks/useBusinessImage';
-import { changeMerchantRow, getBusinessDetail, updateBusinessImageName, uploadImage } from '../../../services/fetch-utils';
+import { changeMerchantRow, getBusinessDetail, updateBusinessImageName, updateBusinessTheme, uploadImage } from '../../../services/fetch-utils';
 import './EditShop.css';
 
 export default function EditShop({
@@ -67,6 +67,7 @@ export default function EditShop({
     try {
       await changeMerchantRow(id, businessInfoTwo[0]); 
       await updateBusinessImageName(id, shopImage.name);
+      await updateBusinessTheme(id, shopTheme);
       await uploadImage(shopImage);
     } catch (e) {
         //eslint-disable-next-line no-console
