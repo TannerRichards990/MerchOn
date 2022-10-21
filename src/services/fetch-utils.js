@@ -35,8 +35,8 @@ export async function uploadImage(shopImage) {
   return checkError(response);
 }
 
-export async function updateBusinessImageName(business_image_name, id) {
-  const response = await client.from('merchon').select('*').match({ id }).update(business_image_name).single();
+export async function updateBusinessImageName(id, business_image_name) {
+  const response = await client.from('merchon').update({ business_image_name }).eq('id', id).single();
   return checkError(response);
 }
 
