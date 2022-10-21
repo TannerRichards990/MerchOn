@@ -25,7 +25,7 @@ function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
   const { id } = useParams();
   const temp = user.email;
-  console.log('user email', temp);
+  // console.log('user email', temp);
 
   const clickHandler = async () => {
     console.log('we out here clickin!');

@@ -8,7 +8,7 @@ export default function BusinessCard(business) {
   let x = JSON.parse(business.business_info);
   businessInfo.push(x);
   const { imageData } = useBusinessImage(business.id);
-
+  console.log(imageData);
   return (
     <div className="b-card">
 
