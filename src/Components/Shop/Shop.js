@@ -48,11 +48,6 @@ export default function Shop() {
     alert('Your shopping cart has been updated!');
   };
 
-  const clearCart = () => {
-    localStorage.clear();
-    console.log(localStorage);
-  };
-
   return ( 
     <>
       <div className="welcome">WELCOME TO THE SHOP</div>
