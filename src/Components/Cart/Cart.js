@@ -5,6 +5,7 @@ import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
+  let temp = [];
   let totalSum = 0;
   let totalSumString = '';
   let shoppingCart = JSON.parse(localStorage.getItem('cart'));
@@ -17,11 +18,13 @@ export default function Cart() {
     );
   }
 
+
   const clearCart = () => {
     localStorage.removeItem('cart');
-    console.log('cart');
     history.push('/Cart');
   };
+
+
 
   const checkOut = () => {
     history.push('/Venmo');
@@ -40,6 +43,16 @@ export default function Cart() {
       </>
     );}
 
+  const clearItem = (remove) => {
+    let temp = [];
+    shoppingCart.map((keep) => {
+      if (keep !== remove)
+        temp.push(keep);
+      localStorage.setItem('cart', JSON.stringify(temp));
+      location.reload();
+    }
+    );
+  };
 
   function totalMoney() {
     let moneyArr = [];
@@ -70,6 +83,7 @@ export default function Cart() {
                     This should show the item price: {item[1]}
                     </h1>
                   </li>
+                  <button onClick={() => (clearItem(item))}>Remove Item</button>
                 </div>
               ))}
             </div>
