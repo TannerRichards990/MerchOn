@@ -22,7 +22,7 @@ export default function Venmo() {
   return (
     <>    
       <div>Please send your payment of ${totalSumString} to:</div>
-      <img src={process.env.PUBLIC_URL + `connor_venmo.png`}/>
+      <img className='connor-venmo' src={process.env.PUBLIC_URL + `connor_venmo.png`}/>
     </>
   );
 }

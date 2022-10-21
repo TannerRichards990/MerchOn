@@ -4,6 +4,16 @@ import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
+  
+  if (!shoppingCart) {
+    return (
+      <>
+        <div>Your shopping cart is empty</div>
+      </>
+    );
+  }
+
+
   let totalSum = 0;
   let totalSumString = '';
   let shoppingCart = JSON.parse(localStorage.getItem('cart'));
@@ -21,6 +31,14 @@ export default function Cart() {
         <div>Your shopping cart is empty</div>
       </>
     );}
+
+  if (!shoppingCart) {
+    return (
+      <>
+        <div>Your shopping cart is empty</div>
+      </>
+    );}
+
 
   function totalMoney() {
     let moneyArr = [];

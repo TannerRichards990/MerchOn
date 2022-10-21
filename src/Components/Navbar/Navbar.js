@@ -3,7 +3,6 @@ import React, { useState, useContext } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import { NavbarData } from './NavbarData';
 import { useUser } from '../../Hooks/useUser';
 import './Navbar.css';
 import { UserContext } from '../../Context/UserContext';
@@ -14,7 +13,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { signOut } from '../../services/auth';
 
 function Navbar() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const history = useHistory();
   if (!user) {
     history.push('/Landing');
@@ -25,10 +24,12 @@ function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
   const { id } = useParams();
   const temp = user.email;
-  console.log('user email', temp);
+  // console.log('user email', temp);
 
   const clickHandler = async () => {
+    console.log('we out here clickin!');
     await signOut();
+    setUser(null);
   };
 
   const { supaUser, setSupaUser, loading, setLoading, error, setError } = useUser(temp);
@@ -58,7 +59,7 @@ function Navbar() {
           </li>
           <li className='nav-text'>
             <Link to={`/Editor/${supaUser.id}`}>
-              <StoreIcon />
+              <AccountCircleIcon />
               <span>My Shop</span>
             </Link>
           </li>
@@ -75,7 +76,7 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-text'>
-            <Link to='/Landing' onClick={clickHandler}>
+            <Link to='/Landing' onClick={() => clickHandler()}>
               <LogoutIcon />
               <span>SignOut</span>
             </Link>

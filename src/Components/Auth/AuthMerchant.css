@@ -1,12 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Vai&display=swap');
 
 .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    background: rgb(0,6,4);
+    background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
 }
 
-.inputs {
+div.inputs {
     font-family: 'Noto Sans Vai', sans-serif;
+    font-size: 1.4rem;
     color: #2a807d;
+    text-shadow: 2px 2px 2px black;
+    width: 40vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/woodboard.png);
+    border: 5px solid #ffbd59;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+    
+}
+
+.merch-image {
+    height: 200px;
+    width: 200px;
+}
+
+.submit {
+    height: 5vh;
+    width: 5vw;
+    margin-top: 15px;
+    color: #2a807d;
+    background-color: black;
+    border: 2px solid #ffbd59;
+    font-size: 1.2rem; 
 }

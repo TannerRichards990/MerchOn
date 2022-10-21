@@ -80,7 +80,7 @@ export default function SignUpMerchant() {
         </label>
 
         <label htmlFor="shopName" value={shopName}>
-          <p>Shop Name</p>
+          <p>Shop Name:</p>
           <input type="text" value={shopName} onChange={(e) => setShopName(e.target.value)}/>
         </label>
 
@@ -88,39 +88,41 @@ export default function SignUpMerchant() {
           <p>Enter Shop Description</p>
           <textarea type="textarea" value={aboutShop} onChange={(e) => setAboutShop(e.target.value)} />
         </label>
+        
         <label htmlFor="businessStreet">
-          <p>Street Address</p>
+          <p>Street Address:</p>
           <input type="text" value={businessStreet} onChange={(e) => setBusinessStreet(e.target.value)} />
         </label>
 
         <label htmlFor="businessCity">
-          <p>City</p>
+          <p>City:</p>
           <input type="text" value={businessCity} onChange={(e) => setBusinessCity(e.target.value)} />
         </label>
 
         <label htmlFor="businessState">
-          <p>State</p>
+          <p>State:</p>
           <input type="text" value={businessState} onChange={(e) => setBusinessState(e.target.value)} />
         </label>
 
         <label htmlFor="businessZip">
-          <p>Zip Code</p>
+          <p>Zip Code:</p>
           <input type="text" value={businessZip} onChange={(e) => setBusinessZip(e.target.value)} />
         </label>
 
         <label htmlFor="business-img-input">
-          <p>Upload an Image for your business</p>
+          <p>Upload an Image for your business:</p>
           <input accept="image/*" type="file" id="business-img-input" onChange={imageChange}/>
         </label>
         
         <div className="submit-button">
-          <button className="submit" onClick={submitHandler}>Submit</button>
           {shopImage && (
             <div>
-              <img src={URL.createObjectURL(shopImage)}/>
+              <img className='merch-img' src={URL.createObjectURL(shopImage)}/>
             </div>
           )}
+          <button className="submit" onClick={submitHandler}>Submit</button>
         </div>
       </div>
     </div>
-  );}
+  );
+}

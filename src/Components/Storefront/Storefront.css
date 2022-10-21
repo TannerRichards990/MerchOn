@@ -4,6 +4,7 @@
 
 .storefront-main {
   background-image: url(../../background.png);
+  background-size: cover;
   background-repeat: no-repeat;
   color: aliceblue;
   height: 100vh;

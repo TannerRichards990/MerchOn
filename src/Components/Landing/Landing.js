@@ -7,7 +7,7 @@ import './Landing.css';
 
 import { Email } from '@mui/icons-material';
 import { useState } from 'react';
-import { authUser } from '../../services/auth';
+import { authUser, signOut } from '../../services/auth';
 
 export default function Landing() {
   const [userEmail, setUserEmail] = useState('');
@@ -21,15 +21,14 @@ export default function Landing() {
   }
   
   const clickMerchantHandler = () => {
+    console.log('clicked merchant handler!');
     history.push('/AuthMerchant');
   };
   const clickShopperHandler = () => {
+    console.log('clicked shopper handler!');
     history.push('/AuthShopper/');
   };
   const logInHandler = () => {
-    history.push('/AuthLogIn');
-  };
-  const logOutHandler = () => {
     history.push('/AuthLogIn');
   };
   
@@ -41,18 +40,15 @@ export default function Landing() {
         <div className='right-top'>
           <nav>
             <button className='button' onClick={logInHandler}>Log-In</button>
-            <button className='button' onClick={logOutHandler}>Log-Out</button>
           </nav>
-          <h1 className='slogan'>
-            Any Place, Anywhere, Local Based Merch For Everyone
-          </h1>
+          <h1 className='slogan'>Any Place, Anywhere, Local Based Merch, For Everyone!</h1>
         </div>
         <div className='buttons'>
           <button className='merchant' onClick={clickMerchantHandler}>Merchant</button>
           <button className='shopper' onClick={clickShopperHandler}>Shopper</button>
         </div>
       </div>
-      <ReactPlayer className='music' url={'https://soundcloud.com/bassti_music/pure-imagination?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'} volume={0.1} playing={true} />
+      {/* <ReactPlayer className='music' url={'https://soundcloud.com/bassti_music/pure-imagination?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'} volume={0.1} playing={true} /> */}
     </div>
   );
 }
