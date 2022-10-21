@@ -33,9 +33,6 @@ export default function Landing() {
   const logInHandler = () => {
     history.push('/AuthLogIn');
   };
-  const logOutHandler = async () => {
-    await signOut();
-  };
   
   return (
     <div className='main-container'>
@@ -45,7 +42,6 @@ export default function Landing() {
         <div className='right-top'>
           <nav>
             <button className='button' onClick={logInHandler}>Log-In</button>
-            <button className='button' onClick={logOutHandler}>Log-Out</button>
           </nav>
           <h1 className='slogan'>
             Any Place
