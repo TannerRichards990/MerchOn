@@ -24,7 +24,7 @@ export default function EditShop({
   const { id } = useParams();
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
   const [shopImage, setShopImage] = useState();
-  
+  // console.log(businessDetail.business_info);
   const imageChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       setShopImage(e.target.files[0]);
@@ -35,14 +35,16 @@ export default function EditShop({
     let x = JSON.parse(businessDetail.business_info);
     businessInfo.push(x);
   }
+  // console.log(businessInfo);
 
-  if (businessInfo.length !== 0) {
-    let x = JSON.parse(businessInfo[0].business_info);
-    businessInfoTwo.push(x);
-  }
-  if (businessInfoTwo.length !== 0) {
-    console.log('businessInfoTwo: ', businessInfoTwo[0].business_location.business_street);
-  }
+  // if (businessInfo.length !== 0) {
+  //   console.log(businessInfo[0].business_location);
+  //   let y = JSON.parse(businessInfo[0].business_location);
+  //   businessInfoTwo.push(y);
+  // }
+  // if (businessInfoTwo.length !== 0) {
+  //   console.log('businessInfoTwo: ', businessInfoTwo[0].business_location.business_street);
+  // }
   
   
   if (businessDetail.length !== 0) {
@@ -54,19 +56,19 @@ export default function EditShop({
       categories: '',
       business_about: aboutShop,
       business_location: {
-        business_street: businessInfoTwo[0].business_location.business_street,
-        business_city: businessInfoTwo[0].business_location.business_city,
-        business_state: businessInfoTwo[0].business_location.business_state,
-        business_zip: businessInfoTwo[0].business_location.business_zip
+        business_street: businessInfo[0].business_location.business_street,
+        business_city: businessInfo[0].business_location.business_city,
+        business_state: businessInfo[0].business_location.business_state,
+        business_zip: businessInfo[0].business_location.business_zip
       }
     };
-    businessInfoThree.push(business_info_new);
+    businessInfoTwo.push(business_info_new);
     // console.log(business_info_new);
   } 
   // console.log(businessInfoThree);
   const handleClick = async () => {
     try {
-      await changeMerchantRow(id, businessInfoThree); 
+      await changeMerchantRow(id, businessInfoTwo[0]); 
     } catch (e) {
         //eslint-disable-next-line no-console
       console.error(e.message);
