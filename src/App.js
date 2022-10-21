@@ -38,10 +38,6 @@ function App() {
         <Route path="/AuthMerchant/">
           <SignUpMerchant />
         </Route>
-
-        <Route path="/Landing/">
-          <Landing />
-        </Route>
         
         <Route path="/AuthShopper/">
           <SignUpShopper />

@@ -14,7 +14,7 @@ import { signOut } from '../../services/auth';
 
 
 function Navbar() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const history = useHistory();
   if (!user) {
     history.push('/Landing');
@@ -28,7 +28,9 @@ function Navbar() {
   console.log('user email', temp);
 
   const clickHandler = async () => {
+    console.log('we out here clickin!');
     await signOut();
+    setUser(null);
   };
 
   const { supaUser, setSupaUser, loading, setLoading, error, setError } = useUser(temp);
@@ -75,7 +77,7 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-text'>
-            <Link to='/Landing' onClick={clickHandler}>
+            <Link to='/Landing' onClick={() => clickHandler()}>
               <LogoutIcon />
               <span>SignOut</span>
             </Link>
