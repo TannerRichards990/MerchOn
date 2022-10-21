@@ -25,7 +25,7 @@ function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
   const { id } = useParams();
   const temp = user.email;
-  console.log('user email', temp);
+  // console.log('user email', temp);
 
   const clickHandler = async () => {
     await signOut();
@@ -88,7 +88,7 @@ function Navbar() {
           </li>
 
         </ul>
-        <img src='' />
+        
       </nav>
     </>
   );

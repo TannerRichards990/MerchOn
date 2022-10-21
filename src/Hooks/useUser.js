@@ -7,8 +7,7 @@ export function useUser(email) {
   const [supaUser, setSupaUser] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-  const { user } = useContext(UserContext);
-  console.log(user);
+  // const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {

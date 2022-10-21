@@ -32,11 +32,6 @@ export default function SignUpShopper() {
     <>
       <div className="auth-container">
         <div>
-
-          <button onClick={signOutHandler}>Sign Out</button>
-        </div>
-        
-        <div>
           <label htmlFor="email">
             <p>Enter User Name</p>
             <input type="text" value={ email } onChange={(e) => setEmail(e.target.value)} />

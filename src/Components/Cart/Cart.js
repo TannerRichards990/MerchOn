@@ -4,6 +4,16 @@ import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
+  
+  if (!shoppingCart) {
+    return (
+      <>
+        <div>Your shopping cart is empty</div>
+      </>
+    );
+  }
+
+
   let totalSum = 0;
   let totalSumString = '';
   // console.log(localStorage);
