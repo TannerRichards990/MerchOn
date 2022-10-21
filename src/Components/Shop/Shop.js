@@ -52,7 +52,7 @@ export default function Shop() {
   return ( 
     <>
       <div >WELCOME TO THE SHOP</div>
-      {businessDetail.length !== 0 && (
+      {businessDetail.length !== 0 && themeDetail[0] && (
         <div className={`standard-${themeDetail[0].theme}`}>
           <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
           <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
