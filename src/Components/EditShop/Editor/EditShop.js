@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { useBusiness } from '../../../Hooks/useBusiness';
 import { useBusinessImage } from '../../../Hooks/useBusinessImage';
-import { changeMerchantRow, getBusinessDetail } from '../../../services/fetch-utils';
+import { changeMerchantRow, getBusinessDetail, updateBusinessImageName, uploadImage } from '../../../services/fetch-utils';
 import './EditShop.css';
 
 export default function EditShop({
@@ -30,6 +30,7 @@ export default function EditShop({
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
   const [shopImage, setShopImage] = useState();
   // console.log(businessDetail.business_info);
+  
   const imageChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       setShopImage(e.target.files[0]);
@@ -61,10 +62,12 @@ export default function EditShop({
   const handleItemButton = () => {
     history.push(`/Items/${id}`);
   };
-
+  // console.log(shopImage.name);
   const handleClick = async () => {
     try {
       await changeMerchantRow(id, businessInfoTwo[0]); 
+      await updateBusinessImageName(id, shopImage.name);
+      await uploadImage(shopImage);
     } catch (e) {
         //eslint-disable-next-line no-console
       console.error(e.message);
@@ -92,7 +95,7 @@ export default function EditShop({
       <div className='shop-form-control'>
         <label htmlFor='shopImage'>
           <p>Shop Image:</p>
-          <input name='shopImage' type='file' value={shopImage} 
+          <input accept="image/*" name='shopImage' type='file'
             onChange={imageChange} />
         </label>
       </div>
