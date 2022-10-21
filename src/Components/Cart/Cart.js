@@ -34,6 +34,14 @@ export default function Cart() {
       </>
     );}
 
+  if (!shoppingCart) {
+    return (
+      <>
+        <div>Your shopping cart is empty</div>
+      </>
+    );}
+
+
   function totalMoney() {
     let moneyArr = [];
     shoppingCart.map((item) => (

@@ -36,29 +36,19 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     text-align: center;
 }
 
-.log-in {
+/* .log-in {
     color: #078FCD;
     position: relative;
     left: 325px;
     font-size: 20px;
     font-family: 'Noto Sans Vai', sans-serif;
-}
+} */
 
-.slogan {
-    color: white;
-    font-size: 40px;
-    position: relative;
-    top: 65px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Noto Sans Vai', sans-serif;
-}
+
 
 .buttons {
     display: grid;
     grid-template-columns: 50% 50%;
-    
-    
     
 }
 
@@ -70,7 +60,8 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     color: white;
     background-color: black;
     font-size: 3rem;
-    border: 2px solid #ffbd59;
+    border: 2px solid #2a807d;
+    cursor: pointer;
 }
 
 .shopper {
@@ -80,8 +71,9 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     align-items: center;
     color: rgb(255, 254, 254);
     background-color: rgb(0, 0, 0);
-    border: 2px solid #2a807d;
+    border: 2px solid #ffbd59;
     font-size: 3rem;
+    cursor: pointer;
 }
 
 .music{
@@ -98,13 +90,11 @@ background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
     font-size: 1.2rem;
     
     
+    
 }
 
 .slogan {
     display: grid;
     align-items: center;
     margin-right: 10%;
-
-    
-    
 }

@@ -18,10 +18,12 @@ export default function EditShop({
   addItem,
   setAddItem
 }) {
+
   let history = useHistory();
   let businessInfo = [];
   let businessInfoTwo = [];
   let businessInfoThree = [];
+
   const { id } = useParams();
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
   const [shopImage, setShopImage] = useState();
@@ -66,6 +68,8 @@ export default function EditShop({
       console.error(e.message);
     }
   };
+
+
 
   return (
     <div className='shop-editor'>

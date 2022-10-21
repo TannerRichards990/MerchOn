@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import { NavbarData } from './NavbarData';
 import { useUser } from '../../Hooks/useUser';
 import './Navbar.css';
 import { UserContext } from '../../Context/UserContext';
@@ -60,7 +59,7 @@ function Navbar() {
           </li>
           <li className='nav-text'>
             <Link to={`/Editor/${supaUser.id}`}>
-              <StoreIcon />
+              <AccountCircleIcon />
               <span>My Shop</span>
             </Link>
           </li>
