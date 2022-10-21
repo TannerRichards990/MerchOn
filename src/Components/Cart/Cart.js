@@ -21,7 +21,7 @@ export default function Cart() {
 
   const clearCart = () => {
     localStorage.removeItem('cart');
-    history.push('/Cart');
+    location.reload();
   };
 
 
