@@ -1,5 +1,4 @@
 import React from 'react';
-import './About.css';
 import ConnorLinked from '../../assets/ConnorLinked.png';
 import ConnorGit from '../../assets/ConnorGit.png';
 import EmilyLinked from '../../assets/EmilyLinked.png';
@@ -8,6 +7,7 @@ import TannerLinked from '../../assets/TannerLinked.png';
 import TannerGit from '../../assets/TannerGit.png';
 import ThomasLinked from '../../assets/ThomasLinked.png';
 import ThomasGit from '../../assets/ThomasGit.png';
+import './About.css';
 
 export default function About() {
   return (

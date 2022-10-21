@@ -1,11 +1,8 @@
 import { useHistory } from 'react-router-dom';
-import './Landing.css';
 import { UserContext } from '../../Context/UserContext';
 import { useContext } from 'react';
 import ReactPlayer from 'react-player/lazy';
-
-
-
+import './Landing.css';
 
 import { Email } from '@mui/icons-material';
 import { useState } from 'react';
@@ -46,13 +43,7 @@ export default function Landing() {
             <button className='button' onClick={logOutHandler}>Log-Out</button>
           </nav>
           <h1 className='slogan'>
-            Any Place
-            <br />
-            Anywhere
-            <br />
-            Local Based Merch
-            <br />
-            For Everyone
+            Any Place, Anywhere, Local Based Merch For Everyone
           </h1>
         </div>
         <div className='buttons'>
@@ -64,4 +55,3 @@ export default function Landing() {
     </div>
   );
 }
-  

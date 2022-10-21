@@ -1,3 +1,5 @@
+//This page is for displaying the controls and preview side by side
+
 import React, { useState } from 'react';
 import Preview from '../Preview/Preview';
 import EditShop from '../Editor/EditShop';
@@ -9,7 +11,6 @@ export default function EditPage() {
   const [shopTheme, setShopTheme] = useState('default');
   const [shopImage, setShopImage] = useState('');
   const [addItem, setAddItem] = useState([]);
-
 
   return (
     <div className='Editor'>
@@ -28,5 +29,3 @@ export default function EditPage() {
     </div>
   );
 }
-
-//This page is for displaying the controls and preview side by side
