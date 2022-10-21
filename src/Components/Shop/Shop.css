@@ -5,7 +5,8 @@
 .shop-container {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../../../src/assets/space-theme.png);
+  background-color: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%); 
   color: #ffbd59;
   height: 100vh;
   width: 100vw;
