@@ -2,7 +2,7 @@
 
 /* font-family: 'Cormorant Garamond', serif; */
 
-.main-container {
+.about-container {
     height: 100vh;
     width: 100vw;
 }
@@ -14,7 +14,7 @@
     height: 10%;
     width: 100vw;
     position: relative;
-    bottom: 60px;
+    bottom: 90px;
 }
 
 .about-text {
@@ -22,7 +22,7 @@
     height: 10%;
     width: 100vw;
     position: relative;
-    bottom: 30px;
+    bottom: 6em;
 }
 
 .creators {
@@ -31,23 +31,29 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 80%;
     width: 100vw;
+    position: relative;
+    bottom: 2.5em;
+    right: 1em;
 }
 
-img {
+.tan-img, .con-img, .em-img, .tom-img {
+    width: 250px;
+}
+
+.qr {
     width: 100px;
+    margin: 10px 20px;
 }
 
-div.tanner {
-    justify-content: center;
-    margin: auto;
-}
-
-.t-richy {
+.socials {
     display: flex;
     flex-direction: row;
 }
 
-.t-richy p {
-    margin-left: 10px;
-    padding: 10px;
+.tan-linked, .con-linked, .em-linked, .tom-linked {
+    margin-left: 9em;
+}
+
+.tan-git, .con-git, .em-git, .tom-git {
+    margin-left: 5.65em;
 }
