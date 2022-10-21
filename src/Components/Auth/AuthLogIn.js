@@ -1,23 +1,27 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../../Context/UserContext';
 import { authUser } from '../../services/auth';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import './AuthLogIn.css';
 
 export default function AuthLogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { user, setUser } = useContext(UserContext);
+  let history = useHistory();
+
+  // console.log(user);
 
   const clickHandler = async () => {
     const userResp = await authUser(email, password);
+    // console.log(userResp);
     setUser(userResp);
     setEmail('');
     setPassword('');
   };
 
   if (user) {
-    return <Redirect to="/Storefront" />;
+    history.push('/storefront/');
   }
 
   return (
