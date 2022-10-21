@@ -5,6 +5,7 @@ import { UserContext } from '../../Context/UserContext';
 import { useBusiness } from '../../Hooks/useBusiness';
 import { useBusinessImage } from '../../Hooks/useBusinessImage';
 import { useItems } from '../../Hooks/useItems';
+import { useShopImage } from '../../Hooks/useShopImage';
 import './Shop.css';
 
 export default function Shop() {
@@ -16,7 +17,8 @@ export default function Shop() {
   const history = useHistory();
   const [search, setSearch] = useState('');
   const { imageData } = useBusinessImage(id);
-
+  const { shopImageData } = useShopImage(id);
+  console.log(shopImageData);
   if (!user) {
     history.push('/landing');
   }
@@ -78,6 +80,9 @@ export default function Shop() {
             {searchItems().map((item) => (
               <>              
                 <div key={item.item_name} {...item}>
+                  <div>
+                    <img alt="item image"src={shopImageData}/>
+                  </div>
                   <div>This should show the item name: {item.item_name}</div>
                   <div>This should show the item price: {item.item_price}</div>
                 </div>
