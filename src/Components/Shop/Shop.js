@@ -45,7 +45,7 @@ export default function Shop() {
     cart.push(cartItem);
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(localStorage);
-    alert('Your shopping cart has been updated!');
+    // alert('Your shopping cart has been updated!');
   };
 
   const clearCart = () => {
@@ -76,16 +76,19 @@ export default function Shop() {
 
           <div className="shop-map">
             {searchItems().map((item) => (
-              <div key={item.item_name} {...item}>
-                <div>This should show the item name: {item.item_name}</div>
-                <div>This should show the item price: {item.item_price}</div>
-              </div>
+              <>              
+                <div key={item.item_name} {...item}>
+                  <div>This should show the item name: {item.item_name}</div>
+                  <div>This should show the item price: {item.item_price}</div>
+                </div>
+                <button onClick={() => (addToCart(item))}>Add items to shopping cart</button>
+              </>
             ))}
           </div>
           <div>{id}</div>
-          {/* <div>
-            <button onClick={clickHandler}>Add items to shop</button>
-          </div> */}
+          <div>
+
+          </div>
         </div>
       )}
     </>
