@@ -15,7 +15,7 @@ export default function BusinessCard(business) {
         <div className="bc-title">{businessInfo[0].business_name}</div>
         <div className="bc-description">{businessInfo[0].business_about}</div>
         <div className="business_image_el">
-          <img alt='business logo' src={imageData}/>
+          <img className="business-logo" alt='business-logo' src={imageData}/>
         </div>
         <Link to={`/storefront/${business.id}`} className="bc-store">CLICK TO ENTER SHOP</Link>
       </div>

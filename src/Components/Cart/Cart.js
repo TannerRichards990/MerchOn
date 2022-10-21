@@ -1,10 +1,15 @@
+import { LocalTaxi } from '@mui/icons-material';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
-  
+  let temp = [];
+  let totalSum = 0;
+  let totalSumString = '';
+  let shoppingCart = JSON.parse(localStorage.getItem('cart'));
+
   if (!shoppingCart) {
     return (
       <>
@@ -14,13 +19,12 @@ export default function Cart() {
   }
 
 
-  let totalSum = 0;
-  let totalSumString = '';
-  let shoppingCart = JSON.parse(localStorage.getItem('cart'));
-
   const clearCart = () => {
-    localStorage.clear();
+    localStorage.removeItem('cart');
+    history.push('/Cart');
   };
+
+
 
   const checkOut = () => {
     history.push('/Venmo');
@@ -39,6 +43,16 @@ export default function Cart() {
       </>
     );}
 
+  const clearItem = (remove) => {
+    let temp = [];
+    shoppingCart.map((keep) => {
+      if (keep !== remove)
+        temp.push(keep);
+      localStorage.setItem('cart', JSON.stringify(temp));
+      location.reload();
+    }
+    );
+  };
 
   function totalMoney() {
     let moneyArr = [];
@@ -69,14 +83,14 @@ export default function Cart() {
                     This should show the item price: {item[1]}
                     </h1>
                   </li>
+                  <button onClick={() => (clearItem(item))}>Remove Item</button>
                 </div>
               ))}
             </div>
-            <button onClick={clearCart}>Clear Cart</button>
-            <button onClick={totalMoney}>find sum</button>
             <div className='subtotal'>
                   Subtotal: ${totalSumString}
             </div>
+            <button onClick={clearCart}>Clear Cart</button>
             <button onClick={checkOut}>Checkout</button>
           </div>
         )}

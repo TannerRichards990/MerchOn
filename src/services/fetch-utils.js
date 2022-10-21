@@ -35,8 +35,8 @@ export async function uploadImage(shopImage) {
   return checkError(response);
 }
 
-export async function updateBusinessImageName(business_image_name, id) {
-  const response = await client.from('merchon').select('*').match({ id }).update(business_image_name).single();
+export async function updateBusinessImageName(id, business_image_name) {
+  const response = await client.from('merchon').update({ business_image_name }).eq('id', id).single();
   return checkError(response);
 }
 
@@ -70,6 +70,14 @@ export async function grabID(email) {
   return checkError(resp);
 }
 
+export async function updateBusinessTheme(id, theme) {
+  const response = await client.from('merchon').update({ theme }).match({ id }).select('theme').single();
+  return checkError(response);
+}
+export async function getBusinessTheme(id) {
+  const response = await client.from('merchon').select('theme').eq('id', id);
+  return checkError(response);
+}
 // fetch shop item image from supabase bucket
 
 export async function fetchShopImage(shop_item_image_name) {

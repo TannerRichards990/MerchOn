@@ -38,7 +38,7 @@ export default function SignUpShopper() {
           
           <label htmlFor="password" value={ password }>
             <p>Enter Password</p>
-            <input type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
+            <input placeholder="6 Characters Min." type="password" value={ password } onChange={(e) => setPassword(e.target.value)} />
           </label>
 
           <label>

@@ -38,12 +38,17 @@
   margin: 10px;
 }
 
+.business-logo {
+  width: 100px;
+}
+
 /* click to enter shop styling begins */
 .bc-store {
   width: 500px;
   height: 50px;
   color: #ffbd59;
   background: #111;
+  position: relative;
   cursor: pointer;
   z-index: 0;
   border-radius: 10px;

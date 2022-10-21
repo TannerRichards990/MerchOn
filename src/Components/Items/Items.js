@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { addItem } from '../../services/fetch-utils';
 
 const Items = () => {
+  const history = useHistory();
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
@@ -10,7 +11,8 @@ const Items = () => {
   const { id } = useParams();
 
   const handleSubmit = async () => {
-    await addItem(productName, price, description, id);
+    await addItem(productName, price, 0, description, id);
+    history.push(`/Editor/${id}`);
   };
 
   return (
@@ -69,7 +71,7 @@ const Items = () => {
 
         <div className="add-item-button">
           <p>Add the item to your store</p>
-          <button>Add</button>
+          <button onClick={handleSubmit}>Add</button>
         </div>
       </form>
     </section>
