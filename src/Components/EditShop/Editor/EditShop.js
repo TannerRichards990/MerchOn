@@ -17,6 +17,22 @@ export default function EditShop({
   setAddItem
 }) {
 
+
+
+
+
+
+
+  const submitHandler = async () => {
+    const businessResponse = await changeMerchantRow(business_info_new);
+    setBusinessDetail(businessResponse);
+  };
+
+
+  
+
+  
+
   const { id } = useParams();
   const { businessDetail, setBusinessDetail, loading, setLoading, error, setError } = useBusiness(id);
 
@@ -28,6 +44,8 @@ export default function EditShop({
       console.error(e.message);
     }
   };
+
+
 
   return (
     <div className='shop-editor'>
