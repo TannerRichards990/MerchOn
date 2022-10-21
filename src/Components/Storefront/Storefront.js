@@ -26,14 +26,10 @@ export default function Storefront() {
   if (error) return <h1>{error}</h1>;
 
   if (!user) {
-    return <Redirect to="/Landing/" />;
+    return <Redirect to='/Landing/' />;
   }
-
-  const handleSgnOut = async () => {
-    await signOut();
-    history.push('/landing');
-  };
-
+  console.log(user);
+  
   return (
     <>
 
