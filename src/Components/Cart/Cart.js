@@ -1,10 +1,14 @@
+import { LocalTaxi } from '@mui/icons-material';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './Cart.css';
 
 export default function Cart() {
   const history = useHistory();
-  
+  let totalSum = 0;
+  let totalSumString = '';
+  let shoppingCart = JSON.parse(localStorage.getItem('cart'));
+
   if (!shoppingCart) {
     return (
       <>
@@ -13,13 +17,10 @@ export default function Cart() {
     );
   }
 
-
-  let totalSum = 0;
-  let totalSumString = '';
-  let shoppingCart = JSON.parse(localStorage.getItem('cart'));
-
   const clearCart = () => {
-    localStorage.clear();
+    localStorage.removeItem('cart');
+    console.log('cart');
+    history.push('/Cart');
   };
 
   const checkOut = () => {
@@ -72,11 +73,10 @@ export default function Cart() {
                 </div>
               ))}
             </div>
-            <button onClick={clearCart}>Clear Cart</button>
-            <button onClick={totalMoney}>find sum</button>
             <div className='subtotal'>
                   Subtotal: ${totalSumString}
             </div>
+            <button onClick={clearCart}>Clear Cart</button>
             <button onClick={checkOut}>Checkout</button>
           </div>
         )}
