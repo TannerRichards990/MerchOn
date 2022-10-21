@@ -20,9 +20,11 @@ export default function Venmo() {
   totalMoney();
 
   return (
-    <>    
-      <div>Please send your payment of ${totalSumString} to:</div>
-      <img className='connor-venmo' src={process.env.PUBLIC_URL + `connor_venmo.png`}/>
+    <>
+      <div className='venmo-container'>    
+        <div className='money'>Please send your payment of ${totalSumString} to:</div>
+        <img className='connor-venmo' src={process.env.PUBLIC_URL + `connor_venmo.png`}/>
+      </div>
     </>
   );
 }

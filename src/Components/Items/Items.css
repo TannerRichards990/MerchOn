@@ -1,3 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 
 /* font-family: 'Cormorant Garamond', serif; */
+
+.items-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../background.png);
+  color: #ffbd59;
+  height: 100vh;
+  width: 100vw;
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* z-index: .1; */
+}
+
+.title {
+  font-size: 3em;
+  color: #ffbd59;
+  height: 10vh;
+  width: 100vw;
+}
+
+.item-form{
+  font-size: 2rem;
+  text-shadow: 2px 2px 2px #000000;
+  color: #ffbd59;
+  background-image: url(../../../src/assets/woodboard.png);
+  width: 75%;
+  height: 75%;
+  border: 1px solid #2a807d;
+  box-shadow: 2px 2px 3px 0px #078FCD;
+  -webkit-box-shadow: 2px 2px 4px 0px #078FCD;
+  border-radius: 15px;
+
+}

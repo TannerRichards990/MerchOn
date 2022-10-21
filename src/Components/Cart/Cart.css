@@ -1,0 +1,81 @@
+.cart-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(../../assets/woodboard.png);
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.cart {
+  justify-content: center;
+  font-size: 2rem;
+  color: #ffbd59;
+  margin: 0 auto;
+  background-image: url(../../background.png);
+  border: 3px solid #ffbd59;
+  height: 80%;
+  width: 90%;
+}
+
+.cart h1 {
+  font-size: 2rem;
+  color: #ffbd59;
+  
+}
+
+.cart button {
+  font-size: 1.5rem;
+  color: #ffbd59;
+  background: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+  border: 3px solid #ffbd59;
+  height: 10%;
+  width: 20%;
+  margin: 15px;
+}
+
+.banner {
+  font-size: 1.5rem;
+  color: #ffbd59;
+  background-color: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+  border: 3px solid #ffbd59;
+  
+  
+  
+}
+
+.subtotal{
+  font-size: 3rem;
+  color: #ffbd59;
+  margin: 2.5%;
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
+  }
+
+.clear {
+  font-size: 2rem;
+  color: #ffbd59;
+  background-color: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+  border: 1px solid #ffbd59;
+  box-shadow: 2px 2px 3px 0px #078FCD;
+  -webkit-box-shadow: 2px 2px 4px 0px #078FCD;
+  border-radius: 15px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.checkout {
+  font-size: 2rem;
+  color: #ffbd59;
+  background-color: rgb(0,6,4);
+  background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+  border: 1px solid #ffbd59;
+  box-shadow: 2px 2px 3px 0px #078FCD;
+  -webkit-box-shadow: 2px 2px 4px 0px #078FCD;
+  border-radius: 15px;
+  margin-left: 20px;
+  cursor: pointer;
+}

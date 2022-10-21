@@ -1,0 +1,31 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 30px;
+    background: rgb(0,6,4);
+    background: linear-gradient(90deg, rgba(0,6,4,1) 0%, rgba(10,88,81,1) 60%);
+}
+
+.form-controls {
+  color: #ffbd59;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  background-image: url(../../assets/woodboard.png);
+  border: 5px solid #ffbd59;
+  height: 35%;
+  width: 40%;
+}
+
+.input {
+  margin: 15px;
+  font-size: 1.2rem;
+}
+

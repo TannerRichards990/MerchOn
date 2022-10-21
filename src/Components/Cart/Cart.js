@@ -70,17 +70,19 @@ export default function Cart() {
 
   return (
     <>    
-      <div>
+      <div className='banner'>
         <h2>Shopping Cart</h2>
+      </div>
+      <div className='cart-container'> 
         {localStorage.getItem('cart') && (
           <div>
             <div className='cart'>
               {shoppingCart.map((item) => (
                 <div key={item} {...item}>
                   <li>
-                    This should show the item name: {item[0]}
+                    item name: {item[0]}
                     <h1>
-                    This should show the item price: {item[1]}
+                    item price: {item[1]}
                     </h1>
                   </li>
                   <button onClick={() => (clearItem(item))}>Remove Item</button>
@@ -88,13 +90,14 @@ export default function Cart() {
               ))}
             </div>
             <div className='subtotal'>
-                  Subtotal: ${totalSumString}
+            Subtotal: ${totalSumString}
             </div>
-            <button onClick={clearCart}>Clear Cart</button>
-            <button onClick={checkOut}>Checkout</button>
+            <button className='clear' onClick={clearCart}>Clear Cart</button>
+            <button className='checkout' onClick={checkOut}>Checkout</button>
           </div>
         )}
       </div>
+      
     </>
   );
 }

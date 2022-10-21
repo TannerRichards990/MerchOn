@@ -9,5 +9,5 @@
   /* grid-gap: 20px; */
   width: 100%;
   height: calc(100vh - 70px);
-  background-image: url(../../../background.png);
+  background-image: url(../../../../src/assets/woodboard.png);
 }

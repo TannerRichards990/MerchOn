@@ -1,20 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap%27');
 
 /* font-family: 'Cormorant Garamond', serif; */
 
 .about-container {
     height: 100vh;
     width: 100vw;
+    background-image: url(../../background.png);
 }
 
 .about-title {
-    color:aliceblue;
+    color: #ffbd59;
     font-size: 80px;
     align-items: center;
     height: 10%;
     width: 100vw;
     position: relative;
     bottom: 90px;
+    background-image: url(../../../src/assets/woodboard.png);
+}
+
+.meet{
+    color: #ffbd59;
+    font-size: 40px;
+    align-items: center;
+    height: 10%;
+    width: 100vw;
+    
+    
 }
 
 .about-text {
@@ -26,7 +38,7 @@
 }
 
 .creators {
-    color: aliceblue;
+    color: #ffbd59;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 80%;
@@ -34,6 +46,7 @@
     position: relative;
     bottom: 2.5em;
     right: 1em;
+    font-size: 1.5rem;
 }
 
 .tan-img, .con-img, .em-img, .tom-img {

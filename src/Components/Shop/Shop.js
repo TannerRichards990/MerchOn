@@ -51,42 +51,43 @@ export default function Shop() {
   };
   return ( 
     <>
-      <div >WELCOME TO THE SHOP</div>
-      {businessDetail.length !== 0 && themeDetail[0] && (
-        <div className={`standard-${themeDetail[0].theme}`}>
-          <div className="shop-title">Business Name: {businessInfo[0].business_name}</div>
-          <div className="shop-description">Business About: {businessInfo[0].business_about}</div>
-          <div className="shop-owner">Business PWNer: {businessInfo[0].business_owner}</div>
-          <div className="business_image_el">
-            <img alt='business logo' src={imageData}/>
-          </div>
+      <div className='welcome' >WELCOME TO THE SHOP</div>
+      <div className='shop-container'> 
+        {businessDetail.length !== 0 && themeDetail[0] && (
+          <div className={`standard-${themeDetail[0].theme}`}>
+            <div className="shop-title"> {businessInfo[0].business_name}</div>
+            <div className="shop-description"> {businessInfo[0].business_about}</div>
+            <div className="shop-owner"> {businessInfo[0].business_owner}</div>
+            <div className="business_image_el">
+              <img className='business-logo' alt='business logo' src={imageData}/>
+            </div>
           
-          <div className='shop-search'>
-            <label htmlFor="search">
-              <p>Search for an item!</p>
-              <input className="shop-sort" name="search" placeholder="search" value={search} onChange={(e) => {
-                setSearch(e.target.value);
-              }}></input>
-            </label>
-          </div>
+            <div className='shop-search'>
+              <label htmlFor="search">
+                <p>Search for an item!</p>
+                <input className="shop-sort" name="search" placeholder="search" value={search} onChange={(e) => {
+                  setSearch(e.target.value);
+                }}></input>
+              </label>
+            </div>
 
-          <div className="shop-map">
-            {searchItems().map((item) => (
-              <>              
-                <div key={item.item_name} {...item}>
-                  <div>This should show the item name: {item.item_name}</div>
-                  <div>This should show the item price: {item.item_price}</div>
-                </div>
-                <button onClick={() => (addToCart(item))}>Add items to shopping cart</button>
-              </>
-            ))}
+            <div className="shop-map">
+              {searchItems().map((item) => (
+                <>              
+                  <div key={item.item_name} {...item}>
+                    <div> item name: {item.item_name}</div>
+                    <div> item price: {item.item_price}</div>
+                  </div>
+                  <button onClick={() => (addToCart(item))}>Add items to shopping cart</button>
+                </>
+              ))}
+            </div>
+            <div>{id}</div>
+            <div>
+            </div>
           </div>
-          <div>{id}</div>
-          <div>
-
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }
