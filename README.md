@@ -19,12 +19,12 @@
 - GitHub - https://github.com/Thomas-Jenkins
 
 ## What is MerchOn?
-
-## How does it work?
+An ecommerce website for consumers to shop from their favorite local shops and for small businesses to sell their products online in their area.
 
 ## Deployed Site
 
 [ NETLIFY ]
+https://merch0n.netlify.app/
 
 ## Our Planning Artifact
 
